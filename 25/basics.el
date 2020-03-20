@@ -19,6 +19,9 @@
 ;;
 ;;; Code:
 
+;; Flymake temp dir
+(setq temporary-file-directory "~/.emacs.d/.tmp/")
+
 
 ;; trump hang workaround
 ;; (setq tramp-ssh-controlmaster-options
@@ -245,7 +248,7 @@ mode of the invoking window is in
   (interactive (find-tag-interactive "View tag other window: "))
   (let ((window (get-buffer-window)))
     (if (eq 1 (length (visible-frame-list)))
-        ;; (xref-find-definitions-other-window)
+        ;; ( xref-find-definitions-other-window)
         (find-tag-other-window tagname next-p regexp-p)
       (let* ((mypos (seq-position (visible-frame-list) (selected-frame)))
              (otherpos (mod (+ mypos 1) (length (visible-frame-list))))

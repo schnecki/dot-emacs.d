@@ -355,7 +355,6 @@
       "../Common/lib/"))))
  '(column-number-mode t)
  '(company-box-icons-alist (quote company-box-icons-icons-in-terminal))
- '(company-fuzzy-sorting-backend (quote flx))
  '(company-idle-delay 0.01)
  '(cua-delete-selection nil)
  '(custom-safe-themes
@@ -395,9 +394,9 @@
     ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include")))
  '(flycheck-clang-includes (quote ("/usr/include/netdb.h")))
  '(flycheck-flake8-maximum-line-length 160)
+ '(flycheck-ghc-search-path (quote ("src" "shared" "test")))
  '(flymake-gui-warnings-enabled nil)
  '(frame-background-mode (quote dark))
- '(global-company-fuzzy-mode t nil (company-fuzzy))
  '(global-eclim-mode t)
  '(global-flycheck-mode t)
  '(global-undo-tree-mode t)
@@ -454,6 +453,8 @@
  '(jde-sourcepath (quote ("./src/main" "./src/test")) t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
+ '(lsp-haskell-process-path-hie "ghcide")
+ '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
  '(mpc-host "192.168.178.62")
  '(org-agenda-files (quote ("~/Documents/planning/")))
@@ -474,10 +475,15 @@
  '(org-use-sub-superscripts (quote {}))
  '(package-selected-packages
    (quote
-    (company-quickhelp flyspell-lazy company-auctex company-bibtex company-fuzzy pabbrev ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo undo-tree latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx 0blayout browse-kill-ring yaml-mode gams-mode flycheck-elm elm-mode elm-yasnippets yasnippet-snippets company-statistics flycheck-elm elm-mode elm-yasnippets yasnippet-snippets company-statistics matlab-mode hamlet-mode thesaurus tuareg org-gcal flyspell-correct flyspell-correct-helm window-number w3m vc-darcs tex-smart-umlauts smart-mode-line shm shakespeare-mode request rainbow-mode rainbow-delimiters php-mode pager-default-keybindings ov orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac multiple-cursors markdown-toc markdown-mode+ magit jedi javap-mode javadoc-lookup intero ido-ubiquitous ido-hacks ido-gnus htmlize hlint-refactor hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet helm-bibtex header2 gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-haskell flycheck-google-cpplint flycheck-color-mode-line edbi ecb dired+ company-try-hard company-shell company-math company-c-headers change-inner cdlatex bookmark+ bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode android-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
+    (flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex pabbrev ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo undo-tree latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx 0blayout browse-kill-ring yaml-mode gams-mode flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus tuareg org-gcal flyspell-correct flyspell-correct-helm window-number w3m vc-darcs tex-smart-umlauts smart-mode-line shm shakespeare-mode request rainbow-mode rainbow-delimiters php-mode pager-default-keybindings ov orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac multiple-cursors markdown-toc markdown-mode+ magit jedi javap-mode javadoc-lookup intero ido-ubiquitous ido-hacks ido-gnus htmlize hlint-refactor hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet helm-bibtex header2 gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb dired+ company-try-hard company-shell company-math company-c-headers change-inner cdlatex bookmark+ bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode android-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
  '(safe-local-variable-values
    (quote
-    ((intero-targets "simsim:lib" "simsim:exe:simsim-exe")
+    ((intero-targets "borl:lib" "borl-releaser:lib" "borl-releaser:exe:borl-releaser-exe" "borl-releaser:exe:exp")
+     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
+     (intero-targets "experimenter:lib" "experimenter:exe:dice" "experimenter:exe:dice-stateless")
+     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
+     (intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
+     (intero-targets "simsim:lib" "simsim:exe:simsim-exe")
      (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:tensorflow-test" "borl:exe:three-states")
      (intero-targets "high-level-tensorflow:lib")
      (intero-targets "grenade:lib")
@@ -555,7 +561,6 @@
  '(semantic-highlight-func-current-tag-face ((t (:box (:line-width 1 :color "grey75")))))
  '(undo-tree-visualizer-active-branch-face ((t (:foreground "black" :weight bold)))))
 
-(put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -570,3 +575,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 
+(put 'upcase-region 'disabled nil)

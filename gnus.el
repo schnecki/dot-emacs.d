@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 110
+;;     Update #: 113
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -56,23 +56,23 @@
 ;;   )
 
 ;; other newsfeeds
-;; (setq gnus-select-method '(nnimap "uibk"
-;;                                   (nnimap-stream ssl)
-;;                                   (nnimap-server-port 993)
-;;                                   (nnimap-address "mail2.uibk.ac.at")
-;;                                   ))
-
-(setq gnus-select-method '(nnimap "oculytics"
-                                   (nnimap-stream ssl)
-                                   (nnimap-address "outlook.office365.com")
-                                   (nnimap-server-port 993)
-                                   ))
-
-(add-to-list 'gnus-secondary-select-methods '(nnimap "uibk_exchange"
+(setq gnus-select-method '(nnimap "uibk_exchange"
                                   (nnimap-stream ssl)
                                   (nnimap-address "exchange.uibk.ac.at")
                                   (nnimap-server-port "imaps")
                                   ))
+
+;; (setq gnus-select-method '(nnimap "oculytics"
+;;                                    (nnimap-stream ssl)
+;;                                    (nnimap-address "outlook.office365.com")
+;;                                    (nnimap-server-port 993)
+;;                                    ))
+
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "uibk_exchange"
+;;                                   (nnimap-stream ssl)
+;;                                   (nnimap-address "exchange.uibk.ac.at")
+;;                                   (nnimap-server-port "imaps")
+;;                                   ))
 
 (add-to-list 'gnus-secondary-select-methods '(nnimap "uibk"
                                                      (nnimap-stream ssl)

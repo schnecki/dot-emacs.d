@@ -8,7 +8,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 33
+;;     Update #: 40
 ;; URL:
 ;; Description:
 ;;
@@ -26,10 +26,17 @@
 (require 'flycheck)
 
 ;; Enable flycheck for all buffers
-(global-flycheck-mode t)
+;; (global-flycheck-mode t)
 
 ;; HASKELL
 ;; set in customize-set-variables in init.el
+;; (add-to-list 'load-path (concat package-folder "flycheck-stack"))
+;; (require 'flycheck-stack)
+;; (defun haskell-mode-flycheck-stack ()
+;;   (flycheck-select-checker 'stack)
+;;   (flycheck-mode))
+;; (add-hook 'haskell-mode-hook 'haskell-mode-flycheck-stack)
+
 
 ;; LEDGER
 ;; (eval-after-load 'flycheck '(require 'flycheck-ledger))
