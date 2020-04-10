@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "abs-mode" "20190404.2304" "Major mode for the modeling language Abs" '((emacs "25") (erlang "0") (maude-mode "0") (flymake "0.3")) :commit "31fb36f9206203062b8c618fef6ad484e44af226" :keywords '("languages") :authors '(("Rudi Schlatte" . "rudi@constantly.at")) :maintainer '("Rudi Schlatte" . "rudi@constantly.at") :url "https://github.com/abstools/abs-mode")
