@@ -8,7 +8,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 990
+;;     Update #: 995
 ;; URL:
 ;; Description:
 ;;
@@ -495,9 +495,9 @@
 (custom-set-variables '(haskell-stylish-on-save t))
 (add-hook 'haskell-mode-hook 'flyspell-prog-mode)
 
-(eval-after-load 'interactive-haskell-mode
-  ;; (define-key interactive-haskell-mode-map (kbd "M-.") 'haskell-mode-goto-loc)
-  (define-key interactive-haskell-mode-map (kbd "C-c C-t") 'haskell-mode-show-type-at))
+;; (eval-after-load 'interactive-haskell-mode
+;;   ;; (define-key interactive-haskell-mode-map (kbd "M-.") 'haskell-mode-goto-loc)
+;;   (define-key interactive-haskell-mode-map (kbd "C-c C-t") 'haskell-mode-show-type-at))
 
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
