@@ -394,6 +394,7 @@
     ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include")))
  '(flycheck-clang-includes (quote ("/usr/include/netdb.h")))
  '(flycheck-flake8-maximum-line-length 160)
+ '(flycheck-ghc-args (quote ("-DFLYCHECK")))
  '(flycheck-ghc-language-extensions (quote ("NoStarIsType")))
  '(flycheck-ghc-search-path (quote ("src" "shared" "test")))
  '(flymake-gui-warnings-enabled nil)
@@ -408,6 +409,9 @@
  '(haskell-font-lock-symbols nil)
  '(haskell-interactive-mode-collapse t)
  '(haskell-interactive-popup-errors nil)
+ '(haskell-mode-hook
+   (quote
+    (haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode hindent-mode haskell-indentation-mode my/haskell-minor-mode)))
  '(haskell-process-args-cabal-repl
    (quote
     ("--ghc-option=-ferror-spans" "--ghc-option=-fbreak-on-error")))
