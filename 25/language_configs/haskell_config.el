@@ -8,7 +8,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 1024
+;;     Update #: 1028
 ;; URL:
 ;; Description:
 ;;
@@ -59,17 +59,22 @@
                         (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
                           (split-string default-directory "src")
-                      (if (string-match "shared/" default-directory)
-                          (split-string default-directory "shared")
-                        (if (string-match "exp/" default-directory)
-                            (split-string default-directory "exp")
-                          (if (string-match "fay/" default-directory)
-                              (split-string default-directory "fay")
-                            (if (string-match "fay-shared/" default-directory)
-                                (split-string default-directory "fay-shared")
-                              (if (string-match "examples/" default-directory)
-                                  (split-string default-directory "examples/")
-                                (split-string default-directory "test")))))))))))
+                        (if (string-match "shared/" default-directory)
+                            (split-string default-directory "shared")
+                          (if (string-match "exp/" default-directory)
+                              (split-string default-directory "exp")
+                            (if (string-match "fay/" default-directory)
+                                (split-string default-directory "fay")
+                              (if (string-match "fay-shared/" default-directory)
+                                  (split-string default-directory "fay-shared")
+                              (if (string-match "cbits/" default-directory)
+                                  (split-string default-directory "cbits")
+                                (if (string-match "examples/" default-directory)
+                                    (split-string default-directory "examples/")
+                                  (if (string-match "bench/" default-directory)
+                                      (split-string default-directory "bench/")
+                                    (split-string default-directory "test"))
+                                  )))))))))))
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
     ;; (message esdir)
     (setq tagslst '()) ;; '("."))
@@ -123,7 +128,7 @@
   (hindent-mode)
   (define-key haskell-mode-map (kbd "C-c h h") 'haskell-hoogle)
   (define-key haskell-mode-map (kbd "C-.") nil)
-  (define-key haskell-mode-map (kbd "M-.") nil)
+  (define-key interactive-haskell-mode-map (kbd "M-.") nil)
 
   )
 

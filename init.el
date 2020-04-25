@@ -334,7 +334,7 @@
  '(Flymake-compilation-prevents-syntax-check nil)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
- '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
    (quote
     ((concat
@@ -353,6 +353,7 @@
       (nth 0
            (split-string default-directory "src"))
       "../Common/lib/"))))
+ '(clang-format-style "LLVM")
  '(column-number-mode t)
  '(company-box-icons-alist (quote company-box-icons-icons-in-terminal))
  '(company-idle-delay 0.01)
@@ -389,12 +390,17 @@
  '(ede-project-directories
    (quote
     ("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04")))
+ '(flycheck-clang-args (quote ("-DFLYCHECK")))
  '(flycheck-clang-include-path
    (quote
-    ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include")))
+    ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include" "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
  '(flycheck-clang-includes (quote ("/usr/include/netdb.h")))
+ '(flycheck-cppcheck-include-path (quote ("/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
+ '(flycheck-cppcheck-suppressions (quote ("knownConditionTrueFalse")))
  '(flycheck-flake8-maximum-line-length 160)
- '(flycheck-ghc-args (quote ("-DFLYCHECK")))
+ '(flycheck-ghc-args
+   (quote
+    ("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float")))
  '(flycheck-ghc-language-extensions (quote ("NoStarIsType")))
  '(flycheck-ghc-search-path (quote ("src" "shared" "test")))
  '(flymake-gui-warnings-enabled nil)
@@ -488,7 +494,7 @@
      ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
+    (clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
  '(safe-local-variable-values
    (quote
     ((intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:gridworld-step" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
