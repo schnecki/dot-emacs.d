@@ -7,7 +7,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 141
+;;     Update #: 143
 ;; URL:
 ;; Description:
 ;;
@@ -191,8 +191,8 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ++++++++++++++++++++++++++++++ FLYSPELL ++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(require 'flyspell-correct-helm)
-(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous-word-generic)
+;; (require 'flyspell-correct-helm)
+;; (define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

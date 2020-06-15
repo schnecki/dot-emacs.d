@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 112
+;;     Update #: 114
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -67,13 +67,11 @@
 ;;                                    (nnimap-address "outlook.office365.com")
 ;;                                    (nnimap-server-port 993)
 ;;                                    ))
-
 (setq gnus-select-method '(nnimap "uibk_exchange"
                                   (nnimap-stream ssl)
                                   (nnimap-address "exchange.uibk.ac.at")
                                   (nnimap-server-port "imaps")
                                   ))
-
 
 ;; (add-to-list 'gnus-secondary-select-methods '(nnimap "uibk_exchange"
 ;;                                   (nnimap-stream ssl)

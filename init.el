@@ -334,7 +334,7 @@
  '(Flymake-compilation-prevents-syntax-check nil)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
- '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
    (quote
     ((concat
@@ -353,9 +353,9 @@
       (nth 0
            (split-string default-directory "src"))
       "../Common/lib/"))))
+ '(clang-format-style "LLVM")
  '(column-number-mode t)
  '(company-box-icons-alist (quote company-box-icons-icons-in-terminal))
- '(company-fuzzy-sorting-backend (quote flx))
  '(company-idle-delay 0.01)
  '(cua-delete-selection nil)
  '(custom-safe-themes
@@ -390,14 +390,21 @@
  '(ede-project-directories
    (quote
     ("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04")))
+ '(flycheck-clang-args (quote ("-DFLYCHECK")))
  '(flycheck-clang-include-path
    (quote
-    ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include")))
+    ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include" "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
  '(flycheck-clang-includes (quote ("/usr/include/netdb.h")))
+ '(flycheck-cppcheck-include-path (quote ("/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
+ '(flycheck-cppcheck-suppressions (quote ("knownConditionTrueFalse")))
  '(flycheck-flake8-maximum-line-length 160)
+ '(flycheck-ghc-args
+   (quote
+    ("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float")))
+ '(flycheck-ghc-language-extensions (quote ("NoStarIsType")))
+ '(flycheck-ghc-search-path (quote ("src" "shared" "test")))
  '(flymake-gui-warnings-enabled nil)
  '(frame-background-mode (quote dark))
- '(global-company-fuzzy-mode t nil (company-fuzzy))
  '(global-eclim-mode t)
  '(global-flycheck-mode t)
  '(global-undo-tree-mode t)
@@ -408,12 +415,19 @@
  '(haskell-font-lock-symbols nil)
  '(haskell-interactive-mode-collapse t)
  '(haskell-interactive-popup-errors nil)
+ '(haskell-mode-hook
+   (quote
+    (haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode hindent-mode haskell-indentation-mode my/haskell-minor-mode)))
  '(haskell-process-args-cabal-repl
    (quote
     ("--ghc-option=-ferror-spans" "--ghc-option=-fbreak-on-error")))
  '(haskell-process-args-ghci (quote ("-ferror-spans -fbreak-on-error")))
  '(haskell-process-args-stack-ghci nil)
+ '(haskell-process-auto-import-loaded-modules t)
+ '(haskell-process-log t)
  '(haskell-process-path-ghci "stack")
+ '(haskell-process-suggest-hoogle-imports t)
+ '(haskell-process-suggest-remove-import-lines nil)
  '(haskell-process-type (quote stack-ghci))
  '(haskell-stylish-on-save t)
  '(helm-M-x-always-save-history t)
@@ -454,6 +468,8 @@
  '(jde-sourcepath (quote ("./src/main" "./src/test")) t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
+ '(lsp-haskell-process-path-hie "ghcide")
+ '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
  '(mpc-host "192.168.178.62")
  '(org-agenda-files (quote ("~/Documents/planning/")))
@@ -472,31 +488,14 @@
  '(org-latex-prefer-user-labels t)
  '(org-latex-table-caption-above nil)
  '(org-use-sub-superscripts (quote {}))
+ '(package-archives
+   (quote
+    (("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/"))))
  '(package-selected-packages
    (quote
-    (company-quickhelp flyspell-lazy company-auctex company-bibtex company-fuzzy pabbrev ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo undo-tree latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx 0blayout browse-kill-ring yaml-mode gams-mode flycheck-elm elm-mode elm-yasnippets yasnippet-snippets company-statistics flycheck-elm elm-mode elm-yasnippets yasnippet-snippets company-statistics matlab-mode hamlet-mode thesaurus tuareg org-gcal flyspell-correct flyspell-correct-helm window-number w3m vc-darcs tex-smart-umlauts smart-mode-line shm shakespeare-mode request rainbow-mode rainbow-delimiters php-mode pager-default-keybindings ov orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac multiple-cursors markdown-toc markdown-mode+ magit jedi javap-mode javadoc-lookup intero ido-ubiquitous ido-hacks ido-gnus htmlize hlint-refactor hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet helm-bibtex header2 gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-haskell flycheck-google-cpplint flycheck-color-mode-line edbi ecb dired+ company-try-hard company-shell company-math company-c-headers change-inner cdlatex bookmark+ bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode android-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
- '(safe-local-variable-values
-   (quote
-    ((intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
-     (intero-targets "simsim:lib" "simsim:exe:simsim-exe")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "high-level-tensorflow:lib")
-     (intero-targets "grenade:lib")
-     (intero-targets "api-maker:lib")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-hard" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "borl-lp:lib")
-     (intero-targets "borl-model-based:lib" "examples:exe:gridworld")
-     (intero-targets "experimenter:lib" "experimenter:exe:dice" "experimenter:exe:dice-stateless" "experimenter:test:experimenter-test")
-     (intero-targets "tensorflow-haskell-high-level-api:lib" "tensorflow-haskell-high-level-api:exe:feedforward")
-     (intero-targets "tensorflow-haskell-high-level-api:lib" "tensorflow-haskell-high-level-api:exe:feedfoward")
-     (TeX-mast . paper\.tex)
-     (TeX-master . paper\.tex)
-     (intero-targets "borl-model-based:lib" "borl-model-based:test:borl-model-based-test" "examples:exe:gridworld")
-     (intero-targets "cms:lib" "cms:exe:cms")
-     (intero-targets "simsim:lib" "simsim:exe:simsim-exe" "simsim:test:simsim-test")
-     (intero-targets "cms:lib" "cms:exe:cms" "cms:test:test")
-     (header-auto-update-enabled))))
+    (clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
+ '(safe-local-variable-values (quote ((header-auto-update-enabled))))
  '(semanticdb-javap-classpath
    (quote
     ((concat
@@ -556,7 +555,6 @@
  '(semantic-highlight-func-current-tag-face ((t (:box (:line-width 1 :color "grey75")))))
  '(undo-tree-visualizer-active-branch-face ((t (:foreground "black" :weight bold)))))
 
-(put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 (put 'dired-find-alternate-file 'disabled nil)
 (put 'narrow-to-region 'disabled nil)
@@ -571,3 +569,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init.el ends here
 
+(put 'upcase-region 'disabled nil)

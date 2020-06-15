@@ -19,6 +19,9 @@
 ;;
 ;;; Code:
 
+;; Flymake temp dir
+(setq temporary-file-directory "~/.emacs.d/.tmp/")
+
 
 ;; trump hang workaround
 ;; (setq tramp-ssh-controlmaster-options
@@ -78,48 +81,109 @@
         (revert-buffer t t))
     (call-interactively 'compile)))
 
-;; CLOSE/BURY THE COMPILATION WINDOW IF THERE WAS NO ERROR AT ALL.
-(defun compilation-exit-autoclose (status code msg)
-  "Automatically close the *compilation* buffer, if the major
-mode of the invoking window is in
-`compilation-modes-to-close-window listed."
-  (interactive)
-  (let ((this-buffer (current-buffer)))
-    (let ((cmm (buffer-local-value 'major-mode (other-buffer this-buffer t nil))))
+;; ;; CLOSE/BURY THE COMPILATION WINDOW IF THERE WAS NO ERROR AT ALL.
+;; (defun bury-compile-buffer-if-successful (buffer string)
+;;  "Bury a compilation buffer if succeeded without warnings "
+;;  (when (and
+;;          (buffer-live-p buffer)
+;;          (string-match "compilation" (buffer-name buffer))
+;;          (string-match "finished" string)
+;;          (not
+;;           (with-current-buffer buffer
+;;             (goto-char (point-min))
+;;             (search-forward "warning" nil t))))
+;;     (run-with-timer 1 nil
+;;                     (lambda (buf)
+;;                       (bury-buffer buf)
+;;                       (switch-to-prev-buffer (get-buffer-window buf) 'kill))
+;;                     buffer)))
+;; ;; (add-hook 'compilation-exit-message-function 'bury-compile-buffer-if-successful)
+;; (add-hook 'compilation-exit-message-function nil)
 
-        (if (not (equal nil (find cmm compilation-modes-to-close-window)))
-            (when (and (eq status 'exit) (zerop code))
-              ;; then bury the *compilation* buffer, so that C-x b doesn't go there
-              ;; (bury-buffer)
-              ;; and delete/bury the *compilation* buffer
-              ;; (replace-buffer-in-windows "*compilation*")
-              (bury-buffer "*compilation*")
-              ;; (other-window 1)
-              ;; (switch-to-buffer "*shell*")
-              (command-execute 'shell)
-              (shell)
-              (message "compilation successful")
-              ;; (cons msg code)
-              )
-          ;; Otherwise open compilation window. Always return the anticipated result
-          ;; of compilation-exit-message-function
-          (cons msg code)))));; )
+;; (setq shell-file-name "bash")
+;; (setq shell-command-switch "-c")
+(setenv "BASH_ENV" "~/.bashrc")
+
+;; Helper for compilation. Close the compilation window if
+;; there was no error at all.
+(defun compilation-exit-autoclose (status code msg)
+  "Close compile window on successful compiliation."
+
+  ;; If M-x compile exists with a 0
+  (when (and (eq status 'exit) (zerop code))
+    ;; then bury the *compilation* buffer, so that C-x b doesn't go there
+    (bury-buffer)
+    ;; and delete the *compilation* window
+    (delete-window (get-buffer-window (get-buffer "*compilation*")))
+    ;; (command-execute 'shell)
+    ;; (shell)
+    ;; (delete-other-windows)
+    ;; (split-window-right)
+    ;; (other-window 1)
+    ;; (shell)
+    ;; (let ((w (split-window-right 1)))
+    ;;     (select-window w)
+    (shell)
+    ;; (switch-to-buffer "*shell*")
+    ;; (shell)
+    ;; (other-window 1)
+    ;; (shell)
+    ;; (switch-to-buffer "*shell*")
+    )
+  ;; Always return the anticipated result of compilation-exit-message-function
+  (cons msg code))
+;; Specify my function (maybe I should have done a lambda function)
+(setq compilation-exit-message-function 'compilation-exit-autoclose)
+
+;; (defun compilation-exit-autoclose (status code msg)
+;;   "Automatically close the *compilation* buffer, if the major
+;; mode of the invoking window is in
+;; `compilation-modes-to-close-window listed."
+;;   (interactive)
+;;   (let ((this-buffer (current-buffer)))
+;;     (let ((cmm (buffer-local-value 'major-mode (other-buffer this-buffer t nil))))
+
+;;       (if (not (equal nil (find cmm compilation-modes-to-close-window)))
+;;           (when (and (eq status 'exit) (zerop code))
+;;             ;; then bury the *compilation* buffer, so that C-x b doesn't go there
+;;             ;; (bury-buffer)
+;;             ;; and delete/bury the *compilation* buffer
+;;             ;; (replace-buffer-in-windows "*compilation*")
+;;             (bury-buffer "*compilation*")
+;;             ;; (other-window 1)
+;;             ;; (switch-to-buffer "*shell*")
+;;             (command-execute 'shell)
+;;             (switch-to-buffer "*shell*")
+;;             ;; (shell)
+;;             ;; (message "compilation successful")
+;;             ;; (cons msg code)
+;;             )
+;;         ;; Otherwise open compilation window. Always return the anticipated result
+;;         ;; of compilation-exit-message-function
+;;         (cons msg code)
+;;         ))));;
 
 ;; SPECIFY FUNCTION
 ;; specified for each language
-(setq compilation-modes-to-close-window '(jde-mode
-                                          java-mode
-                                          ))
-(setq compilation-exit-message-function 'compilation-exit-autoclose)
+;; (setq compilation-modes-to-close-window '(jde-mode
+;;                                           java-mode
+;;                                           c-mode
+;;                                           ))
+;; (setq compilation-exit-message-function 'compilation-exit-autoclose)
 ;; (setq compilation-exit-message-function nil)
 
 ;; COMPILE CLOSES MAKEFILE
 (defun compile-closest-Makefile ()
   (interactive)
-  (compile
-   (concat "make -C " (loop as d = default-directory then (expand-file-name
-                                                           ".." d) if (file-exists-p (expand-file-name "Makefile" d)) return
-                                                           d))))
+  (let* ((dir (loop as d = default-directory then
+                    (expand-file-name ".." d) if (file-exists-p (expand-file-name "Makefile" d)) return d))
+         (makefile (concat dir "/Makefile"))
+         )
+    (message (concat "Compiling using Makefile at " makefile))
+    (compile (concat "make -C " dir))
+    ;; (cd dir)
+    ;; (compile "make -C " makefile)
+    ))
 
 ;; bind compiling with get-above-makefile to f5
 (global-set-key [f5] 'compile-closest-Makefile)
@@ -245,7 +309,7 @@ mode of the invoking window is in
   (interactive (find-tag-interactive "View tag other window: "))
   (let ((window (get-buffer-window)))
     (if (eq 1 (length (visible-frame-list)))
-        ;; (xref-find-definitions-other-window)
+        ;; ( xref-find-definitions-other-window)
         (find-tag-other-window tagname next-p regexp-p)
       (let* ((mypos (seq-position (visible-frame-list) (selected-frame)))
              (otherpos (mod (+ mypos 1) (length (visible-frame-list))))
@@ -426,7 +490,7 @@ mode of the invoking window is in
   "switch-buffers-between-frames switches the buffers between the two last frames"
   (interactive)
   (let ((this-frame-buffer nil)
-	(other-frame-buffer nil))
+        (other-frame-buffer nil))
     (setq this-frame-buffer (car (frame-parameter nil 'buffer-list)))
     (other-frame 1)
     (setq other-frame-buffer (car (frame-parameter nil 'buffer-list)))
@@ -453,15 +517,15 @@ mode of the invoking window is in
 
 
 (defun insert-date (prefix)
-    "Insert the current date. With prefix-argument, use ISO format. With
+  "Insert the current date. With prefix-argument, use ISO format. With
    two prefix arguments, write out the day and month name."
-    (interactive "P")
-    (let ((format (cond
-                   ((not prefix) "%d.%m.%Y")
-                   ((equal prefix '(4)) "%Y-%m-%d")
-                   ((equal prefix '(16)) "%A, %d. %B %Y")))
-          (system-time-locale "de_DE"))
-      (insert (format-time-string format))))
+  (interactive "P")
+  (let ((format (cond
+                 ((not prefix) "%d.%m.%Y")
+                 ((equal prefix '(4)) "%Y-%m-%d")
+                 ((equal prefix '(16)) "%A, %d. %B %Y")))
+        (system-time-locale "de_DE"))
+    (insert (format-time-string format))))
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; +++++++++++++++++++++++++ Open File as Root ++++++++++++++++++++++++++
@@ -497,11 +561,11 @@ mode of the invoking window is in
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 (if (display-graphic-p)
-		(progn
-			(menu-bar-mode 1)		 ;; MENUBAR
-			(tool-bar-mode -1)	 ;; REMOVE TOOLBAR
-			(scroll-bar-mode -1) ;; REMOVE SCROLLBARS
-			))
+    (progn
+      (menu-bar-mode 1)    ;; MENUBAR
+      (tool-bar-mode -1)   ;; REMOVE TOOLBAR
+      (scroll-bar-mode -1) ;; REMOVE SCROLLBARS
+      ))
 
 
 ;; ENABLE UTF8
@@ -626,3 +690,4 @@ mode of the invoking window is in
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; basics.el ends here
+

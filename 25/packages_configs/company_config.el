@@ -53,16 +53,15 @@
 
 ;; Statistics
 
-(require 'company-statistics)
-(company-statistics-mode)
+;; (require 'company-statistics)
+;; (company-statistics-mode)
 
 ;; global activation of the unicode symbol completion
-(add-to-list 'company-backends 'company-math-symbols-unicode)
+;; (add-to-list 'company-backends 'company-math-symbols-unicode)
 
 ;; fuzzy
 ;; (require 'company-fuzzy)
 ;; (global-company-fuzzy-mode 1)
-
 
 (setq company-eclim-auto-save nil)          ; Stop eclim auto save.
 (setq company-dabbrev-downcase nil)         ; No downcase when completion.

@@ -7,9 +7,9 @@
 ;; Created: Sa Nov  2 16:14:09 2013 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Jan 21 11:52:56 2020 (+0100)
+;; Last-Updated: Fri Mar 20 14:14:45 2020 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 216
+;;     Update #: 217
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -171,7 +171,7 @@
 
   (TeX-PDF-mode t)
   (setq TeX-master (guess-TeX-master (buffer-file-name)))
-  ;; (flyspell-mode)
+  (flyspell-mode)
   ;; (flyspell-buffer)
 
   ;; enable org-table mode

@@ -7,9 +7,9 @@
 ;; Created: Fr Okt  4 20:40:17 2013 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Jan 14 12:35:41 2020 (+0100)
+;; Last-Updated: Fri Apr 24 20:24:11 2020 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 142
+;;     Update #: 149
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -110,17 +110,17 @@
 
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-c C-.") nil))
-
-
-;; (eval-after-load "flyspell"
-;;   '(define-key flyspell-mode-map (kbd "C-c C-.") 'find-tag-other-window)
-;;   )
+(eval-after-load "flyspell"
+  '(define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous))
 
 
 (setq flyspell-issue-message-flag nil)
 
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-M-i") nil))
+
+(eval-after-load "flyspell"
+  '(define-key flyspell-mode-map (kbd "C-.") nil))
 
 ;; (setq ispell-program-name "hunspell")          ; Use hunspell to correct mistakes
 

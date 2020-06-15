@@ -33,3 +33,4 @@ org-gcal/*
 .cask
 .org-id-locations
 /recentf
+/.lsp-session-v1

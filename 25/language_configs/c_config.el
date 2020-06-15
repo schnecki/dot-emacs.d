@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2014 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Jan 14 11:59:29 2020 (+0100)
+;; Last-Updated: Sat Apr 25 13:19:13 2020 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 94
+;;     Update #: 107
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -71,15 +71,34 @@
 ;; (add-hook 'c-mode-hook 'turn-on-eldoc-mode)
 
 ;; Create and set tags table
+;; ;; Create and set tags table
 (defun make-c-tags ()
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
-  (let ((dir (nth 0 (split-string default-directory "src"))))
+  (let* ((dir (nth 0 (if (string-match "app/" default-directory)
+                        (split-string default-directory "app")
+                      (if (string-match "src/" default-directory)
+                          (split-string default-directory "src")
+                        (if (string-match "shared/" default-directory)
+                            (split-string default-directory "shared")
+                          (if (string-match "exp/" default-directory)
+                              (split-string default-directory "common"))))))))
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
+    (setq tagslst '())
+    (if (file-exists-p (concat esdir "src")) (add-to-list 'tagslst "src"))
+    (if (file-exists-p (concat esdir "shared")) (add-to-list 'tagslst "shared"))
+    (if (file-exists-p (concat esdir "test")) (add-to-list 'tagslst "test"))
+    (if (file-exists-p (concat esdir "app")) (add-to-list 'tagslst "app"))
+    (if (file-exists-p (concat esdir "common")) (add-to-list 'tagslst "common"))
+    (if (file-exists-p (concat esdir "examples")) (add-to-list 'tagslst "examples"))
+    (setq dirs (mapconcat 'identity tagslst " "))
+    (message (concat "dirs: " dirs))
+    (message (concat "dirs: " dirs))
     (shell-command
-     (concat "cd " esdir " && find . -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
-    (message (concat "cd " esdir " && find . -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
+     (concat "cd " esdir " && find " dirs " -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
+    (message (concat "cd " esdir " && find " dirs " -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
     (visit-tags-table (concat dir "TAGS"))))
+
 
 (require 'auto-complete-config)
 (require 'auto-complete-c-headers)
@@ -87,6 +106,12 @@
 
 
 ;; (setq ac-clang-flags (split-string "-I/usr/include/c++/4.9.1"))
+
+(defun format-c-with-clang-format ()
+  (interactive)
+  (save-excursion
+    (mark-defun)
+    (clang-format-region (region-beginning) (region-end))))
 
 
 ;; C MODE
@@ -147,7 +172,7 @@
                                (auto-complete)
                                ;; (semantic-ia-complete-tip (point))
                                )))
-
+  (flyspell-prog-mode nil)
   (add-hook 'after-save-hook 'make-c-tags nil t)
 
   )
@@ -156,6 +181,7 @@
 (add-hook 'c-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
 (define-key c-mode-map (kbd "M-o")  'fa-show)
+(define-key c-mode-map (kbd "M-q")  'format-c-with-clang-format)
 (define-key c++-mode-map (kbd "M-o")  'fa-show)
 
 
