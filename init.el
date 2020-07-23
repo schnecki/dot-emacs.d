@@ -487,6 +487,7 @@
  '(org-latex-listings t)
  '(org-latex-prefer-user-labels t)
  '(org-latex-table-caption-above nil)
+ '(org-startup-shrink-all-tables t)
  '(org-use-sub-superscripts (quote {}))
  '(package-archives
    (quote
