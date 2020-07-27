@@ -7,9 +7,9 @@
 ;; Created: Mo Okt 14 18:48:42 2013 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Fri Mar 23 11:39:30 2018 (+0100)
+;; Last-Updated: Thu Jul 23 17:13:34 2020 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 34
+;;     Update #: 36
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -44,7 +44,7 @@
 (setq whitespace-line-column 100)
 (setq-default fill-column 100)
 
-; (global-whitespace-mode t)
+(global-whitespace-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

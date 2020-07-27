@@ -488,6 +488,7 @@
  '(org-latex-listings t)
  '(org-latex-prefer-user-labels t)
  '(org-latex-table-caption-above nil)
+ '(org-startup-shrink-all-tables t)
  '(org-use-sub-superscripts (quote {}))
  '(package-archives
    (quote
@@ -496,35 +497,7 @@
  '(package-selected-packages
    (quote
     (clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
- '(safe-local-variable-values
-   (quote
-    ((TeX-mast . presentation\.tex)
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:gridworld-step" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
-     (intero-targets "borl:lib" "borl-releaser:lib" "borl-releaser:exe:borl-releaser-exe" "borl-releaser:exe:exp")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
-     (intero-targets "experimenter:lib" "experimenter:exe:dice" "experimenter:exe:dice-stateless")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
-     (intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
-     (intero-targets "simsim:lib" "simsim:exe:simsim-exe")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "high-level-tensorflow:lib")
-     (intero-targets "grenade:lib")
-     (intero-targets "api-maker:lib")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-hard" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:tensorflow-test" "borl:exe:three-states")
-     (intero-targets "borl-lp:lib")
-     (intero-targets "borl-model-based:lib" "examples:exe:gridworld")
-     (intero-targets "experimenter:lib" "experimenter:exe:dice" "experimenter:exe:dice-stateless" "experimenter:test:experimenter-test")
-     (intero-targets "tensorflow-haskell-high-level-api:lib" "tensorflow-haskell-high-level-api:exe:feedforward")
-     (intero-targets "tensorflow-haskell-high-level-api:lib" "tensorflow-haskell-high-level-api:exe:feedfoward")
-     (TeX-mast . paper\.tex)
-     (TeX-master . paper\.tex)
-     (intero-targets "borl-model-based:lib" "borl-model-based:test:borl-model-based-test" "examples:exe:gridworld")
-     (intero-targets "cms:lib" "cms:exe:cms")
-     (intero-targets "simsim:lib" "simsim:exe:simsim-exe" "simsim:test:simsim-test")
-     (intero-targets "cms:lib" "cms:exe:cms" "cms:test:test")
-     (header-auto-update-enabled))))
+ '(safe-local-variable-values (quote ((header-auto-update-enabled))))
  '(semanticdb-javap-classpath
    (quote
     ((concat
