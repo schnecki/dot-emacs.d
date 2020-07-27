@@ -7,9 +7,9 @@
 ;; Created: Sa Nov  2 16:14:09 2013 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Fri Mar 20 14:14:45 2020 (+0100)
+;; Last-Updated: Mon Jul 27 12:59:46 2020 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 217
+;;     Update #: 219
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -212,6 +212,7 @@
   ;; set keys
   (local-set-key (kbd "C-x SPC") 'compile-show-latex)
 
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (add-hook 'after-save-hook (lambda () (TeX-texify)) nil 'make-it-local)
   ;; (add-hook 'after-save-hook (lambda () (TeX-command "View" 'TeX-active-master 0)) nil 'make-it-local)
   ;; (add-hook 'after-save-hook (lambda () (funcall-interactively 'compile-show-latex)) nil t)
@@ -236,6 +237,7 @@
 
   )
 
+(add-hook 'TeX-latex-mode 'my/latex-minor-mode)
 (add-hook 'LaTeX-mode-hook 'my/latex-minor-mode)
 (add-hook 'LaTeX-mode-hook #'tex-smart-umlauts-decode)
 

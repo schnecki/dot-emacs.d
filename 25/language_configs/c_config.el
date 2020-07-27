@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2014 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Sat Apr 25 13:19:13 2020 (+0200)
+;; Last-Updated: Wed Apr 29 15:20:22 2020 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 107
+;;     Update #: 118
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -81,7 +81,7 @@
                           (split-string default-directory "src")
                         (if (string-match "shared/" default-directory)
                             (split-string default-directory "shared")
-                          (if (string-match "exp/" default-directory)
+                          (if (string-match "common/" default-directory)
                               (split-string default-directory "common"))))))))
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
     (setq tagslst '())
@@ -96,7 +96,7 @@
     (message (concat "dirs: " dirs))
     (shell-command
      (concat "cd " esdir " && find " dirs " -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
-    (message (concat "cd " esdir " && find " dirs " -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
+    ;; (message (concat "cd " esdir " && find " dirs " -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" | etags - 1>/dev/null 2>/dev/null") nil)
     (visit-tags-table (concat dir "TAGS"))))
 
 
@@ -179,7 +179,10 @@
 
 ;; add hook
 (add-hook 'c-mode-hook 'my-c-mode-hook)
+(add-hook 'cc-mode-hook 'my-c-mode-hook)
 (add-hook 'c++-mode-hook 'my-c-mode-hook)
+(add-hook 'c-mode-hook
+          (lambda () (add-hook 'after-save-hook 'make-c-tags nil 'local)))
 (define-key c-mode-map (kbd "M-o")  'fa-show)
 (define-key c-mode-map (kbd "M-q")  'format-c-with-clang-format)
 (define-key c++-mode-map (kbd "M-o")  'fa-show)

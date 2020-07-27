@@ -334,7 +334,7 @@
  '(Flymake-compilation-prevents-syntax-check nil)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
+ '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
    (quote
     ((concat
@@ -353,7 +353,8 @@
       (nth 0
            (split-string default-directory "src"))
       "../Common/lib/"))))
- '(clang-format-style "LLVM")
+ '(clang-format-executable "/usr/bin/clang-format")
+ '(clang-format-style "{BasedOnStyle: llvm, ColumnLimit: 160}")
  '(column-number-mode t)
  '(company-box-icons-alist (quote company-box-icons-icons-in-terminal))
  '(company-idle-delay 0.01)
@@ -497,7 +498,8 @@
     (clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex ess color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-ledger flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
  '(safe-local-variable-values
    (quote
-    ((intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:gridworld-step" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
+    ((TeX-mast . presentation\.tex)
+     (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:gridworld-step" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
      (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gridworld-mini" "borl:exe:multichain" "borl:exe:parallel" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:three-states")
      (intero-targets "borl:lib" "borl-releaser:lib" "borl-releaser:exe:borl-releaser-exe" "borl-releaser:exe:exp")
      (intero-targets "borl:lib" "borl:exe:gridworld" "borl:exe:gym" "borl:exe:multichain" "borl:exe:printer-mail" "borl:exe:queuing-system" "borl:exe:queuing-system-alt" "borl:exe:three-states")
