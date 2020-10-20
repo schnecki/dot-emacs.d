@@ -10,4 +10,5 @@
  (magit-pull nil)
  (magit-push nil)
  (magit-rebase nil)
+ (magit-show-refs nil)
  (magit-tag nil))
