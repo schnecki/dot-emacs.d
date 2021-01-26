@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2014 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Wed Apr 29 15:20:22 2020 (+0200)
+;; Last-Updated: Tue Jan 26 18:00:29 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 118
+;;     Update #: 119
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -174,6 +174,7 @@
                                )))
   (flyspell-prog-mode nil)
   (add-hook 'after-save-hook 'make-c-tags nil t)
+  (local-set-key [f1] 'man-follow) ;; find man page
 
   )
 

@@ -9,6 +9,7 @@
 ;; bind C-n and C-p
 (define-key company-active-map (kbd "C-n") 'company-select-next-or-abort)
 (define-key company-active-map (kbd "C-p") 'company-select-previous-or-abort)
+(define-key company-active-map (kbd "M-h") 'company-show-doc-buffer)
 
 
 (defun complete-or-indent ()

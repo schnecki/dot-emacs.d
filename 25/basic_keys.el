@@ -7,7 +7,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 143
+;;     Update #: 144
 ;; URL:
 ;; Description:
 ;;
@@ -97,7 +97,6 @@
 (global-set-key (kbd "C-x C-SPC") 'compile-again) ;; compile
 (global-set-key (kbd "C-x SPC") 'compile-closest-Makefile) ;; compile
 ;; (global-set-key (kbd "C-c SPC") 'compile-closest-Makefile) ;; compile
-(global-set-key [f1] 'man-follow) ;; find man page
 (global-set-key (kbd (concat prefix-command-key " c")) 'shell) ;;  start shell
 (global-set-key (kbd (concat prefix-command-key " r")) 'replace-regexp) ;; regex replace
 (global-set-key (kbd (concat prefix-command-key " s l")) 'list-matching-lines) ;; Regex search and show in other buffer

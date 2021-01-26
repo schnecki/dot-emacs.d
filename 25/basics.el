@@ -688,6 +688,10 @@
 ;; Editorconfig (see https://editorconfig.org/)
 (editorconfig-mode 1)
 
+;; IDO - Interactive do things
+;; (require 'ido)
+;; (ido-mode nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; basics.el ends here
 

@@ -5,9 +5,9 @@
 ;; Author: Manuel Schneckenreither
 ;; Created: Tue Dec 11 00:43:14 2012 (+0100)
 ;; Version:
-;; Last-Updated: Fri Feb  7 22:00:45 2020 (+0100)
+;; Last-Updated: Mon Jan 18 12:36:18 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 496
+;;     Update #: 497
 ;; URL:
 ;; Description:
 ;;
@@ -121,6 +121,8 @@
 (load (concat package-conf-folder "company_config.el"))
 ;; load django
 (load (concat package-conf-folder "python_django_config.el"))
+;; load ESS
+(load (concat package-conf-folder "ess_config.el"))
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

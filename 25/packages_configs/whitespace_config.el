@@ -7,9 +7,9 @@
 ;; Created: Mo Okt 14 18:48:42 2013 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Thu Jul 23 17:13:34 2020 (+0200)
+;; Last-Updated: Tue Jan 26 22:37:02 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 36
+;;     Update #: 39
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -36,15 +36,20 @@
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-(require 'whitespace)
-;; highlight all columns > 80 (default value)
-;; (setq whitespace-style '(face empty tabs lines-tail trailing))
-(setq whitespace-style '(face  tabs lines-tail trailing))
+;; (require 'whitespace)
+;; ;; highlight all columns > 80 (default value)
+;; ;; (setq whitespace-style '(face empty tabs lines-tail trailing))
+;; (setq whitespace-style '(face tabs lines-tail trailing))
 
-(setq whitespace-line-column 100)
-(setq-default fill-column 100)
+;; (setq whitespace-line-column 100)
+;; (setq-default fill-column 100)
 
-(global-whitespace-mode t)
+;; (global-whitespace-mode t)
+
+
+(require 'fill-column-indicator)
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode t)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
