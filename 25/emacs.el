@@ -5,9 +5,9 @@
 ;; Author: Manuel Schneckenreither
 ;; Created: Tue Dec 11 00:43:14 2012 (+0100)
 ;; Version:
-;; Last-Updated: Mon Jan 18 12:36:18 2021 (+0100)
+;; Last-Updated: Sun Feb  7 15:19:34 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 497
+;;     Update #: 498
 ;; URL:
 ;; Description:
 ;;
@@ -131,6 +131,7 @@
 
 
 (load-file (concat language-conf-folder "c_config.el"))
+(load-file (concat language-conf-folder "r_config.el"))
 (load-file (concat language-conf-folder "haskell_config.el"))
 (load-file (concat language-conf-folder "elm_config.el"))
 (load-file (concat language-conf-folder "java_config.el"))
