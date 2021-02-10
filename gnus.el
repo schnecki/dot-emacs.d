@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 114
+;;     Update #: 119
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -98,11 +98,17 @@
                                                      (nnimap-server-port 993)
                                                      ))
 
-;; (add-to-list 'gnus-secondary-select-methods '(nnimap "kl-sol"
-;;                                                      (nnimap-stream ssl)
-;;                                                      (nnimap-address "imap.easyname.com")
-;;                                                      (nnimap-server-port 993)
-;;                                                      ))
+(add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-info"
+                                                     (nnimap-stream ssl)
+                                                     (nnimap-address "imap.easyname.com")
+                                                     (nnimap-server-port 993)
+                                                     ))
+
+(add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-ms"
+                                                     (nnimap-stream ssl)
+                                                     (nnimap-address "imap.easyname.com")
+                                                     (nnimap-server-port 993)
+                                                     ))
 
 ;; (add-to-list 'gnus-secondary-select-methods '(nnimap "oculytics"
 ;;                                                      (nnimap-stream ssl)
@@ -282,20 +288,16 @@
          (address "manuel.schneckenreither@student.uibk.ac.at"))
         ((header "to" "manuel.schneckenreither@uibk.ac.at")
          (address "manuel.schneckenreither@uibk.ac.at"))
-        ((header "to" "ms@kl-sol.com")
-         (address "ms@kl-sol.com"))
-        ((header "to" "ms@oculytics.com")
-         (address "ms@oculytics.com"))
+        ((header "to" "info@globalpont.com")
+         (address "info@globalpont.com"))
         ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
          (address "manuel.schneckenreither@student.uibk.ac.at"))
         ((header "cc" "manuel.schneckenreither@uibk.ac.at")
          (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "cc" "manuel.schnecki@gmail.com")
          (address "manuel.schnecki@gmail.com"))
-        ((header "cc" "ms@kl-sol.com")
-         (address "ms@kl-sol.com"))
-        ((header "cc" "ms@oculytics.com")
-         (address "ms@oculytics.com"))
+        ((header "cc" "info@globalpont.com")
+         (address "info@globalpont.com"))
         ;; (".*"
         ;;  (signature-file "~/News/signature")
         ;;  (name "Manuel Schneckenreither")))

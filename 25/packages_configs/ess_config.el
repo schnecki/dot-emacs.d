@@ -27,7 +27,7 @@
 (setq ess-r--no-company-meta t)
 
 (add-hook 'ess-mode-hook 'my/ess-minor-mode)
-
+(add-hook 'ess-post-run-hook 'ess-tracebug)
 
 ;; (setq display-buffer-alist
 ;;       `(("*R Dired"

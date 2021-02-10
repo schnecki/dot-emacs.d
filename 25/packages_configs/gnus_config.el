@@ -7,9 +7,9 @@
 ;; Created: Di Feb  4 12:54:58 2014 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Mon Nov 25 13:20:08 2019 (+0100)
+;; Last-Updated: Tue Feb  9 13:16:54 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 300
+;;     Update #: 309
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -476,6 +476,15 @@
 ;;                               body))))
 ;;     (compose-mail)))
 
+
+(defun my-gnus-group-list-subscribed-groups ()
+  "List all subscribed groups with or without un-read messages"
+  (interactive)
+  (gnus-group-list-all-groups 5))
+
+(define-key gnus-group-mode-map
+  ;; list all the subscribed groups even they contain zero un-read messages
+  (kbd "o") 'my-gnus-group-list-subscribed-groups)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; gnus_config.el ends here
