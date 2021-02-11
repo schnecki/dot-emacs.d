@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 119
+;;     Update #: 245
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -48,30 +48,216 @@
 
 (global-set-key (kbd "C-x m") 'gnus-msg-mail)
 
+;; INCOMING MAIL CONFIG
+(setq gnus-select-method '(nnnil nil))
+(setq gnus-secondary-select-methods
+      '((nnimap "uibk_exchange"
+                (nnimap-address "exchange.uibk.ac.at")
+                (nnimap-server-port 993)
+                (nnimap-stream ssl)
+                (nnir-search-engine imap))
+        (nnimap "uibk"
+                (nnimap-address "mail.uibk.ac.at")
+                (nnimap-stream ssl)
+                (nnimap-server-port 993)
+                (nnir-search-engine imap))
+        (nnimap "gmail"
+                (nnimap-address "imap.gmail.com")
+                (nnimap-stream ssl)
+                (nnimap-server-port 993)
+                (nnir-search-engine imap)
+                (nnmail-expiry-target "nnimap+work:[Gmail]/Trash")
+                (nnmail-expiry-wait 'immediate)
+                )
+        (nnimap "globalpont-info"
+                (nnimap-address "imap.easyname.com")
+                (nnimap-stream ssl)
+                (nnimap-server-port 993)
+                (nnir-search-engine imap))
+        (nnimap "globalpont-ms"
+                (nnimap-address "imap.easyname.com")
+                (nnimap-stream ssl)
+                (nnimap-server-port 993)
+                (nnir-search-engine imap))
+        ))
 
-;; (if (fboundp 'w32-send-sys-command)
-;;     (eval-after-load "gnutls"
-;;       '(progn
-;;          (setq gnutls-trustfiles '("c:/cygwin/usr/ssl/certs/ca-bundle.trust.crt" "c:/cygwin/usr/ssl/certs/ca-bundle.crt"))))
-;;   )
 
-;; other newsfeeds
-;; (setq gnus-select-method '(nnimap "uibk"
-;;                                   (nnimap-stream ssl)
-;;                                   (nnimap-server-port 993)
-;;                                   (nnimap-address "mail2.uibk.ac.at")
-;;                                   ))
+;; OUTGOING MAIL CONFIG
 
-;; (setq gnus-select-method '(nnimap "oculytics"
-;;                                    (nnimap-stream ssl)
-;;                                    (nnimap-address "outlook.office365.com")
-;;                                    (nnimap-server-port 993)
-;;                                    ))
-(setq gnus-select-method '(nnimap "uibk_exchange"
-                                  (nnimap-stream ssl)
-                                  (nnimap-address "exchange.uibk.ac.at")
-                                  (nnimap-server-port "imaps")
-                                  ))
+;; Emacs prompts for passwords and saves them in ~/.authinfo
+(setq smtp-accounts
+      '(("manuel.schnecki@gmail.com" "smtp.gmail.com" 587 "manuel.schnecki@gmail.com")
+        ("manuel.schneckenreither@uibk.ac.at" "smtp.uibk.ac.at" 587 "c4371143")
+        ("manuel.schneckenreither@student.uibk.ac.at" "smtp.uibk.ac.at" 587 "csap3804")
+        ("info@globalpont.com" "smtp.easyname.com" 587 "146315mail4")
+        ("ms@globalpont.com" "smtp.easyname.com" 587 "146315mail6")
+        ))
+
+
+;; Set the SMTP Server according to the mail address we use for sending
+(defun set-smtp-server-message-send-and-exit ()
+  "Set SMTP server from list of multiple ones and send mail."
+  (interactive)
+  (message-remove-header "X-Message-SMTP-Method") ;; Remove. We always determine it by the From field
+  (let ((sender
+         (message-fetch-field "From")))
+    (loop for (addr server port usr) in smtp-accounts
+          when (string-match addr sender)
+          do (message-add-header (format "X-Message-SMTP-Method: smtp %s %d %s" server port usr)))
+    (let ((xmess
+           (message-fetch-field "X-Message-SMTP-Method")))
+      (if xmess
+          (progn
+            (message (format "Sending message using '%s' with config '%s'" sender xmess))
+            (message-send-and-exit))
+        (error "Could not find SMTP Server for this Sender address: %s. You might want to correct it or add it to the SMTP Server list 'smtp-accounts'" sender)))))
+
+;; Send emails via multiple servers
+(defun local-gnus-compose-mode ()
+  "Keys."
+  (local-set-key (kbd "C-c C-c")  'set-smtp-server-message-send-and-exit)
+  )
+
+
+;; set in group mode hook
+(add-hook 'gnus-message-setup-hook 'local-gnus-compose-mode)
+
+
+;; Evaluated from top to bottom
+(setq gnus-posting-styles
+      '((".*")
+        ((header "from" "manuel.schneckenreither@uibk.ac.at")
+         (address "Manuel Schneckenreither <manuel.schneckenreither@uibk.ac.at>")
+         (organization "University of Innsbruck")
+         ;; (signature-file "~/.signature-work")
+         )
+        ((header "from" "manuel.schneckenreither@student.uibk.ac.at")
+         (address "Manuel Schneckenreither <manuel.schneckenreither@student.uibk.ac.at>")
+         (organization "University of Innsbruck")
+         ;; (signature-file "~/.signature-work")
+         )
+        ((header "from" "manuel.schnecki@gmail.com")
+         (address "Manuel Schneckenreither <manuel.schnecki@gmail.com>")
+         ;; (organization "")
+         ;; (signature-file "~/.signature-work")
+         )
+        ((header "from" "info@globalpont.com")
+         (address "GlobalPont Info <info@globalpont.com>")
+         (organization "GlobalPont")
+         ;; (signature-file "~/.signature-work")
+         )
+        ((header "from" "ms@globalpont.com")
+         (address "Manuel Schneckenreither <ms@globalpont.com>")
+         (organization "GlobalPont")
+         ;; (signature-file "~/.signature-work")
+         )
+        ;; Reply from the address it was send to
+        ((header "x-original-to" "\\(\\+.+\\)@globalpont.com")
+         (address "\\1@globalpont.com"))
+        ((header "x-original-to" "schnecki@gmail.com")
+         (address "schnecki@gmail.com.com"))
+        ((header "x-original-to" "manuel.schneckenreither@uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        ((header "x-original-to" "manuel.schneckenreither@student.uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        ((header "cc" "\\(\\+.+\\)@globalpont.com")
+         (address "\\1@globalpont.com"))
+        ((header "cc" "schnecki@gmail.com")
+         (address "schnecki@gmail.com.com"))
+        ((header "cc" "manuel.schneckenreither@uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        )
+      )
+
+
+;; (require 'cl)
+;; (setq smtpmail-stream-type 'ssl) ;; If using TLS/SSL.  Use C-h v smtpmail-stream-type RET to see possible values
+
+;; (defun my-change-smtp ()
+;;   (save-excursion
+;;     (loop with from = (save-restriction
+;;                         (message-narrow-to-headers)
+;;                         (message-fetch-field "from"))
+;;           for (addr fname server usr) in smtp-accounts
+;;           when (string-match addr from)
+;;           do (setq user-mail-address addr
+;;                    user-full-name fname
+;;                    smtpmail-smtp-user usr
+;;                    smtpmail-smtp-server server))))
+
+;; (defadvice smtpmail-via-smtp
+;;     (before change-smtp-by-message-from-field (recipient buffer &optional ask) activate)
+;;   (with-current-buffer buffer (my-change-smtp)))
+
+;; (setq user-mail-address "manuel.schnecki@gmail.com"
+;;       user-full-name "Manuel Schneckenreither"
+;;       smtpmail-smtp-server "smtp.gmail.com"
+;;       smtpmail-auth-credentials (expand-file-name "~/.authinfo"))
+
+(setq gnus-posting-styles
+      '(((header "to" "manuel.schnecki@gmail.com")
+         (address "manuel.schnecki@gmail.com"))
+        ((header "to" "manuel.schneckenreither@student.uibk.ac.at")
+         (address "manuel.schneckenreither@student.uibk.ac.at"))
+        ((header "to" "manuel.schneckenreither@uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        ((header "to" "info@globalpont.com")
+         (address "info@globalpont.com")
+         ;; (signature-file "~/.signature-work")
+         ("X-Message-SMTP-Method" "smtp smtp.easyserver.com 587 info@globalpont.com"))
+        ((header "to" "ms@globalpont.com")
+         (address "ms@globalpont.com")
+         ;; (signature-file "~/.signature-work")
+         ("X-Message-SMTP-Method" "smtp smtp.easyserver.com 587 ms@globalpont.com"))
+        ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
+         (address "manuel.schneckenreither@student.uibk.ac.at"))
+        ((header "cc" "manuel.schneckenreither@uibk.ac.at")
+         (address "manuel.schneckenreither@uibk.ac.at"))
+        ((header "cc" "manuel.schnecki@gmail.com")
+         (address "manuel.schnecki@gmail.com"))
+        ((header "cc" "info@globalpont.com")
+         (address "info@globalpont.com")
+         ;; (signature-file "~/.signature-work")
+         ("X-Message-SMTP-Method" "smtp smtp.easyserver.com 587 info@globalpont.com"))
+        ((header "cc" "ms@globalpont.com")
+         (address "ms@globalpont.com")
+         (organization "GlobalPont")
+         ;; (signature-file "~/.signature-work")
+         ("X-Message-SMTP-Method" "smtp smtp.easyserver.com 587 ms@globalpont.com")
+         )
+        ;; (".*"
+        ;;  (signature-file "~/News/signature")
+        ;;  (name "Manuel Schneckenreither")))
+        ))
+
+
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.gmail.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
+
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-info"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.easyname.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
+
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-ms"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.easyname.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
+
+
+;; (setq gnus-select-method
+;; '((nnimap "uibk_exchange"
+;;                             (nnimap-stream ssl)
+;;                             (nnimap-address "exchange.uibk.ac.at")
+;;                             (nnimap-server-port "imaps")
+;;                             ))
 
 ;; (add-to-list 'gnus-secondary-select-methods '(nnimap "uibk_exchange"
 ;;                                   (nnimap-stream ssl)
@@ -79,11 +265,11 @@
 ;;                                   (nnimap-server-port "imaps")
 ;;                                   ))
 
-(add-to-list 'gnus-secondary-select-methods '(nnimap "uibk"
-                                                     (nnimap-stream ssl)
-                                                     (nnimap-server-port 993)
-                                                     (nnimap-address "mail.uibk.ac.at")
-                                                     ))
+;; '(nnimap "uibk"
+;;                                                     (nnimap-stream ssl)
+;;                                                     (nnimap-server-port 993)
+;;                                                     (nnimap-address "mail.uibk.ac.at")
+;;                                                     ))
 
 ;; (add-to-list 'gnus-secondary-select-methods '(nnimap "uibk-c703"
 ;;                                                      (nnimap-stream ssl)
@@ -92,23 +278,23 @@
 ;;                                                      ))
 
 
-(add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
-                                                     (nnimap-stream ssl)
-                                                     (nnimap-address "imap.gmail.com")
-                                                     (nnimap-server-port 993)
-                                                     ))
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "gmail"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.gmail.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
 
-(add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-info"
-                                                     (nnimap-stream ssl)
-                                                     (nnimap-address "imap.easyname.com")
-                                                     (nnimap-server-port 993)
-                                                     ))
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-info"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.easyname.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
 
-(add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-ms"
-                                                     (nnimap-stream ssl)
-                                                     (nnimap-address "imap.easyname.com")
-                                                     (nnimap-server-port 993)
-                                                     ))
+;; (add-to-list 'gnus-secondary-select-methods '(nnimap "globalpont-ms"
+;;                                                      (nnimap-stream ssl)
+;;                                                      (nnimap-address "imap.easyname.com")
+;;                                                      (nnimap-server-port 993)
+;;                                                      ))
 
 ;; (add-to-list 'gnus-secondary-select-methods '(nnimap "oculytics"
 ;;                                                      (nnimap-stream ssl)
@@ -281,28 +467,6 @@
 (setq mail-signature t)
 (setq mail-signature-file "~/Mail/signature")
 (setq message-cite-reply-position (quote traditional))
-(setq gnus-posting-styles
-      '(((header "to" "manuel.schnecki@gmail.com")
-         (address "manuel.schnecki@gmail.com"))
-        ((header "to" "manuel.schneckenreither@student.uibk.ac.at")
-         (address "manuel.schneckenreither@student.uibk.ac.at"))
-        ((header "to" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
-        ((header "to" "info@globalpont.com")
-         (address "info@globalpont.com"))
-        ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
-         (address "manuel.schneckenreither@student.uibk.ac.at"))
-        ((header "cc" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
-        ((header "cc" "manuel.schnecki@gmail.com")
-         (address "manuel.schnecki@gmail.com"))
-        ((header "cc" "info@globalpont.com")
-         (address "info@globalpont.com"))
-        ;; (".*"
-        ;;  (signature-file "~/News/signature")
-        ;;  (name "Manuel Schneckenreither")))
-      ))
-
 
 ;; Sign messages by default.
 ;; (add-hook 'message-setup-hook 'mml-secure-message-sign-pgpmime)
@@ -346,4 +510,5 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;; gnus.el ends here

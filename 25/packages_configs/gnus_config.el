@@ -7,9 +7,9 @@
 ;; Created: Di Feb  4 12:54:58 2014 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Feb  9 13:16:54 2021 (+0100)
+;; Last-Updated: Thu Feb 11 01:23:50 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 309
+;;     Update #: 311
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -245,13 +245,7 @@
 (setq mail-signature-file "~/.emacs.d/signature")
 (setq message-cite-reply-position (quote traditional))
 ;; (setq message-cite-reply-position (quote above))
-;; (setq gnus-posting-styles '((".*"
-;;                              (signature "")
-;;                              (name "Manuel Schneckenreither"))
-;;                             (".*oculytics.*"
-;;                              (signature gnus-signature-oculytics)
-;;                              (name "Manuel Schneckenreither"))
-;;                             ))
+
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++ SCORES ++++++++++++++++++++++++++++++++++
