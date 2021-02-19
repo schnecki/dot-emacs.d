@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 245
+;;     Update #: 246
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -66,8 +66,8 @@
                 (nnimap-stream ssl)
                 (nnimap-server-port 993)
                 (nnir-search-engine imap)
-                (nnmail-expiry-target "nnimap+work:[Gmail]/Trash")
-                (nnmail-expiry-wait 'immediate)
+                ;; (nnmail-expiry-target "nnimap+work:[Gmail]/Trash")
+                ;; (nnmail-expiry-wait 'immediate)
                 )
         (nnimap "globalpont-info"
                 (nnimap-address "imap.easyname.com")

@@ -406,7 +406,7 @@
  '(flycheck-ghc-language-extensions (quote ("NoStarIsType")))
  '(flycheck-ghc-search-path (quote ("src" "shared" "test" "examples")))
  '(flycheck-lintr-linters
-   "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, snake_case_linter = NULL)")
+   "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, object_name_linter = NULL)")
  '(flymake-gui-warnings-enabled nil)
  '(frame-background-mode (quote dark))
  '(global-eclim-mode t)
