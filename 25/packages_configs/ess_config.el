@@ -29,6 +29,13 @@
 (add-hook 'ess-mode-hook 'my/ess-minor-mode)
 (add-hook 'ess-post-run-hook 'ess-tracebug)
 
+
+;; SMART underscore
+(setq ess-smart-underscore-path (concat package-folder "ess-smart-underscore.el"))
+(load-file ess-smart-underscore-path)
+(require 'ess-smart-underscore)
+
+
 ;; (setq display-buffer-alist
 ;;       `(("*R Dired"
 ;;          (display-buffer-reuse-window display-buffer-in-side-window)

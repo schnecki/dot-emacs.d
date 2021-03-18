@@ -1,4 +1,4 @@
-;;; flyspell_config.el ---
+;; flyspell_config.el ---
 ;;
 ;; Filename: flyspell_config.el
 ;; Description:
@@ -7,9 +7,9 @@
 ;; Created: Fr Okt  4 20:40:17 2013 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Fri Apr 24 20:24:11 2020 (+0200)
+;; Last-Updated: Mon Mar 15 19:11:14 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 149
+;;     Update #: 150
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -93,7 +93,9 @@
 (defun flyspell-switch-dictionary()
   (interactive)
   (let* ((dic ispell-current-dictionary)
-         (change (if (string= dic "german") "english" "german")))
+         (change (if (string= dic "german") "english"
+                   (if (string= dic "english")
+                       "spanish" "german"))))
     (ispell-change-dictionary change)
     (message "Dictionary switched from %s to %s" dic change)
     ))
