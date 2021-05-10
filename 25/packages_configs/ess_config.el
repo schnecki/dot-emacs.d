@@ -31,9 +31,9 @@
 
 
 ;; SMART underscore
-(setq ess-smart-underscore-path (concat package-folder "ess-smart-underscore.el"))
-(load-file ess-smart-underscore-path)
-(require 'ess-smart-underscore)
+;; (setq ess-smart-underscore-path (concat package-folder "ess-smart-underscore.el"))
+;; (load-file ess-smart-underscore-path)
+;; (require 'ess-smart-underscore)
 
 
 ;; (setq display-buffer-alist

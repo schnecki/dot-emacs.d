@@ -7,7 +7,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 144
+;;     Update #: 146
 ;; URL:
 ;; Description:
 ;;
@@ -166,7 +166,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 
 ;; quit gnus properly instead of leaving auto-save files around
 (defadvice save-buffers-kill-emacs (before quit-gnus (&rest args) activate)
-  (if org-gcal-client-id (org-gcal-sync))
+  ;; (if org-gcal-client-id (org-gcal-sync))
   (let (buf)
     (when (and (fboundp 'gnus-alive-p)
                (gnus-alive-p)

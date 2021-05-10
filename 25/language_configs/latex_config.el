@@ -7,9 +7,9 @@
 ;; Created: Sa Nov  2 16:14:09 2013 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Mon Jul 27 12:59:46 2020 (+0200)
+;; Last-Updated: Fri Apr 23 10:30:10 2021 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 219
+;;     Update #: 222
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -151,9 +151,11 @@
                         (split-string default-directory "tikz")
                       (if (string-match "figures/" default-directory)
                           (split-string default-directory "figures")
+                      (if (string-match "proceedings/" default-directory)
+                          (split-string default-directory "proceedings")
                       (if (string-match "paper/" default-directory)
                           (split-string default-directory "paper")
-                            (split-string default-directory "src")))))))
+                            (split-string default-directory "src"))))))))
 
 
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))

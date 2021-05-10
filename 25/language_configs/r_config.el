@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2021 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Sun Feb  7 20:11:31 2021 (+0100)
+;; Last-Updated: Mon May 10 15:36:29 2021 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 127
+;;     Update #: 128
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -60,8 +60,8 @@
                             (split-string default-directory "shared")
                           (if (string-match "exp/" default-directory)
                               (split-string default-directory "exp")
-                            (if (string-match "fay/" default-directory)
-                                (split-string default-directory "fay")
+                            (if (string-match "analysis/" default-directory)
+                                (split-string default-directory "analysis")
                               (if (string-match "fay-shared/" default-directory)
                                   (split-string default-directory "fay-shared")
                               (if (string-match "cbits/" default-directory)

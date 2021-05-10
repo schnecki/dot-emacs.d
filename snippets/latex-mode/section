@@ -3,5 +3,5 @@
 # key: sec
 # --
 \\${2:}section{${1:Heading}}
-\\label{$2sec:${1:$(replace-regexp-in-string " " "_" yas/text)}}
+\\label{$2sec:${1:$(replace-regexp-in-string " " "-" yas/text)}}
 $0
