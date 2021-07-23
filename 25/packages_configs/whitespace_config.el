@@ -7,9 +7,9 @@
 ;; Created: Mo Okt 14 18:48:42 2013 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Sun Jan 31 20:33:00 2021 (+0100)
+;; Last-Updated: Mon May 31 12:26:24 2021 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 40
+;;     Update #: 42
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -39,7 +39,7 @@
 (require 'whitespace)
 ;; highlight all columns > 80 (default value)
 ;; (setq whitespace-style '(face empty tabs lines-tail trailing))
-(setq whitespace-style '(face tabs lines-tail trailing))
+(setq whitespace-style '(face tabs trailing))
 
 (setq whitespace-line-column 100)
 (setq-default fill-column 100)

@@ -8,7 +8,7 @@
 ;; Version:
 ;; Package-Requires: ()
 ;;           By: Manuel Schneckenreither
-;;     Update #: 246
+;;     Update #: 247
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -87,7 +87,7 @@
 ;; Emacs prompts for passwords and saves them in ~/.authinfo
 (setq smtp-accounts
       '(("manuel.schnecki@gmail.com" "smtp.gmail.com" 587 "manuel.schnecki@gmail.com")
-        ("manuel.schneckenreither@uibk.ac.at" "smtp.uibk.ac.at" 587 "c4371143")
+        ;; ("manuel.schneckenreither@uibk.ac.at" "smtp.uibk.ac.at" 587 "c4371143")
         ("manuel.schneckenreither@student.uibk.ac.at" "smtp.uibk.ac.at" 587 "csap3804")
         ("info@globalpont.com" "smtp.easyname.com" 587 "146315mail4")
         ("ms@globalpont.com" "smtp.easyname.com" 587 "146315mail6")
@@ -126,11 +126,11 @@
 ;; Evaluated from top to bottom
 (setq gnus-posting-styles
       '((".*")
-        ((header "from" "manuel.schneckenreither@uibk.ac.at")
-         (address "Manuel Schneckenreither <manuel.schneckenreither@uibk.ac.at>")
-         (organization "University of Innsbruck")
-         ;; (signature-file "~/.signature-work")
-         )
+        ;; ((header "from" "manuel.schneckenreither@uibk.ac.at")
+        ;;  (address "Manuel Schneckenreither <manuel.schneckenreither@uibk.ac.at>")
+        ;;  (organization "University of Innsbruck")
+        ;;  ;; (signature-file "~/.signature-work")
+        ;;  )
         ((header "from" "manuel.schneckenreither@student.uibk.ac.at")
          (address "Manuel Schneckenreither <manuel.schneckenreither@student.uibk.ac.at>")
          (organization "University of Innsbruck")
@@ -156,16 +156,16 @@
          (address "\\1@globalpont.com"))
         ((header "x-original-to" "schnecki@gmail.com")
          (address "schnecki@gmail.com.com"))
-        ((header "x-original-to" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
+        ;; ((header "x-original-to" "manuel.schneckenreither@uibk.ac.at")
+        ;;  (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "x-original-to" "manuel.schneckenreither@student.uibk.ac.at")
          (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "cc" "\\(\\+.+\\)@globalpont.com")
          (address "\\1@globalpont.com"))
         ((header "cc" "schnecki@gmail.com")
          (address "schnecki@gmail.com.com"))
-        ((header "cc" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
+        ;; ((header "cc" "manuel.schneckenreither@uibk.ac.at")
+        ;;  (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
          (address "manuel.schneckenreither@uibk.ac.at"))
         )
@@ -201,8 +201,8 @@
          (address "manuel.schnecki@gmail.com"))
         ((header "to" "manuel.schneckenreither@student.uibk.ac.at")
          (address "manuel.schneckenreither@student.uibk.ac.at"))
-        ((header "to" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
+        ;; ((header "to" "manuel.schneckenreither@uibk.ac.at")
+        ;;  (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "to" "info@globalpont.com")
          (address "info@globalpont.com")
          ;; (signature-file "~/.signature-work")
@@ -213,8 +213,8 @@
          ("X-Message-SMTP-Method" "smtp smtp.easyserver.com 587 ms@globalpont.com"))
         ((header "cc" "manuel.schneckenreither@student.uibk.ac.at")
          (address "manuel.schneckenreither@student.uibk.ac.at"))
-        ((header "cc" "manuel.schneckenreither@uibk.ac.at")
-         (address "manuel.schneckenreither@uibk.ac.at"))
+        ;; ((header "cc" "manuel.schneckenreither@uibk.ac.at")
+        ;;  (address "manuel.schneckenreither@uibk.ac.at"))
         ((header "cc" "manuel.schnecki@gmail.com")
          (address "manuel.schnecki@gmail.com"))
         ((header "cc" "info@globalpont.com")

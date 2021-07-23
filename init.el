@@ -479,6 +479,7 @@
  '(mpc-host "192.168.178.62")
  '(org-agenda-files (quote ("~/Documents/planning/")))
  '(org-agenda-skip-deadline-prewarning-if-scheduled 3)
+ '(org-duration-format (quote h:mm))
  '(org-export-creator-string "")
  '(org-export-with-creator nil)
  '(org-file-apps

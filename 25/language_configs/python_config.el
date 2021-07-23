@@ -7,9 +7,9 @@
 ;; Created: Sun Oct 12 21:01:25 2014 (+0200)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Jan 14 11:59:40 2020 (+0100)
+;; Last-Updated: Fri Jul 23 13:48:44 2021 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 55
+;;     Update #: 58
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -42,7 +42,9 @@
   (let ((dir (nth 0 (if (string-match "tests/" default-directory)
                         (split-string default-directory "tests")
                       (if (string-match "src/" default-directory)
-                          (split-string default-directory "src"))))))
+                          (split-string default-directory "src")
+                        (make-list 1 default-directory)
+                        )))))
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
     (shell-command
      (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \".*flycheck.*\" "

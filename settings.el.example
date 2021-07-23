@@ -1,11 +1,11 @@
 ;; Delete the example from the file name and edit this file for your needs.
 
 (setq your-full-name "Manuel Schneckenreither")
-(setq your-mail-address "manuel.schneckenreither@uibk.ac.at")
+(setq your-mail-address "manuel.schneckenreither@student.uibk.ac.at")
 
 (defvar your-mail-addresses
   (concat your-mail-address
-          "\\|manuel.schnecki@gmail.com\\|manuel.schneckenreither@student.uibk.ac.at"))
+          "\\|manuel.schnecki@gmail.com\\|ms@globalpont.com"))
 
 
 ;; THESAURUS - choose synonym and replace
