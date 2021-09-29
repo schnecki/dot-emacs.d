@@ -336,8 +336,7 @@
  '(auto-save-default nil)
  '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
-   (quote
-    ((concat
+   '((concat
       (nth 0
            (split-string default-directory "src"))
       "./lib/")
@@ -352,63 +351,58 @@
      (concat
       (nth 0
            (split-string default-directory "src"))
-      "../Common/lib/"))))
+      "../Common/lib/")))
  '(clang-format-executable "/usr/bin/clang-format")
  '(clang-format-style "{BasedOnStyle: llvm, ColumnLimit: 160}")
  '(column-number-mode t)
- '(company-box-icons-alist (quote company-box-icons-icons-in-terminal))
+ '(company-box-icons-alist 'company-box-icons-icons-in-terminal)
  '(company-idle-delay 0.01)
  '(cua-delete-selection nil)
  '(custom-safe-themes
-   (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default)))
+   '("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
  '(delete-active-region nil)
  '(dired-kept-versions 10)
  '(display-time-mode t)
- '(ecb-auto-expand-tag-tree (quote all))
- '(ecb-auto-expand-tag-tree-collapse-other (quote only-if-on-tag))
+ '(ecb-auto-expand-tag-tree 'all)
+ '(ecb-auto-expand-tag-tree-collapse-other 'only-if-on-tag)
  '(ecb-display-image-icons-for-semantic-tags nil)
  '(ecb-expand-methods-switch-off-auto-expand nil)
- '(ecb-jde-set-directories-buffer-to-jde-sourcepath (quote replace))
+ '(ecb-jde-set-directories-buffer-to-jde-sourcepath 'replace)
  '(ecb-layout-name "left-methods-sources")
  '(ecb-layout-window-sizes
-   (quote
-    (("left-methods-sources"
+   '(("left-methods-sources"
       (ecb-methods-buffer-name 0.15546218487394958 . 0.6911764705882353)
       (ecb-sources-buffer-name 0.15546218487394958 . 0.29411764705882354))
      ("left8"
       (ecb-directories-buffer-name 0.15126050420168066 . 0.29411764705882354)
       (ecb-sources-buffer-name 0.15126050420168066 . 0.23529411764705882)
       (ecb-methods-buffer-name 0.15126050420168066 . 0.29411764705882354)
-      (ecb-history-buffer-name 0.15126050420168066 . 0.16176470588235295)))))
- '(ecb-method-face (quote ecb-default-highlight-face))
- '(ecb-methods-general-face (quote ecb-default-general-face))
+      (ecb-history-buffer-name 0.15126050420168066 . 0.16176470588235295))))
+ '(ecb-method-face 'ecb-default-highlight-face)
+ '(ecb-methods-general-face 'ecb-default-general-face)
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/" "/"))))
- '(ecb-type-tag-expansion (quote ((default) (c-mode "struct"))))
+ '(ecb-source-path '(("/" "/")))
+ '(ecb-type-tag-expansion '((default) (c-mode "struct")))
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
  '(eclimd-autostart nil)
  '(ede-project-directories
-   (quote
-    ("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04")))
+   '("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04"))
  '(flycheck-checker-error-threshold nil)
- '(flycheck-clang-args (quote ("-DFLYCHECK")))
+ '(flycheck-clang-args '("-DFLYCHECK"))
  '(flycheck-clang-include-path
-   (quote
-    ("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include" "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
- '(flycheck-clang-includes (quote ("/usr/include/netdb.h")))
- '(flycheck-cppcheck-include-path (quote ("/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/")))
- '(flycheck-cppcheck-suppressions (quote ("knownConditionTrueFalse")))
+   '("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include" "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/"))
+ '(flycheck-clang-includes '("/usr/include/netdb.h"))
+ '(flycheck-cppcheck-include-path '("/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/"))
+ '(flycheck-cppcheck-suppressions '("knownConditionTrueFalse"))
  '(flycheck-flake8-maximum-line-length 160)
  '(flycheck-ghc-args
-   (quote
-    ("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float")))
- '(flycheck-ghc-language-extensions (quote ("NoStarIsType")))
- '(flycheck-ghc-search-path (quote ("src" "shared" "test" "examples")))
+   '("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float"))
+ '(flycheck-ghc-language-extensions '("NoStarIsType"))
+ '(flycheck-ghc-search-path '("src" "shared" "test" "examples"))
  '(flycheck-lintr-linters
    "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, object_name_linter = NULL)")
  '(flymake-gui-warnings-enabled nil)
- '(frame-background-mode (quote dark))
+ '(frame-background-mode 'dark)
  '(global-eclim-mode t)
  '(global-flycheck-mode t)
  '(global-undo-tree-mode t)
@@ -420,98 +414,90 @@
  '(haskell-interactive-mode-collapse t)
  '(haskell-interactive-popup-errors nil)
  '(haskell-mode-hook
-   (quote
-    (haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode hindent-mode haskell-indentation-mode my/haskell-minor-mode)))
+   '(haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode hindent-mode haskell-indentation-mode my/haskell-minor-mode))
  '(haskell-process-args-cabal-repl
-   (quote
-    ("--ghc-option=-ferror-spans" "--ghc-option=-fbreak-on-error")))
- '(haskell-process-args-ghci (quote ("-ferror-spans -fbreak-on-error")))
+   '("--ghc-option=-ferror-spans" "--ghc-option=-fbreak-on-error"))
+ '(haskell-process-args-ghci '("-ferror-spans -fbreak-on-error"))
  '(haskell-process-args-stack-ghci nil)
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
  '(haskell-process-path-ghci "stack")
  '(haskell-process-suggest-hoogle-imports t)
  '(haskell-process-suggest-remove-import-lines nil)
- '(haskell-process-type (quote stack-ghci))
+ '(haskell-process-type 'stack-ghci)
  '(haskell-stylish-on-save t)
  '(helm-M-x-always-save-history t)
  '(helm-M-x-fuzzy-match t)
  '(helm-autoresize-mode t)
  '(helm-buffers-fuzzy-matching t)
- '(helm-case-fold-search (quote (quote smart)))
- '(helm-comp-read-case-fold-search (quote smart))
+ '(helm-case-fold-search ''smart)
+ '(helm-comp-read-case-fold-search 'smart)
  '(helm-ff-file-name-history-use-recentf t)
  '(helm-ff-search-library-in-sexp t)
- '(helm-file-name-case-fold-search (quote smart))
+ '(helm-file-name-case-fold-search 'smart)
  '(helm-flx-mode t)
- '(helm-fuzzy-matching-highlight-fn (quote helm-flx-fuzzy-highlight-match))
- '(helm-fuzzy-sort-fn (quote helm-flx-fuzzy-matching-sort))
+ '(helm-fuzzy-matching-highlight-fn 'helm-flx-fuzzy-highlight-match)
+ '(helm-fuzzy-sort-fn 'helm-flx-fuzzy-matching-sort)
  '(helm-input-idle-delay 0.1)
- '(helm-locate-case-fold-search (quote smart))
+ '(helm-locate-case-fold-search 'smart)
  '(helm-locate-command "locate %.0s %s")
  '(helm-mini-default-sources
-   (quote
-    (helm-source-buffers-list helm-source-recentf helm-source-buffer-not-found)))
+   '(helm-source-buffers-list helm-source-recentf helm-source-buffer-not-found))
  '(helm-mode t)
  '(helm-move-to-line-cycle-in-source t)
  '(helm-net-prefer-curl t)
  '(helm-scroll-amount 8)
  '(helm-split-window-inside-p t)
- '(help-at-pt-display-when-idle (quote (flymake-overlay)) nil (help-at-pt))
+ '(help-at-pt-display-when-idle '(flymake-overlay) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.1)
- '(hindent-extra-args (quote ("--line-length" "180")))
- '(intero-extra-ghc-options (quote ("-ifay")))
+ '(hindent-extra-args '("--line-length" "180"))
+ '(intero-extra-ghc-options '("-ifay"))
  '(intero-extra-ghci-options nil)
  '(ivy-count-format "")
  '(ivy-mode t)
  '(ivy-use-virtual-buffers t)
  '(jde-compile-option-directory "./../classes")
- '(jde-compiler (quote ("javac")))
- '(jde-global-classpath (quote ("./../classes" "./../lib")))
- '(jde-jdk (quote ("1.8")))
- '(jde-jdk-registry (quote (("1.8" . "/usr/lib/jvm/default/"))))
- '(jde-sourcepath (quote ("./src/main" "./src/test")) t)
+ '(jde-compiler '("javac"))
+ '(jde-global-classpath '("./../classes" "./../lib"))
+ '(jde-jdk '("1.8"))
+ '(jde-jdk-registry '(("1.8" . "/usr/lib/jvm/default/")))
+ '(jde-sourcepath '("./src/main" "./src/test") t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
  '(lsp-haskell-process-path-hie "ghcide")
  '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
  '(mpc-host "192.168.178.62")
- '(org-agenda-files (quote ("~/Documents/planning/")))
+ '(org-agenda-files '("~/Documents/planning/"))
  '(org-agenda-skip-deadline-prewarning-if-scheduled 3)
- '(org-duration-format (quote h:mm))
+ '(org-duration-format 'h:mm)
  '(org-export-creator-string "")
  '(org-export-with-creator nil)
  '(org-file-apps
-   (quote
-    ((auto-mode . emacs)
+   '((auto-mode . emacs)
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . default)
-     ("\\.pdf\\'" . "evince %s"))))
+     ("\\.pdf\\'" . "evince %s")))
  '(org-html-creator-string "")
  '(org-latex-caption-above nil)
  '(org-latex-listings t)
  '(org-latex-prefer-user-labels t)
  '(org-latex-table-caption-above nil)
  '(org-startup-shrink-all-tables t)
- '(org-use-sub-superscripts (quote {}))
+ '(org-use-sub-superscripts '{})
  '(package-archives
-   (quote
-    (("gnu" . "https://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/"))))
+   '(("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   (quote
-    (gams-mode fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers)))
+   '(gams-mode fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
  '(safe-local-variable-values
-   (quote
-    ((TeX-master . paper\.tex)
+   '((TeX-master . paper\.tex)
      (TeX-mast . presentation\.tex)
      (TeX-command-extra-options . "-shell-escape")
      (TeX-mast . paper\.tex)
-     (header-auto-update-enabled))))
+     (header-auto-update-enabled)))
  '(semanticdb-javap-classpath
-   (quote
-    ((concat
+   '((concat
       (nth 0
            (split-string default-directory "src"))
       "./lib/")
@@ -526,13 +512,13 @@
      (concat
       (nth 0
            (split-string default-directory "src"))
-      "../Common/lib/"))))
- '(send-mail-function (quote smtpmail-send-it))
+      "../Common/lib/")))
+ '(send-mail-function 'smtpmail-send-it)
  '(setq max-specpdl-size t)
  '(size-indication-mode t)
  '(smtpmail-default-smtp-server "smtp.uibk.ac.at")
  '(smtpmail-default-smtp-service 587)
- '(solarized-contrast (quote high))
+ '(solarized-contrast 'high)
  '(tags-case-fold-search nil)
  '(tex-smart-umlauts-german-shortcuts nil)
  '(tool-bar-mode nil)
@@ -544,8 +530,7 @@
  '(wolfram-path "/home/schnecki/Documents/Wolfram Mathematica/")
  '(xref-prompt-for-identifier t)
  '(yas-prompt-functions
-   (quote
-    (yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt))))
+   '(yas-ido-prompt yas-dropdown-prompt yas-completing-prompt yas-x-prompt yas-no-prompt)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
