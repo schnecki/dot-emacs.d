@@ -2,9 +2,13 @@
 (setq ess-root-path (file-name-as-directory (concat package-folder "ess-18.10.2/lisp")))
 (add-to-list 'load-path ess-root-path)
 
-(require 'ess-site)
+;; Find etc directory of last version installed
+(require 'seq)
+(setq ess-versions-installed (seq-filter (lambda (x) (string-prefix-p "ess-20" x)) (directory-files "~/.emacs.d/elpa/")))
+(setq ess-version-dir-used (nth (- (length ess-versions-installed) 1) ess-versions-installed))
+(setq ess-etc-directory (concat "~/.emacs.d/elpa/" ess-version-dir-used "/etc/"))
 
-;; (require 'ess-site)
+(require 'ess-site)
 (require 'ess-r-mode)
 (add-to-list 'auto-mode-alist '("\\.R\\'" . r-mode))
 (setq ess-use-flymake nil) ;; disable Flymake
