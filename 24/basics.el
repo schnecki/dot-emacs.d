@@ -5,9 +5,9 @@
 ;; Author: Manuel Schneckenreither
 ;; Created: Mon Dec 10 22:51:09 2012 (+0100)
 ;; Version:
-;; Last-Updated: Sat Sep 10 11:08:05 2016 (+0200)
-;;           By: schnecki
-;;     Update #: 805
+;; Last-Updated: Mon Sep 27 13:21:01 2021 (+0200)
+;;           By: Manuel Schneckenreither
+;;     Update #: 806
 ;; URL:
 ;; Description:
 ;;    Basic configuration for emacs. In here are all configs of
@@ -327,19 +327,6 @@ mode of the invoking window is in
   (if my-fullscreen-p
       (my-non-fullscreen)
     (my-fullscreen)))
-
-
-;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-;; ++++++++++++ STOP ASKING EXISTING PROCESS EXISTS STUFF +++++++++++++++
-;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-;; (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-;;   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
-;;   (flet ((process-list ())) ad-do-it))
-
-;; ;; don't ask me if I want to quit the shell
-;; (add-hook 'comint-exec-hook
-;;           (lambda () (process-kill-without-query (get-buffer-process (current-buffer)))))
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

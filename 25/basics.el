@@ -412,11 +412,6 @@
   "Prevent annoying \"Active processes exist\" query when you quit Emacs."
   (flet ((process-list ())) ad-do-it))
 
-;; don't ask me if I want to quit the shell
-(add-hook 'comint-exec-hook
-          (lambda () (process-kill-without-query (get-buffer-process (current-buffer)))))
-
-
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; +++++++++++++++++++ SHOW KILL RING WHEN YANKING ++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
