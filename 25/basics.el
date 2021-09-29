@@ -687,6 +687,19 @@
 ;; (require 'ido)
 ;; (ido-mode nil)
 
+;; Turn of linum mode for big files
+(defun buffer-too-big-p ()
+  (or (> (buffer-size) (* 5000 80))
+      (> (line-number-at-pos (point-max)) 5000)))
+
+(add-hook 'find-file-hook
+          (lambda ()
+            ;; (message minor-mode-list)
+            ;; turn off `linum-mode' when there are more than 5000 lines
+            (if (buffer-too-big-p) (linum-mode -1))
+            (if (buffer-too-big-p) (font-lock-mode -1))
+            (if (buffer-too-big-p) (undo-tree-mode -1))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; basics.el ends here
 
