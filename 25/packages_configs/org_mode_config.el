@@ -70,10 +70,10 @@
 (setq org-return-follows-link t)
 
 ;; open text files in org mode
-(add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
+;; (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 
 ;; open unknown files in org mode
-(setq-default major-mode 'org-mode)
+;; (setq-default major-mode 'org-mode)
 
 ;; Insert source code
 (defun org-insert-src-block (src-code-type)
@@ -422,15 +422,15 @@
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-(eval-after-load "org"
-  '(progn
-     ;; .txt files aren't in the list initially, but in case that changes
-     ;; in a future version of org, use if to avoid errors
-     (if (assoc "\\.txt\\'" org-file-apps)
-         (setcdr (assoc "\\.txt\\'" org-file-apps) "notepad.exe %s")
-       (add-to-list 'org-file-apps '("\\.txt\\'" . "notepad.exe %s") t))
-     ;; Change .pdf association directly within the alist
-     (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")))
+;; (eval-after-load "org"
+;;   '(progn
+;;      ;; .txt files aren't in the list initially, but in case that changes
+;;      ;; in a future version of org, use if to avoid errors
+;;      (if (assoc "\\.txt\\'" org-file-apps)
+;;          (setcdr (assoc "\\.txt\\'" org-file-apps) "notepad.exe %s")
+;;        (add-to-list 'org-file-apps '("\\.txt\\'" . "notepad.exe %s") t))
+;;      ;; Change .pdf association directly within the alist
+;;      (setcdr (assoc "\\.pdf\\'" org-file-apps) "evince %s")))
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++ Org Mobile Setup ++++++++++++++++++++++++++
