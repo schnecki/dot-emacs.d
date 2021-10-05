@@ -1,2 +1,0 @@
-;;; -*- no-byte-compile: t -*-
-(define-package "flyspell-correct-helm" "20191230.630" "Correcting words with flyspell via helm interface" '((flyspell-correct "0.5.0") (helm "1.9.0") (emacs "24")) :commit "b0353a41a737f65c517d3005b36b08a9eaf3a859" :authors '(("Boris Buliga" . "boris@d12frosted.io")) :maintainer '("Boris Buliga" . "boris@d12frosted.io") :url "https://github.com/d12frosted/flyspell-correct")

@@ -334,7 +334,7 @@
  '(Flymake-compilation-prevents-syntax-check nil)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
- '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
    '((concat
       (nth 0
@@ -489,7 +489,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(ess gams-mode fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format flycheck-pycheckers use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets yasnippet-snippets flycheck-elm elm-mode elm-yasnippets yasnippet-snippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(ess fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
  '(safe-local-variable-values
    '((TeX-master . paper\.tex)
      (TeX-mast . presentation\.tex)

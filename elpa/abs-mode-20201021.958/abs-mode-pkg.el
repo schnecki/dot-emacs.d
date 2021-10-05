@@ -1,2 +1,0 @@
-;;; Generated package description from /home/schnecki/.emacs.d/elpa/abs-mode-20201021.958/abs-mode.el  -*- no-byte-compile: t -*-
-(define-package "abs-mode" "20201021.958" "Major mode for the modeling language Abs" '((emacs "25") (erlang "0") (maude-mode "0") (flymake "0.3")) :commit "9101779ef8861cb1f46d288946356e600359a4e0" :authors '(("Rudi Schlatte" . "rudi@constantly.at")) :maintainer '("Rudi Schlatte" . "rudi@constantly.at") :keywords '("languages") :url "https://github.com/abstools/abs-mode")

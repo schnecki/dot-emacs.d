@@ -1,6 +1,8 @@
 
-(setq ess-root-path (file-name-as-directory (concat package-folder "ess-18.10.2/lisp")))
-(add-to-list 'load-path ess-root-path)
+;; (setq ess-root-path (file-name-as-directory (concat package-folder "ess-18.10.2/lisp")))
+;; (add-to-list 'load-path ess-root-path)
+
+;; (setq ess-customize-alist '())
 
 ;; Find etc directory of last version installed
 (require 'seq)
