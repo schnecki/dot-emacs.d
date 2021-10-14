@@ -8,7 +8,7 @@
 ;; Version:
 ;; Last-Updated:
 ;;           By:
-;;     Update #: 1028
+;;     Update #: 1030
 ;; URL:
 ;; Description:
 ;;
@@ -130,8 +130,8 @@
   (define-key haskell-mode-map (kbd "C-.") nil)
   (define-key interactive-haskell-mode-map (kbd "M-.") nil)
 
-  )
 
+  )
 
 (add-hook 'haskell-mode-hook 'my/haskell-minor-mode)
 
