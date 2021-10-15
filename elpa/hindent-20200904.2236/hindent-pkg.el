@@ -1,2 +1,0 @@
-;;; Generated package description from /home/schnecki/.emacs.d/elpa/hindent-20200904.2236/hindent.el  -*- no-byte-compile: t -*-
-(define-package "hindent" "20200904.2236" "Indent haskell code using the \"hindent\" program" '((cl-lib "0.5")) :commit "1917b7b9ac2cb3dcb152f4435de61d1858a4064b" :authors '(("Chris Done" . "chrisdone@gmail.com")) :maintainer '("Chris Done" . "chrisdone@gmail.com") :url "https://github.com/chrisdone/hindent")

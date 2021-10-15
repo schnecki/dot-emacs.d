@@ -1,2 +1,0 @@
-;;; Generated package description from /home/schnecki/.emacs.d/elpa/flyspell-lazy-20201028.111/flyspell-lazy.el  -*- no-byte-compile: t -*-
-(define-package "flyspell-lazy" "20201028.111" "Improve flyspell responsiveness using idle timers" 'nil :commit "d57382cf06462931cb354f5630469425fce56396" :authors '(("Roland Walker" . "walker@pobox.com")) :maintainer '("Roland Walker" . "walker@pobox.com") :keywords '("spelling") :url "http://github.com/rolandwalker/flyspell-lazy")
