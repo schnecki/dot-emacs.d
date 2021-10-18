@@ -306,10 +306,13 @@
   (interactive)
   ;; (load-theme 'arjen t t)
   ;; (enable-theme 'arjen)
-  (load-theme 'leuven t t)
+  (load-theme 'leuven t)
   (enable-theme 'leuven)
+  ;; (load-theme 'solarized-light t t)
   ;; (load-theme 'andreas t t)
   ;; (enable-theme 'andreas)
+  ;; (load-theme 'spacemacs t)
+  ;; (enable-theme 'spacemacs-light)
   )
 
 (load-my-theme)
@@ -359,7 +362,7 @@
  '(company-idle-delay 0.01)
  '(cua-delete-selection nil)
  '(custom-safe-themes
-   '("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
+   '("efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4ca84f9861113f889d505b66c4a9c30b81400f450b54f4c857d3eb44c5bdc601" "0615f6940c6c5e5638c9157644263889db755d43576c25f7b311806f4cfe2c3a" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
  '(delete-active-region nil)
  '(dired-kept-versions 10)
  '(display-time-mode t)
@@ -489,7 +492,7 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(ess fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(solarized-theme spacemacs-theme leuven-theme ess fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
  '(safe-local-variable-values
    '((TeX-master . paper\.tex)
      (TeX-mast . presentation\.tex)
