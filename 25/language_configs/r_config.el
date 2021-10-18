@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2021 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Fri Oct 15 14:52:21 2021 (+0200)
+;; Last-Updated: Tue Oct 19 01:06:26 2021 (+0200)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 129
+;;     Update #: 130
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -56,22 +56,24 @@
                         (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
                           (split-string default-directory "src")
-                        (if (string-match "shared/" default-directory)
-                            (split-string default-directory "shared")
-                          (if (string-match "exp/" default-directory)
-                              (split-string default-directory "exp")
-                            (if (string-match "analysis/" default-directory)
-                                (split-string default-directory "analysis")
-                              (if (string-match "fay-shared/" default-directory)
-                                  (split-string default-directory "fay-shared")
-                              (if (string-match "cbits/" default-directory)
-                                  (split-string default-directory "cbits")
-                                (if (string-match "examples/" default-directory)
-                                    (split-string default-directory "examples/")
-                                  (if (string-match "bench/" default-directory)
-                                      (split-string default-directory "bench/")
-                                    (split-string default-directory "test"))
-                                  )))))))))))
+                        (if (string-match "R/" default-directory)
+                            (split-string default-directory "R")
+                          (if (string-match "shared/" default-directory)
+                              (split-string default-directory "shared")
+                            (if (string-match "exp/" default-directory)
+                                (split-string default-directory "exp")
+                              (if (string-match "analysis/" default-directory)
+                                  (split-string default-directory "analysis")
+                                (if (string-match "fay-shared/" default-directory)
+                                    (split-string default-directory "fay-shared")
+                                  (if (string-match "cbits/" default-directory)
+                                      (split-string default-directory "cbits")
+                                    (if (string-match "examples/" default-directory)
+                                        (split-string default-directory "examples/")
+                                      (if (string-match "bench/" default-directory)
+                                          (split-string default-directory "bench/")
+                                        (split-string default-directory "test"))
+                                      ))))))))))))
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
     ;; (message esdir)
     (setq tagslst '()) ;; '("."))
@@ -86,13 +88,13 @@
     (setq dirs (mapconcat 'identity tagslst " "))
     (message (concat "dirs: " dirs))
     (shell-command
-          (concat "cd " esdir " && find " dirs " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
-     ;; (concat "cd " esdir
-     ;;         ;; " && hasktags --ignore-close-implementation -e --cache . 2>/dev/null 1>/dev/null") nil)
-     ;;         " && hasktags -e --ignore-close-implementation "
-     ;;         dirs
-     ;;         ;; " 2>/dev/null 1>/dev/null"
-     ;;         ) nil)
+     (concat "cd " esdir " && find " dirs " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
+    ;; (concat "cd " esdir
+    ;;         ;; " && hasktags --ignore-close-implementation -e --cache . 2>/dev/null 1>/dev/null") nil)
+    ;;         " && hasktags -e --ignore-close-implementation "
+    ;;         dirs
+    ;;         ;; " 2>/dev/null 1>/dev/null"
+    ;;         ) nil)
     (visit-tags-table (concat dir "TAGS")))
   )
 
