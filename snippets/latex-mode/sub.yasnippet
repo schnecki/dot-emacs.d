@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# contributor : Steve Lianoglou <slianoglou@gmail.com>
+# key: sub
+# group: sections
+# name : \subsection
+# --
+%% -----------------------------------------------------------------------------
+%% ${1:subsection name}
+\subsection{$1}
+\label{sub:${2:${1:$(replace-regexp-in-string "[^[:alnum:]]" "_" yas/text)}}}

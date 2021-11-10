@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# contributor : Steve Lianoglou <slianoglou@gmail.com>
+# key : wrapfig
+# group: environments
+# name : \begin{wrapfigure} ... \end{wrapfigure}
+# --
+\begin{wrapfigure}{${1:r}}{${2:0.62}\textwidth}
+  \vspace{${3:-12pt}}
+  \centering
+  \includegraphics[${4:scale=${5:1}}]{${6:file}}
+  \vspace{${7:-10pt}}
+  \caption${8:[${9:short_caption}]}{${10:\small}
+    ${11:\textbf{${12:title}}}
+    ${13:caption}
+  }
+  \vspace{${14:-15pt}}
+  \label{fig:${15:${9:$(replace-regexp-in-string "[^[:alnum:]]" "_" yas/text)}}}
+\end{wrapfigure}

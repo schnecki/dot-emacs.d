@@ -1,0 +1,35 @@
+# name : R6 new class
+# key : class
+# expand-env: ((yas/indent-line 'fixed))
+# --
+#' $1 class
+#'
+#' This class defines a $1
+#' @export
+${1:Name} <- R6::R6Class(
+    classname = "$1",
+
+    ## Properties
+    private = list(
+        .${2:x} = NULL$0         # ${3:matrix}
+    ),
+
+    ## Methods
+    public = list(
+        initialize = function($2) {
+            self\$$2 <- $2
+        }
+    ),
+
+    ## Accessable properties. Active bindings look like fields, but each time they are accessed,
+    ## they call a function. They are always publicly visible.
+    active = list(
+        $2 = function(value) {
+            if (missing(value)) return(private\$.$2)
+            if (!(${4:is.matrix(value)}))
+                stop("ERROR: Unallowed property ", value, " for '$2' at ", getSrcFilename(function(){}), ":", getSrcLocation(function(){}))
+            private\$.$2 <- value
+            return(self)
+        }
+    )
+)

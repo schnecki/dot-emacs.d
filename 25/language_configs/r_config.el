@@ -7,9 +7,9 @@
 ;; Created: Fr Feb  7 00:07:46 2021 (+0100)
 ;; Version:
 ;; Package-Requires: ()
-;; Last-Updated: Tue Oct 19 01:06:26 2021 (+0200)
+;; Last-Updated: Wed Nov 10 22:05:00 2021 (+0100)
 ;;           By: Manuel Schneckenreither
-;;     Update #: 130
+;;     Update #: 149
 ;; URL:
 ;; Doc URL:
 ;; Keywords:
@@ -56,8 +56,8 @@
                         (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
                           (split-string default-directory "src")
-                        (if (string-match "R/" default-directory)
-                            (split-string default-directory "R")
+                        (if (string-match "/R/" default-directory)
+                            (split-string default-directory "/R/")
                           (if (string-match "shared/" default-directory)
                               (split-string default-directory "shared")
                             (if (string-match "exp/" default-directory)
@@ -74,8 +74,8 @@
                                           (split-string default-directory "bench/")
                                         (split-string default-directory "test"))
                                       ))))))))))))
-    (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
-    ;; (message esdir)
+    (setq esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
+    (message (concat "esdir: " esdir))
     (setq tagslst '()) ;; '("."))
     (if (file-exists-p (concat esdir "src")) (add-to-list 'tagslst "src"))
     (if (file-exists-p (concat esdir "shared")) (add-to-list 'tagslst "shared"))
@@ -95,7 +95,7 @@
     ;;         dirs
     ;;         ;; " 2>/dev/null 1>/dev/null"
     ;;         ) nil)
-    (visit-tags-table (concat dir "TAGS")))
+    (visit-tags-table (concat esdir "TAGS")))
   )
 
 

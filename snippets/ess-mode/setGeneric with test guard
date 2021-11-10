@@ -1,0 +1,11 @@
+#name : setGeneric( ... ) with test guard
+#key : setgent
+# --
+if (!isGeneric("${1:method}")) {
+$>if (is.function("$1")) {
+$>$>fnc <- $1
+} else {
+$>$>fnc <- function(${2:x${3:, ${4:...}}}) standardGeneric("$1")
+$>}
+$>setGeneric("$1", fnc)
+}$0

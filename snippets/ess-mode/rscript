@@ -1,0 +1,58 @@
+#name : Rscript utility
+#key : rscript
+# --
+#!/usr/bin/env Rscript
+details <- "
+  ${1:details}
+
+  Package Required:
+    + optparse
+    + ${2:packages}"
+
+################################################################################
+## Generic Rscript setup
+## -----------------------------------------------------------------------------
+
+## Insures that Rscript will exit during an uncaught error
+options(error=function(err) {
+  cat("An error happened you didn't account for\n")
+  cat("\n\n")
+  quit(save='no', status=1)
+})
+
+## Exit script with user supplied error
+err <- function(..., sep=" ") {
+  msg <- paste(unlist(list(...)), sep=sep)
+  cat("ERROR:", msg, "\n")
+  quit(save='no', status=1)
+}
+
+## Use `optparse` to configure and parse command line arguments.
+suppressPackageStartupMessages({
+  if (!require(optparse)) {
+    err('The optparse library needed, please install via:\n',
+        'install.packages("optparse", repos="http://R-Forge.R-project.org")')
+  }
+})
+
+################################################################################
+## Particulars of this script start here
+## -----------------------------------------------------------------------------
+usage <- paste("%prog [OPTIONS] ${3:args}\n", details, sep="\n")
+
+option.list <-
+  list(${4:options}
+       make_option(c('-v', '--verbose'), default=FALSE, action="store_true",
+                   help="Make some noise.")
+       )
+
+parser <- OptionParser(usage=usage, option_list=option.list)
+parsed <- parse_args(parser, positional_arguments=TRUE)
+opts <- parsed$options
+args <- parsed$args
+
+verbose <- opts$verbose
+
+###############################################################################
+## Check option/arguments
+## ----------------------------------------------------------------------------

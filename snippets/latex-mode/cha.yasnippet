@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# contributor : Steve Lianoglou <slianoglouk@gmail.com>
+# key : cha
+# group: sections
+# name : \chapter
+# --
+\chapter{${1:name}}
+\label{cha:${2:${1:$(replace-regexp-in-string "[^[:alnum:]]" "_" yas/text)}}}

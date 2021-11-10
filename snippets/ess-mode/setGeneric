@@ -1,0 +1,4 @@
+#name : setGeneric( ... )
+#key : setgen
+# --
+setGeneric("${1:name}", function(${2:x${3:, ${4:...}}}) standardGeneric("$1"))$0
