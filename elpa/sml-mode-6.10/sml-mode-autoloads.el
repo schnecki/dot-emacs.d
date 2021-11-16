@@ -54,11 +54,7 @@ Major Mode for editing ML-Yacc files.
 
 \(fn)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sml-mode" '("sml-" "inferior-sml-" "font-lock-")))
-
-;;;***
-
-;;;### (autoloads nil nil ("sml-mode-pkg.el") (0 0 0 0))
+(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sml-mode" '("font-lock-" "inferior-sml-" "sml-")))
 
 ;;;***
 

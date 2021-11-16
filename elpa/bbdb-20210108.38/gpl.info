@@ -1,4 +1,4 @@
-This is gpl.info, produced by makeinfo version 6.5 from gpl.texi.
+This is gpl.info, produced by makeinfo version 6.7 from gpl.texi.
 
                         Version 3, 29 June 2007
 
@@ -714,3 +714,8 @@ please read <http://www.gnu.org/philosophy/why-not-lgpl.html>.
 Tag Table:
 
 End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

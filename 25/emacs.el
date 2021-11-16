@@ -44,8 +44,6 @@
 (load (concat package-conf-folder "flycheck_config.el"))
 ;; FLYSPELL -- automatic spell checking on-the-fly
 (load (concat package-conf-folder "flyspell_config.el"))
-;; HEADER 2 - Enter a header in the files
-(load (concat package-conf-folder "header2_config.el"))
 ;; IDO - minibuffer helper
 ;; (load (concat package-conf-folder "ido_config.el"))
 ;; MULTIPLE CURSORS - use multiple cursors to edit the buffers

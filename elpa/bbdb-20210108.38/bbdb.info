@@ -1,4 +1,4 @@
-This is bbdb.info, produced by makeinfo version 6.5 from bbdb.texi.
+This is bbdb.info, produced by makeinfo version 6.7 from bbdb.texi.
 
 This file documents the Insidious Big Brother Database (BBDB)
 
@@ -1281,3 +1281,8 @@ Node: GNU Free Documentation License39623
 Node: Index64769
 
 End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

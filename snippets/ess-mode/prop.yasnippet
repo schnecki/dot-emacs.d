@@ -4,7 +4,7 @@
 # --
 ${1:name} = function(value) {
     if (missing(value)) return(private\$.$1)
-    if (!(${2:is.numeric(value)}${3: && length(value) == 1}))
+    if (!(${2:base::is.numeric(value)}${3: && base::length(value) == 1}))
         stop("ERROR: Unallowed property ", value, " for '$1' at ", getSrcFilename(function(){}), ":", getSrcLocation(function(){}))
     private\$.$1 <- value
     return(self)

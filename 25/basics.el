@@ -673,9 +673,6 @@
 ;; (setq mail-self-blind nil) ;; does not work for me, solved by bcc'ing to myself
 (add-hook 'message-send-hook 'add-sender-mail-bcc)
 
-;; Calendar
-(require 'org-gcal)
-
 ;; Regex
 (require 're-builder)
 (setq reb-re-syntax 'string)
