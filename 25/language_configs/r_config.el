@@ -53,7 +53,7 @@
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
   (let ((dir (nth 0 (if (string-match "app/" default-directory)
-                        (split-string default-directory "app")
+o                        (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
                           (split-string default-directory "src")
                         (if (string-match "/R/" default-directory)
@@ -102,6 +102,10 @@
 ;; R MODE
 (defun my-r-mode-hook ()
   (add-hook 'after-save-hook 'make-r-tags nil t) )
+
+(setq auto-mode-alist
+      (cons '("\\.r$" . ess-r-mode) auto-mode-alist))
+
 
 ;; add hook
 (add-hook 'r-mode-hook 'my-r-mode-hook)
