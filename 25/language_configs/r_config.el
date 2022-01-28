@@ -103,8 +103,8 @@ o                        (split-string default-directory "app")
 (defun my-r-mode-hook ()
   (add-hook 'after-save-hook 'make-r-tags nil t) )
 
-(setq auto-mode-alist
-      (cons '("\\.r$" . ess-r-mode) auto-mode-alist))
+;; (setq auto-mode-alist
+;;       (cons '("\\.r$" . ess-r-mode) auto-mode-alist))
 
 
 ;; add hook

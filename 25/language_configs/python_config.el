@@ -39,34 +39,32 @@
 (defun make-python-tags ()
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
-  (let ((dir (nth 0 (if (string-match "tests/" default-directory)
-                        (split-string default-directory "tests")
-                      (if (string-match "src/" default-directory)
-                          (split-string default-directory "src")
-                        (make-list 1 default-directory)
-                        )))))
-    (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
+  (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
+                    if (or (file-exists-p (expand-file-name ".venv" d))
+                           (file-exists-p (expand-file-name "setup.py" d)))
+                    return d))
+         (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/"))))
     (shell-command
-     (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \".*flycheck.*\" "
+     (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \"flycheck_*\" -not -path \"./venv/*\"  -not -path \"./.venv/*\" -not -name \".*flycheck.*\" "
              "| etags - 1>/dev/null 2>/dev/null") nil)
-    (visit-tags-table (concat dir "TAGS"))))
+    (visit-tags-table (concat esdir "TAGS"))))
 
 
 (defun set-pylint-virutalenv ()
   "Set (or create) the virtualenv environment for pylint."
   (interactive)
-  (let ((paths (split-string default-directory "src"))
-        (dir (nth 0 (split-string default-directory "src"))))
-    (if (> (length paths) 1)
-        (let ((esdir (replace-regexp-in-string " " "\\\\ " dir)))
-          (if (file-exists-p (concat esdir "/.venv"))
-              ((lambda () (interactive)
-                 (message "virtualenv found, setting pylint executable path of virtualenv!")
-                 (setq flycheck-python-pylint-executable (concat esdir "/.venv/bin/pylint"))))
-             (shell-command (concat "cd " esdir " && virtualenv .venv && pip install pylint"))
-             (set-pylint-virutalenv)))
-      (message "No project (path piece called 'src' found on path)!"))
-      ))
+  (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
+                    if (or (file-exists-p (expand-file-name ".venv" d))
+                           (file-exists-p (expand-file-name "setup.py" d)))
+                    return d))
+         (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
+         (paths (split-string default-directory esdir)))
+    (if (file-exists-p (concat esdir "/.venv"))
+        ((lambda () (interactive)
+           (message "virtualenv found, setting pylint executable path of virtualenv!")
+           (setq flycheck-python-pylint-executable (concat esdir "/.venv/bin/pylint"))))
+      (shell-command (concat "cd " esdir " && virtualenv .venv && pip install pylint"))
+      (set-pylint-virutalenv))))
 
 
 ;; C MODE

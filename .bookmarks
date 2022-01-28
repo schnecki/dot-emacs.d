@@ -1,24 +1,32 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*- 
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
@@ -218,7 +226,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("smart_production" 0 16
+(#1=(#("reinforce" 0 9
+      (bmkp-full-record #1#))
+    (buffer-name . "reinforce/")
+    (visits . 0)
+    (time . #2=(25066 35235 491267 284000))
+    (created . #2#)
+    (position . 258)
+    (filename . "   - no file -")
+    (desktop-file . "/home/schnecki/Documents/projects/reinforce/emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("smart_production" 0 16
       (bmkp-full-record #1#))
     (buffer-name . "hours.org")
     (visits . 0)
@@ -288,15 +306,15 @@
     (filename . "   - no file -")
     (desktop-file . "/home/schnecki/Documents/projects/grenade/emacs.desktop")
     (handler . bmkp-jump-desktop))
-#1=(#("borl-trader" 0 11
+#1=(#("aral-trader" 0 11
       (bmkp-full-record #1#))
-    (buffer-name . "borl-trader/")
-    (visits . 0)
-    (time . #2=(23970 14613 997909 440000))
-    (created . #2#)
+    (buffer-name . "aral-trader/")
+    (visits . 1)
+    (time 25017 48836 906069 532000)
+    (created 23970 14613 997909 440000)
     (position . 260)
     (filename . "   - no file -")
-    (desktop-file . "/home/schnecki/Documents/projects/borl-trader/emacs.desktop")
+    (desktop-file . "/home/schnecki/Documents/projects/aral-trader/emacs.desktop")
     (handler . bmkp-jump-desktop))
 #1=(#("management" 0 10
       (bmkp-full-record #1#))
