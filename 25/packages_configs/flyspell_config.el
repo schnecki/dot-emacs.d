@@ -70,7 +70,13 @@
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 ;; latex mode hook
 (add-hook 'latex-mode-hook 'turn-on-flyspell)
+;; latex mode hook
+(add-hook 'message-mode-hook 'flyspell-mode)
 
+
+;; (add-hook 'flyspell-mode-hook #'flyspell-local-vars)
+;; (defun flyspell-local-vars ()
+;;   (add-hook 'hack-local-variables-hook #'flyspell-buffer))
 
 ;; MINOR MODE HOOK
 (defun my/flyspell-minor-mode ()
@@ -123,6 +129,11 @@
 
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-.") nil))
+
+(require 'auto-correct)
+(eval-after-load "flyspell"
+  '(auto-correct-mode))
+
 
 ;; (setq ispell-program-name "hunspell")          ; Use hunspell to correct mistakes
 
