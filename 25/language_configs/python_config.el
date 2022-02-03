@@ -45,7 +45,7 @@
                     return d))
          (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/"))))
     (shell-command
-     (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \"flycheck_*\" -not -path \"./venv/*\"  -not -path \"./.venv/*\" -not -name \".*flycheck.*\" "
+     (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \"flycheck_*\" -not -path \"./venv/*\"  -not -path \"./.venv/*\"  -not -path \"./.eggs/*\"  -not -path \"./build/*\" -not -name \".*flycheck.*\" "
              "| etags - 1>/dev/null 2>/dev/null") nil)
     (visit-tags-table (concat esdir "TAGS"))))
 
@@ -54,16 +54,18 @@
   "Set (or create) the virtualenv environment for pylint."
   (interactive)
   (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
-                    if (or (file-exists-p (expand-file-name ".venv" d))
-                           (file-exists-p (expand-file-name "setup.py" d)))
+                    if (or (file-exists-p (expand-file-name "venv" d))
+                           (or (file-exists-p (expand-file-name ".venv" d))
+                               (file-exists-p (expand-file-name "setup.py" d))))
                     return d))
          (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
-         (paths (split-string default-directory esdir)))
-    (if (file-exists-p (concat esdir "/.venv"))
+         (paths (split-string default-directory esdir))
+         (vdir  (if (file-exists-p (concat esdir "/.venv")) ".venv" "venv")))
+    (if (file-exists-p (concat esdir vdir))
         ((lambda () (interactive)
            (message "virtualenv found, setting pylint executable path of virtualenv!")
-           (setq flycheck-python-pylint-executable (concat esdir "/.venv/bin/pylint"))))
-      (shell-command (concat "cd " esdir " && virtualenv .venv && pip install pylint"))
+           (setq flycheck-python-pylint-executable (concat esdir "/" vdir "/bin/pylint"))))
+      (shell-command (concat "cd " esdir " && virtualenv " vdir " && pip install pylint"))
       (set-pylint-virutalenv))))
 
 

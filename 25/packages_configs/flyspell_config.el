@@ -48,7 +48,7 @@
 ;;; Code:
 
 (require 'flyspell-lazy)
-(flyspell-lazy-mode 1)
+;; (flyspell-lazy-mode 1)
 
 (require 'auto-dictionary)
 (require 'ispell)
@@ -64,8 +64,6 @@
 (if (fboundp 'w32-send-sys-command)
     (setq-default ispell-program-name "c:\\Program Files\\Aspell\\bin\\aspell.exe"))
 
-;; message mode hook
-(add-hook 'message-mode-hook 'turn-on-flyspell)
 ;; text mode hook
 (add-hook 'text-mode-hook 'turn-on-flyspell)
 ;; latex mode hook

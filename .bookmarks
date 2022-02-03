@@ -222,11 +222,25 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;;
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("reinforce" 0 9
+(#1=(#("papers" 0 6
+      (bmkp-full-record #1#))
+    (buffer-name . "paper.tex")
+    (visits . 0)
+    (time . #2=(25083 65345 55555 461000))
+    (created . #2#)
+    (position . 111021)
+    (filename . "   - no file -")
+    (desktop-file . "/home/schnecki/Documents/papers/emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("reinforce" 0 9
       (bmkp-full-record #1#))
     (buffer-name . "reinforce/")
     (visits . 0)
