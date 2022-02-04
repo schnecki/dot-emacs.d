@@ -77,6 +77,12 @@
 ;; HTH,
 ;; Nick
 
+(setq max-lisp-eval-depth 10000)
+(setq max-specpdl-size 30000)
+;; ;; https://github.com/hlissner/doom-emacs/issues/3406
+;; (after! straight
+;;   (add-to-list 'straight-recipes-gnu-elpa-ignored-packages 'seq))
+
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; +++++++++++++++++++++++++ PERSONAL SETTINGS ++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

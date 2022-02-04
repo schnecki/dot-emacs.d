@@ -47,33 +47,26 @@
 ;;
 ;;; Code:
 
-(require 'flyspell-lazy)
+;; (require 'flyspell-lazy)
 ;; (flyspell-lazy-mode 1)
 
-(require 'auto-dictionary)
 (require 'ispell)
 (require 'flyspell)
 
 ;; AUTOMATICALLY GUESS DICTIONARY
-(add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
+;; (require 'auto-dictionary)
+;; (add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
 
 ;; call every now and then
 ;; (setq flyspell-delay 1)
 
 ;; If on Windows use aspell
-(if (fboundp 'w32-send-sys-command)
-    (setq-default ispell-program-name "c:\\Program Files\\Aspell\\bin\\aspell.exe"))
+;; (if (fboundp 'w32-send-sys-command)
+;;     (setq-default ispell-program-name "c:\\Program Files\\Aspell\\bin\\aspell.exe"))
 
-;; text mode hook
-(add-hook 'text-mode-hook 'turn-on-flyspell)
-;; latex mode hook
-(add-hook 'latex-mode-hook 'turn-on-flyspell)
-;; latex mode hook
-(add-hook 'message-mode-hook 'flyspell-mode)
-
-(add-hook 'flyspell-mode-hook #'flyspell-local-vars)
-(defun flyspell-local-vars ()
-  (add-hook 'hack-local-variables-hook #'flyspell-buffer))
+;; (add-hook 'flyspell-mode-hook #'flyspell-local-vars)
+;; (defun flyspell-local-vars ()
+;;   (add-hook 'hack-local-variables-hook #'flyspell-buffer))
 
 ;; MINOR MODE HOOK
 (defun my/flyspell-minor-mode ()
@@ -82,9 +75,6 @@
   ;; KEYS
   (local-set-key (kbd (concat prefix-command-key "s w")) 'ispell-word)
   (local-set-key (kbd (concat prefix-command-key "s b")) 'flyspell-buffer)
-  ;; (add-hook 'auto-save-hook 'flyspell-buffer)
-  ;; (add-hook 'after-save-hook 'flyspell-buffer)
-
   (local-set-key (kbd "C-;") 'flyspell-correct-previous)
 
   )
@@ -95,17 +85,26 @@
 
 (add-hook 'flyspell-mode-hook 'my/flyspell-minor-mode)
 
-(defun flyspell-switch-dictionary()
-  (interactive)
-  (let* ((dic ispell-current-dictionary)
-         (change (if (string= dic "german") "english"
-                   (if (string= dic "english")
-                       "spanish" "german"))))
-    (ispell-change-dictionary change)
-    (message "Dictionary switched from %s to %s" dic change)
-    ))
+;; load mode hook
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'markdown-mode-hook 'flyspell-mode)
+(add-hook 'latex-mode-hook 'flyspell-mode)
+(add-hook 'message-mode-hook 'flyspell-mode)
+(add-hook 'org-mode-hook 'flyspell-mode)
+(add-hook 'haskell-mode-hook 'flyspell-prog-mode)
+(add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 
-(global-set-key (kbd "<f8>") 'flyspell-switch-dictionary)
+;; (defun flyspell-switch-dictionary()
+;;   (interactive)
+;;   (let* ((dic ispell-current-dictionary)
+;;          (change (if (string= dic "german") "english"
+;;                    (if (string= dic "english")
+;;                        "spanish" "german"))))
+;;     (ispell-change-dictionary change)
+;;     (message "Dictionary switched from %s to %s" dic change)
+;;     ))
+
+;; (global-set-key (kbd "<f8>") 'flyspell-switch-dictionary)
 
 ;; fix key
 ;; (eval-after-load "flyspell"
@@ -126,18 +125,8 @@
 (eval-after-load "flyspell"
   '(define-key flyspell-mode-map (kbd "C-.") nil))
 
-;; (require 'auto-correct)
-;; (eval-after-load "flyspell"
-;;   '(auto-correct-mode))
 
-
-;; (setq ispell-program-name "hunspell")          ; Use hunspell to correct mistakes
-
-
-;; ;; WHEN ENABLED IT BREAKS AUTO-COMPLETION (AUTO-COMPLETE) FOR JAVA - workaround
-;; ;; in auto_complete_config.el needs therefore to be enabled!
 ;; (add-hook 'jde-mode-hook (lambda () (flyspell-mode))) ;; prog for
-
 ;; (add-hook 'tcl-mode-hook 'flyspell-mode)
 
 ;; (add-hook 'org-mode-hook (lambda () (flyspell-mode)))
@@ -145,14 +134,6 @@
 ;; (add-hook 'c-mode-hook (lambda () (flyspell-mode)))
 ;; (add-hook 'emacs-lisp-mode-hook (lambda () (flyspell-mode)))
 ;; (add-hook 'haskell-mode-hook (lambda () (flyspell-mode)))
-
-
-;; (defun turn-on-flyspell ()
-;;   "Force 'flyspell-mode' on using a positive arg.  For use in hooks."
-;;    (interactive)
-;;    (flyspell-mode 1))
-
-;; (turn-on-flyspell)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

@@ -384,13 +384,13 @@
 (setq gnus-topic-line-format "%i[ %u&topic-line; ] %v\n")
 
 ;; this corresponds to a topic line format of "%n %A"
-(defun gnus-user-format-function-topic-line (dummy)
-  (let ((topic-face (if (zerop total-number-of-articles)
-                        'my-gnus-topic-empty-face
-                      'my-gnus-topic-face)))
-    (propertize
-     (format "%s %d" name total-number-of-articles)
-     'face topic-face)))
+;; (defun gnus-user-format-function-topic-line (dummy)
+;;   (let ((topic-face (if (zerop total-number-of-articles)
+;;                         'my-gnus-topic-empty-face
+;;                       'my-gnus-topic-face)))
+;;     (propertize
+;;      (format "%s %d" name total-number-of-articles)
+;;      'face topic-face)))
 ;;
 ;;
 ;; ;;; turn on debug info

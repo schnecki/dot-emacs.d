@@ -112,6 +112,11 @@
   (local-set-key (kbd "C-c C-l") 'python-shell-send-buffer)
   )
 
+
+(setq flycheck-python-pycompile-executable "python3")
+;; (add-to-list 'flycheck-disabled-checkers 'python-flake8)
+(setq-default flycheck-disabled-checkers '(python-pylint))
+
 ;; add hook
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 ; (add-hook 'python-mode-hook 'flycheck-mode)
