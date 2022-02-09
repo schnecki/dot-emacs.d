@@ -54,8 +54,8 @@
 (require 'flyspell)
 
 ;; AUTOMATICALLY GUESS DICTIONARY
-;; (require 'auto-dictionary)
-;; (add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
+(require 'auto-dictionary)
+(add-hook 'flyspell-mode-hook (lambda () (auto-dictionary-mode 1)))
 
 ;; call every now and then
 ;; (setq flyspell-delay 1)
@@ -94,17 +94,17 @@
 (add-hook 'haskell-mode-hook 'flyspell-prog-mode)
 (add-hook 'emacs-lisp-mode-hook 'flyspell-prog-mode)
 
-;; (defun flyspell-switch-dictionary()
-;;   (interactive)
-;;   (let* ((dic ispell-current-dictionary)
-;;          (change (if (string= dic "german") "english"
-;;                    (if (string= dic "english")
-;;                        "spanish" "german"))))
-;;     (ispell-change-dictionary change)
-;;     (message "Dictionary switched from %s to %s" dic change)
-;;     ))
+(defun flyspell-switch-dictionary()
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+         (change (if (string= dic "german") "english"
+                   (if (string= dic "english")
+                       "spanish" "german"))))
+    (ispell-change-dictionary change)
+    (message "Dictionary switched from %s to %s" dic change)
+    ))
 
-;; (global-set-key (kbd "<f8>") 'flyspell-switch-dictionary)
+(global-set-key (kbd "<f8>") 'flyspell-switch-dictionary)
 
 ;; fix key
 ;; (eval-after-load "flyspell"

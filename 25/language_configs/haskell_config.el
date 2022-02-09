@@ -125,7 +125,7 @@
   (add-hook 'after-save-hook 'make-haskell-tags nil t)
   ;; (hare-init)
   ;; (flyspell-pr-mode nil)
-  (flyspell-prog-mode nil)
+  ;; (flyspell-prog-mode nil)
   (hindent-mode)
   (define-key haskell-mode-map (kbd "C-c h h") 'haskell-hoogle)
   (define-key haskell-mode-map (kbd "C-.") nil)
