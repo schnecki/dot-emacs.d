@@ -114,7 +114,7 @@
   (set-python-virtualenv)
 
   ;; use programming flyspell mode
-  (flyspell-prog-mode)
+  ;; (flyspell-prog-mode)
 
   (add-hook 'after-save-hook 'make-python-tags nil t)
 
@@ -126,7 +126,7 @@
 
 (setq flycheck-python-pycompile-executable "python3")
 ;; (add-to-list 'flycheck-disabled-checkers 'python-flake8)
-;; (setq-default flycheck-disabled-checkers '(python-pylint))
+(setq-default flycheck-disabled-checkers '(python-pylint))
 
 ;; add hook
 (add-hook 'python-mode-hook 'my-python-mode-hook)
