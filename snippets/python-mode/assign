@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: selfassign
+# key: =
+# group: object oriented
+# --
+self.${1:x} = $1
+$0

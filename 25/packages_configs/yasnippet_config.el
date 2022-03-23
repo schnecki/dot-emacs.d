@@ -39,8 +39,10 @@
 (require 'yasnippet)
 
 ;; additional snippets directories
-(setq yas-snippet-dirs (append yas-snippet-dirs
-                               '("~/.emacs.d/snippets/")))
+;; (setq yas-snippet-dirs (append yas-snippet-dirs
+;;                                '("~/.emacs.d/snippets/")))
+
+(setq yas-snippet-dirs '("~/.emacs.d/snippets/"))
 
 ;; do afterward
 (yas-global-mode 1)

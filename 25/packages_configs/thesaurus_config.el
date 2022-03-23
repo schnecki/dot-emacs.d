@@ -12,12 +12,12 @@
 ;;   'thesaurus-choose-synonym-and-replace)
 
 
-(require 'synonymous)
+(require 'synosaurus)
 
 
 (define-key global-map (kbd (concat prefix-command-key " s s"))
-  'synonymous-synonyms)
+  'synosaurus-lookup)
 
 
-(define-key global-map (kbd (concat prefix-command-key " s a"))
-  'synonymous-antonyms)
+;; (define-key global-map (kbd (concat prefix-command-key " s a"))
+;;   'synonymous-antonyms)

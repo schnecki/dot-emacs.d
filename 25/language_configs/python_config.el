@@ -121,6 +121,11 @@
 (add-hook 'python-mode-hook 'my-python-mode-hook)
 ; (add-hook 'python-mode-hook 'flycheck-mode)
 
+;; sort imports
+(require 'py-isort)
+(add-hook 'before-save-hook 'py-isort-before-save)
+
+
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 ;; (setq jedi:complete-on-dot t)                 ; optional
 

@@ -1,17 +1,13 @@
-# contributor: Mads D. Kristensen <madsdk@gmail.com>
-# name: prop
+# contributor: Julio Carlos Menendez <godinblack@gmail.com>
+# name: _get_foo ... _set_foo ... foo=property(...)
+# key: prop
 # --
-def ${1:foo}():
-   doc = """${2:Doc string}"""
-   def fget(self):
-       return self._$1
+def set_${1:foo}(self, value: ${3:int}) -> None:
+    self._$1 = value
 
-   def fset(self, value):
-       self._$1 = value
+def get_$1(self) -> $3:
+    return self._$1
 
-   def fdel(self):
-       del self._$1
-   return locals()
-$1 = property(**$1())
+$1 = property(get_$1, set_$1)
 
 $0
