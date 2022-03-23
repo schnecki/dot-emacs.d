@@ -50,7 +50,7 @@
     (visit-tags-table (concat esdir "TAGS"))))
 
 
-(defun set-pylint-virutalenv ()
+(defun set-python-virtualenv ()
   "Set (or create) the virtualenv environment for pylint."
   (interactive)
   (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
@@ -60,13 +60,21 @@
                     return d))
          (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
          (paths (split-string default-directory esdir))
-         (vdir  (if (file-exists-p (concat esdir "/.venv")) ".venv" "venv")))
-    (if (file-exists-p (concat esdir vdir))
+         (vdir  (if (file-exists-p (concat esdir "/.venv")) ".venv" "venv"))
+         (pylintdir (concat esdir "/" vdir "/bin/pylint"))
+         (mypydir (concat esdir "/" vdir "/bin/mypy")))
+
+    (if (and (file-exists-p (concat esdir vdir)) (file-exists-p pylintdir))
         ((lambda () (interactive)
            (message "virtualenv found, setting pylint executable path of virtualenv!")
            (setq flycheck-python-pylint-executable (concat esdir "/" vdir "/bin/pylint"))))
-      (shell-command (concat "cd " esdir " && virtualenv " vdir " && pip install pylint"))
-      (set-pylint-virutalenv))))
+      (set-python-virtualenv))
+    (if (and (file-exists-p (concat esdir vdir)) (file-exists-p mypydir))
+        ((lambda () (interactive)
+           (message "virtualenv found, setting mypy executable path of virtualenv!")
+           (setq flycheck-python-mypy-executable (concat esdir "/" vdir "/bin/mypy"))))
+      (shell-command (concat "cd " esdir " && virtualenv " vdir " && pip install mypy"))
+      (set-python-virtualenv))))
 
 
 ;; C MODE
@@ -75,18 +83,18 @@
 
   ;; ;; add auto-complete mode
   ;; (add-to-list 'ac-sources 'ac-source-semantic) ;; slows down auto complete)
-  ;; (add-to-list 'ac-sources 'ac-source-abbrev)
+  (add-to-list 'ac-sources 'ac-source-abbrev)
   ;; ;; (add-to-list 'ac-sources 'ac-source-css-property)
   ;; (add-to-list 'ac-sources 'ac-source-dictionary)
   ;; ;; (add-to-list 'ac-sources 'ac-source-eclim)
-  ;; (add-to-list 'ac-sources 'ac-source-yasnippet)
+  (add-to-list 'ac-sources 'ac-source-yasnippet)
   ;; ;; (add-to-list 'ac-sources 'ac-source-c-headers)
   ;; ;; (add-to-list 'ac-sources 'ac-source-symbols)
   ;; ;; (add-to-list 'ac-sources 'ac-source-filename)
   ;; ;; (add-to-list 'ac-sources 'ac-source-files-in-current-dir)
   ;; ;; (add-to-list 'ac-sources 'ac-source-gtags)
-  ;; (add-to-list 'ac-sources 'ac-source-etags)
-  ;; (add-to-list 'ac-sources 'ac-source-imenu)
+  (add-to-list 'ac-sources 'ac-source-etags)
+  (add-to-list 'ac-sources 'ac-source-imenu)
 
 
   ;; ;; (add-to-list 'ac-sources 'ac-source-semantic-raw) ;; slows down auto complete)
@@ -99,27 +107,30 @@
   ;; (semantic-mode t)
 
   ;; enable auto completion. If it doesn't work try to disable flyspell mode.
-  ; (auto-complete-mode)
+                                        ; (auto-complete-mode)
   (company-mode)
 
-  (set-pylint-virutalenv)
+  ;; custom function to install and set virtualenv binaries
+  (set-python-virtualenv)
 
   ;; use programming flyspell mode
-  ;; (flyspell-prog-mode)
+  (flyspell-prog-mode)
 
   (add-hook 'after-save-hook 'make-python-tags nil t)
 
   (local-set-key (kbd "C-c C-l") 'python-shell-send-buffer)
+
+
   )
 
 
 (setq flycheck-python-pycompile-executable "python3")
 ;; (add-to-list 'flycheck-disabled-checkers 'python-flake8)
-(setq-default flycheck-disabled-checkers '(python-pylint))
+;; (setq-default flycheck-disabled-checkers '(python-pylint))
 
 ;; add hook
 (add-hook 'python-mode-hook 'my-python-mode-hook)
-; (add-hook 'python-mode-hook 'flycheck-mode)
+                                        ; (add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; sort imports
 (require 'py-isort)
@@ -132,17 +143,6 @@
 ;; jedi for autocompletion, etc
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 
-
-;; (defun set-flychecker-executables ()
-;;   "Configure virtualenv for flake8 and lint."
-;;   (when (get-current-buffer-flake8)
-;;     (flycheck-set-checker-executable (quote python-flake8)
-;;                                      (get-current-buffer-flake8)))
-;;   (when (get-current-buffer-pylint)
-;;     (flycheck-set-checker-executable (quote python-pylint)
-;;                                      (get-current-buffer-pylint))))
-;; (add-hook 'flycheck-before-syntax-check-hook
-;;           #'set-flychecker-executables 'local)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; python_config.el ends here
