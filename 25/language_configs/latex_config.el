@@ -51,15 +51,18 @@
 (load-file (concat package-folder "tex_texify/tex_texify.el"))
 
 
+(require 'tex-site)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++ LATEX CONFIG ++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
+
 (setq TeX-save-query nil)
 (setq preview-auto-cache-preamble nil)
 (setq TeX-PDF-mode t)
-(setq-default TeX-master nil)
+;; (setq-default TeX-master nil)
 
 
 (require 'tex-site)

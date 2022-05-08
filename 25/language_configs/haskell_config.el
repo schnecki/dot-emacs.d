@@ -148,5 +148,8 @@
 ;; (add-hook 'haskell-mode-hook 'hlint-refactor-mode)
 
 
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
+
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;; haskell_config.el ends here

@@ -53,7 +53,7 @@
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
   (let ((dir (nth 0 (if (string-match "app/" default-directory)
-o                        (split-string default-directory "app")
+                        (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
                           (split-string default-directory "src")
                         (if (string-match "/R/" default-directory)

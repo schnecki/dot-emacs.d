@@ -11,8 +11,10 @@
   )
 
 ;; pull short
-(global-set-key (kbd (concat prefix-command-key " g p"))
-                'magit-pull)
+;; (with-eval-after-load 'magit
+;; 	(define-key magit-define-global-key-bindings
+;; 	(global-set-key (kbd (concat prefix-command-key " g p"))
+;;                 'magit-pull))
 
 ;; pull long
 ;; (global-set-key (kbd (concat prefix-command-key " g p u l"))
@@ -26,9 +28,9 @@
 ;; (global-set-key (kbd (concat prefix-command-key " g p u s"))
 ;;                 'magit-push)
 
-;; git log
-(global-set-key (kbd (concat prefix-command-key " g l"))
-                'magit-log)
+;; ;; git log
+;; (global-set-key (kbd (concat prefix-command-key " g l"))
+;;                 'magit-log)
 
 ;; git status
 (global-set-key (kbd (concat prefix-command-key " g s"))

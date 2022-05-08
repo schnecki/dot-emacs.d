@@ -115,6 +115,7 @@
 
   ;; use programming flyspell mode
   ;; (flyspell-prog-mode)
+  (flyspell-mode-off)
 
   (add-hook 'after-save-hook 'make-python-tags nil t)
 
