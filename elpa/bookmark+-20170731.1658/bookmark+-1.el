@@ -1521,7 +1521,7 @@ is enabled.  Set this to nil or \"\" if you do not want any lighter."
 ;; works for newer Emacs too.
 ;;;###autoload (autoload 'bmkp-w3m-allow-multiple-buffers-flag "bookmark+")
 (defalias 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag)
-(make-obsolete 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag)
+;; (make-obsolete 'bmkp-w3m-allow-multi-tabs-flag 'bmkp-w3m-allow-multiple-buffers-flag)
 (defcustom bmkp-w3m-allow-multiple-buffers-flag t
   "*Non-nil means jump to a W3M bookmark in a new buffer."
   :type 'boolean :group 'bookmark-plus)
@@ -1981,7 +1981,6 @@ See `bookmark-jump-other-window'."
  
 ;;(@* "Core Replacements (`bookmark-*' except `bookmark-bmenu-*')")
 ;;; Core Replacements (`bookmark-*' except `bookmark-bmenu-*') -------
-
 
 
 ;; REPLACES DOCUMENTATION of ORIGINAL in `bookmark.el'.
@@ -7367,7 +7366,7 @@ If either is a record then it need not belong to `bookmark-alist'."
 
 ;; Keep the alias for a while, in case someone has it referenced in a state file.
 (defalias 'bmkp-info-cp 'bmkp-info-node-name-cp)
-(make-obsolete 'bmkp-info-cp 'bmkp-info-node-name-cp)
+;; (make-obsolete 'bmkp-info-cp 'bmkp-info-node-name-cp)
 
 (defun bmkp-info-node-name-cp (b1 b2)
   "True if bookmark B1 sorts as an Info bookmark before B2.

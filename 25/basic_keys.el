@@ -183,7 +183,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; +++++++++++++++++++++++ TOGGLE LINE TRUNCATION +++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(setq-default truncate-lines 0)
+(setq-default truncate-lines 1)
 (global-set-key [f12] 'toggle-truncate-lines)
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

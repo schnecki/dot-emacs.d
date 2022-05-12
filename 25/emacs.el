@@ -22,6 +22,10 @@
 ;; ++++++++++++++ which means no extra package needed +++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+;; Remove keys that are interfering
+(global-set-key (kbd "C-x x g") nil)		;
+(global-set-key (kbd "C-x x t") nil) 		; toggle-truncate-lines from ‘simple.el’.
+
 (load (concat load-folder "basics.el"))
 ;; custom themes
 (load (concat load-folder "custom_themes.el"))
