@@ -384,8 +384,8 @@
 ;; this corresponds to a topic line format of "%n %A"
 (defun gnus-user-format-function-topic-line (dummy)
   (let ((topic-face (if (zerop total-number-of-articles)
-                        'my-gnus-topic-empty-face
-                      'my-gnus-topic-face)))
+                        'italic
+                      'bold)))
     (propertize
      (format "%s %d" name total-number-of-articles)
      'face topic-face)))

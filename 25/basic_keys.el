@@ -191,7 +191,7 @@ buffer read-only, so I suggest setting kill-read-only-ok to t."
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ;; (require 'flyspell-correct-helm)
-;; (define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previous)
+;; (define-key flyspell-mode-map (kbd "C-;") 'flyspell-correct-previousy)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

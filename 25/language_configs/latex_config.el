@@ -51,16 +51,18 @@
 (load-file (concat package-folder "tex_texify/tex_texify.el"))
 
 
+(require 'tex-site)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++ LATEX CONFIG ++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
 (setq TeX-save-query nil)
 (setq preview-auto-cache-preamble nil)
 (setq TeX-PDF-mode t)
-(setq-default TeX-master nil)
+;; (setq-default TeX-master nil)
 
 
 (require 'tex-site)
@@ -159,9 +161,11 @@
 
 
     (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
-    (shell-command
-     (concat "cd " esdir " && find . -name \"*.tex\" -not -name \"_*\" -not -name \".*\" | etags - 1>/dev/null 2>/dev/null") nil)
+    (async-shell-command
+     (concat "cd " esdir " && find . -name \"*.tex\" -not -name \"_*\" -not -name \".*\" | etags - 1>/dev/null 2>/dev/null"))
     (visit-tags-table (concat dir "TAGS"))))
+
+(add-to-list 'display-buffer-alist '("*Async Shell Command*" display-buffer-no-window (nil)))
 
 ;; auto completion for auctex
 (require 'auto-complete-auctex)
@@ -206,7 +210,7 @@
   (auto-fill-mode)
 
   ;; create and set tags file
-  (add-hook 'after-save-hook 'make-tex-tags nil t)
+  ;; (add-hook 'after-save-hook 'make-tex-tags nil t)
 
   ;; add to hook
   ;; (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill nil t)
@@ -242,6 +246,7 @@
 (add-hook 'TeX-latex-mode 'my/latex-minor-mode)
 (add-hook 'LaTeX-mode-hook 'my/latex-minor-mode)
 (add-hook 'LaTeX-mode-hook #'tex-smart-umlauts-decode)
+(add-hook 'TeX-mode-hook 'my/latex-minor-mode)
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

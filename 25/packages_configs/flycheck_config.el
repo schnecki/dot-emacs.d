@@ -44,6 +44,8 @@
 ;; FLYCHECK MODE LINE COLOR
 (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)
 
+(setq flycheck-check-syntax-automatically '(mode-enabled save new-line idle-change))
+
 ;; Haskell setup
 ;; (eval-after-load 'flycheck
 ;;  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))

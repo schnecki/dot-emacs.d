@@ -2,12 +2,12 @@
 # name: _get_foo ... _set_foo ... foo=property(...)
 # key: propsg
 # --
-def _set_${1:foo}(self, value):
+def set_${1:foo}(self, value: ${3:int}) -> None:
     self._$1 = value
 
-def _get_$1(self):
+def get_$1(self) -> $3:
     return self._$1
 
-$1 = property(_get_$1, _set_$1)
+$1 = property(get_$1, set_$1)
 
 $0

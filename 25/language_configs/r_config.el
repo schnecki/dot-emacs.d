@@ -103,6 +103,10 @@
 (defun my-r-mode-hook ()
   (add-hook 'after-save-hook 'make-r-tags nil t) )
 
+;; (setq auto-mode-alist
+;;       (cons '("\\.r$" . ess-r-mode) auto-mode-alist))
+
+
 ;; add hook
 (add-hook 'r-mode-hook 'my-r-mode-hook)
 (add-hook 'ess-r-mode-hook 'my-r-mode-hook)
