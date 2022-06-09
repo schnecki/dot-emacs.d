@@ -1,0 +1,2 @@
+;;; Generated package description from pine-script-mode.el  -*- no-byte-compile: t -*-
+(define-package "pine-script-mode" "20210629.1257" "Trading View Pine Script major mode" '((emacs "24")) :commit "d8ce5dc595a053e80debf6c1e330995c739a8b05" :authors '(("Eric Crosson" . "eric.s.crosson@utexas.edu")) :maintainer '("Eric Crosson" . "eric.s.crosson@utexas.edu") :keywords '("extensions") :url "https://github.com/ericcrosson/pine-script-mode")

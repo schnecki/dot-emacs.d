@@ -1,3 +1,7 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -230,7 +234,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("papers" 0 6
+(#1=(#("aral" 0 4
+      (bmkp-full-record #1#))
+    (buffer-name . "aral/")
+    (visits . 0)
+    (time . #2=(25248 23468 742151 103000))
+    (created . #2#)
+    (position . 272)
+    (filename . "   - no file -")
+    (desktop-file . "/home/schnecki/Documents/projects/aral/emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("papers" 0 6
       (bmkp-full-record #1#))
     (buffer-name . "paper.tex")
     (visits . 0)

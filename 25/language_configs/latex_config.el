@@ -74,6 +74,10 @@
 ;; (add-hook 'reftex-load-hook 'imenu-add-menubar-index)
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 
+(setq auto-mode-alist
+      (cons '("\\.tikz$" . latex-mode) auto-mode-alist))
+
+
 ;; Activate nice interface between RefTeX and AUCTeX
 (setq reftex-plug-into-AUCTeX t)
 
