@@ -58,10 +58,10 @@
                           (split-string default-directory "src")
                         (if (string-match "/R/" default-directory)
                             (split-string default-directory "/R/")
-                          (if (string-match "shared/" default-directory)
-                              (split-string default-directory "shared")
-                            (if (string-match "exp/" default-directory)
-                                (split-string default-directory "exp")
+                          (if (string-match "analysis/" default-directory)
+                              (split-string default-directory "analysis")
+                            (if (string-match "analisis/" default-directory)
+                                (split-string default-directory "analisis")
                               (if (string-match "analysis/" default-directory)
                                   (split-string default-directory "analysis")
                                 (if (string-match "fay-shared/" default-directory)
@@ -74,28 +74,11 @@
                                           (split-string default-directory "bench/")
                                         (split-string default-directory "test"))
                                       ))))))))))))
-    (setq esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
-    (message (concat "esdir: " esdir))
-    (setq tagslst '()) ;; '("."))
-    (if (file-exists-p (concat esdir "src")) (add-to-list 'tagslst "src"))
-    (if (file-exists-p (concat esdir "shared")) (add-to-list 'tagslst "shared"))
-    (if (file-exists-p (concat esdir "test")) (add-to-list 'tagslst "test"))
-    (if (file-exists-p (concat esdir "app")) (add-to-list 'tagslst "app"))
-    (if (file-exists-p (concat esdir "exp")) (add-to-list 'tagslst "exp"))
-    (if (file-exists-p (concat esdir "examples")) (add-to-list 'tagslst "examples"))
-    (if (file-exists-p (concat esdir "fay")) (add-to-list 'tagslst "fay"))
-    (if (file-exists-p (concat esdir "fay_shared")) (add-to-list 'tagslst "fay_shared"))
-    (setq dirs (mapconcat 'identity tagslst " "))
-    (message (concat "dirs: " dirs))
+    (message (concat "dir: " dir))
+    (setq esdir (string-replace " " "\\\\ " dir))
     (shell-command
-     (concat "cd " esdir " && find " dirs " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
-    ;; (concat "cd " esdir
-    ;;         ;; " && hasktags --ignore-close-implementation -e --cache . 2>/dev/null 1>/dev/null") nil)
-    ;;         " && hasktags -e --ignore-close-implementation "
-    ;;         dirs
-    ;;         ;; " 2>/dev/null 1>/dev/null"
-    ;;         ) nil)
-    (visit-tags-table (concat esdir "TAGS")))
+     (concat "cd " esdir " && find " esdir " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
+    (visit-tags-table (concat esdir "/TAGS")))
   )
 
 
