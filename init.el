@@ -130,7 +130,7 @@
   (require 'package)
   (package-initialize)
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  ;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
 
@@ -149,19 +149,19 @@
         ace-jump-mode
         ace-jump-buffer                 ; config in ace-jump-mode config
         ace-window                      ; config in ace-jump-mode config
-        android-mode
+        ;; android-mode
         auctex
         auto-complete
         auto-complete-auctex
         auto-complete-c-headers
         auto-complete-clang
         auto-dictionary
-        arduino-mode
+        ;; arduino-mode
         ;; backup-each-save ;;; solved differently, see backup_each_save_config.el
         backup-walker
-        bbdb
+        ;; bbdb
         bison-mode
-        bookmark+
+        ;; bookmark+
         browse-kill-ring
         cdlatex
         change-inner
@@ -198,10 +198,10 @@
         gnuplot
         gnuplot-mode
         hamlet-mode
-        haskell-mode
+        ;; haskell-mode
         header2
-        hindent
-        hlint-refactor
+        ;; hindent
+        ;; hlint-refactor
         hayoo
         helm
         helm-bibtex
@@ -219,7 +219,7 @@
         ido-gnus
         ido-hacks
         ido-ubiquitous
-        intero
+        ;; intero
         javadoc-lookup
         javap-mode
         jedi
@@ -233,7 +233,7 @@
         org
         org-ac
         org-cua-dwim
-        org-eldoc
+        ;; org-eldoc
         org-gcal
         org-plus-contrib
         orgtbl-ascii-plot
@@ -573,9 +573,9 @@
 
 
 ;; Open gnus if it is loaded and user does not decline
-(if (fboundp 'gnus)
-    (if (y-or-n-p-with-timeout "Open Gnus (You got 5 seconds do decline)? " 5 t)
-        (gnus)))
+;; (if (fboundp 'gnus)
+;;     (if (y-or-n-p-with-timeout "Open Gnus (You got 5 seconds do decline)? " 5 t)
+;;         (gnus)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
