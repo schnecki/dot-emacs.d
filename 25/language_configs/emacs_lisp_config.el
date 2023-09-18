@@ -98,7 +98,7 @@
   (company-mode)
 
   ;; enable semantic for auto complete mode
-  (semantic-mode t)
+  ;; (semantic-mode t)
 
   ;; use programming flyspell mode
   (flyspell-prog-mode)

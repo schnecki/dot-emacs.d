@@ -1,2 +1,0 @@
-;;; Generated package description from /home/schnecki/.emacs.d/elpa/maude-mode-20200725.2035/maude-mode.el  -*- no-byte-compile: t -*-
-(define-package "maude-mode" "20200725.2035" "Emacs mode for the programming language Maude" '((emacs "25")) :commit "008f372631a1efe15be033792cfb1686b1736aeb" :authors '(("Ellef Gjelstad <ellefg+maude*ifi.uio.no>")) :maintainer '("Rudi Schlatte" . "rudi@constantly.at") :keywords '("languages" "maude") :url "https://github.com/rudi/abs-mode")

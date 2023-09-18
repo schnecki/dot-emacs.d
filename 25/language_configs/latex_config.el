@@ -171,8 +171,9 @@
 
 (add-to-list 'display-buffer-alist '("*Async Shell Command*" display-buffer-no-window (nil)))
 
+;; WE USE COMPANY MODE
 ;; auto completion for auctex
-(require 'auto-complete-auctex)
+;; (require 'auto-complete-auctex)
 
 
 ;; MINOR MODE HOOK
@@ -208,10 +209,20 @@
   ;; (add-to-list 'ac-sources 'ac-source-words-in-same-mode-buffers)
   ;; (add-to-list 'ac-modes 'latex-mode)   ; make auto-complete aware of `latex-mode`
   ;; (add-to-list 'ac-modes 'gams-mode)
+  ;; (setq ac-sources
+  ;;        (append '(ac-source-math-unicode
+  ;;          ac-source-math-latex
+  ;;          ac-source-latex-commands)
+  ;;                ac-sources))
+  ;; (ac-flyspell-workaround) ; fixes a known bug of delay due to flyspell (if it is there)
+  ;; (require 'auto-complete-config) ; should be after add-to-list 'ac-modes and hooks
+  ;; (ac-config-default)
+  ;; (setq ac-auto-start nil)            ; if t starts ac at startup automatically
+  ;; (setq ac-auto-show-menu t)
 
+  ;; We use company mode
   ;; (auto-complete-mode)
-  ;; (company-mode)
-  (auto-fill-mode)
+  ;; (auto-fill-mode)
 
   ;; create and set tags file
   ;; (add-hook 'after-save-hook 'make-tex-tags nil t)
@@ -232,18 +243,13 @@
   (require 'company-auctex)
   (company-auctex-init)
 
+
   ;; bibtex
-  (require 'company-bibtex)
-  (add-to-list 'company-backends 'company-bibtex)
+  ;; (require 'company-bibtex)
+  ;; (add-to-list 'company-backends 'company-bibtex)
 
   (company-mode)
-
-;; D company-box        20190311.1745 installed             Company front-end with icons
-;; D company-cabal      20170917.1317 installed             company-mode cabal backend
-;; D company-ghc        20170918.833  installed             company-mode ghc-mod backend
-;; D company-ghci       20190707.311  installed             company backend which uses the current ghci process.
-;; D company-quickhelp  20180525.1003 installed             Popup documentation for completion candidates
-
+  ;; (setq auto-complete-mode nil)
 
   )
 
@@ -257,14 +263,14 @@
 ;; +++++++++++++++++++++++++++ BIBTEX CONFIG ++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-(defun my/bibtex-minor-mode ()
-  "Minor mode for bibtex"
+;; (defun my/bibtex-minor-mode ()
+;;   "Minor mode for bibtex"
 
-  (add-hook 'before-save-hook 'bibtex-reformat)
+;;   (add-hook 'before-save-hook 'bibtex-reformat)
 
-  )
+;;   )
 
-(add-hook 'bibtex-mode-hook 'my/bibtex-minor-mode)
+;; (add-hook 'bibtex-mode-hook 'my/bibtex-minor-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; latex_config.el ends here

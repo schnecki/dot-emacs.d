@@ -60,21 +60,20 @@
                     return d))
          (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/")))
          (paths (split-string default-directory esdir))
-         (vdir  (if (file-exists-p (concat esdir "/.venv")) ".venv" "venv"))
+         (vdir  (concat esdir (if (file-exists-p (concat esdir "/.venv")) ".venv" "venv")))
          (pylintdir (concat esdir "/" vdir "/bin/pylint"))
          (mypydir (concat esdir "/" vdir "/bin/mypy")))
-
-    (if (and (file-exists-p (concat esdir vdir)) (file-exists-p pylintdir))
+    (message (concat "virtual env directory: " vdir))
+    (if (and (file-exists-p vdir) (file-exists-p pylintdir))
         ((lambda () (interactive)
            (message "virtualenv found, setting pylint executable path of virtualenv!")
-           (setq flycheck-python-pylint-executable (concat esdir "/" vdir "/bin/pylint"))))
-      (set-python-virtualenv))
-    (if (and (file-exists-p (concat esdir vdir)) (file-exists-p mypydir))
+           (setq flycheck-python-pylint-executable (concat vdir "/bin/pylint")))))
+    (if (and (file-exists-p vdir) (file-exists-p mypydir))
         ((lambda () (interactive)
            (message "virtualenv found, setting mypy executable path of virtualenv!")
-           (setq flycheck-python-mypy-executable (concat esdir "/" vdir "/bin/mypy"))))
-      (shell-command (concat "cd " esdir " && virtualenv " vdir " && pip install mypy"))
-      (set-python-virtualenv))))
+           (setq flycheck-python-mypy-executable (concat vdir "/bin/mypy")))
+         (shell-command (concat "virtualenv " vdir " && pip install mypy")))
+      )))
 
 
 ;; C MODE
@@ -120,9 +119,19 @@
   (add-hook 'after-save-hook 'make-python-tags nil t)
 
   (local-set-key (kbd "C-c C-l") 'python-shell-send-buffer)
-
-
+  ;; (flymake-mode)
   )
+
+
+(add-to-list 'process-coding-system-alist '("python" . (utf-8 . utf-8)))
+(setq elpy-rpc-python-command "python3")
+
+(require 'jupyter)
+(require 'elpy)
+(elpy-enable)
+(when (load "flycheck" t t)
+  ;; (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 
 (setq flycheck-python-pycompile-executable "python3")
@@ -134,8 +143,18 @@
                                         ; (add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; sort imports
-(require 'py-isort)
-(add-hook 'before-save-hook 'py-isort-before-save)
+;; (require 'py-isort)
+;; (add-hook 'before-save-hook 'py-isort-before-save)
+
+;; flymake
+;; (require 'flymake)
+
+;; (set-variable 'flymake-log-level 0)
+;; (setq flymake-start-syntax-check-on-newline t)
+;; (setq flymake-no-changes-timeout 5)
+;; (add-hook 'python-mode-hook 'flymake-mode-on)
+;; (add-to-list 'flymake-allowed-file-name-masks
+;;              '("\\.py\\'" flymake-simple-make-init))
 
 
 ;; (add-hook 'python-mode-hook 'jedi:setup)

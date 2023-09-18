@@ -1,0 +1,2 @@
+;;; Generated package description from revert-buffer-all.el  -*- no-byte-compile: t -*-
+(define-package "revert-buffer-all" "20230109.536" "Revert all open buffers" '((emacs "24.3")) :commit "08e90d2d75f5d5900ca2a0d2670592bcf2b2d68f" :authors '(("Campbell Barton" . "ideasman42@gmail.com")) :maintainer '("Campbell Barton" . "ideasman42@gmail.com") :url "https://codeberg.org/ideasman42/emacs-buffer-revert-all")

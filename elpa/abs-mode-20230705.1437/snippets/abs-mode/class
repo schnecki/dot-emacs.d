@@ -1,0 +1,7 @@
+# -*- mode: snippet; -*-
+# name: class
+# key: class
+# --
+class ${1:ClassName} ${2:implements ${3:InterfaceName} }{
+    $0
+}

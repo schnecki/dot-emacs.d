@@ -2,6 +2,34 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
 ;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
@@ -234,7 +262,35 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("aral" 0 4
+(#1=(#("000000237 tmp/" 0 14
+      (bmkp-full-record #1#))
+    (buffer-name . "tmp/")
+    (front-context-string . "PDF\n  drwxrwxrwt")
+    (rear-context-string . ":29 2023-A-2209.")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 0)
+    (time . #2=(25634 42342 610450 470000))
+    (created . #2#)
+    (position . 237)
+    (filename . #3="/tmp/")
+    (dired-directory . #3#)
+    (dired-marked)
+    (dired-switches . "-al")
+    (dired-subdirs)
+    (dired-hidden-dirs)
+    (handler . bmkp-jump-dired))
+#1=(#("agv-rl" 0 6
+      (bmkp-full-record #1#))
+    (buffer-name . "agv-rl/")
+    (visits . 3)
+    (time 25416 10650 965676 237000)
+    (created 25339 54168 940785 451000)
+    (position . 258)
+    (filename . "   - no file -")
+    (desktop-file . "/home/schnecki/Documents/projects/agv-rl/emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("aral" 0 4
       (bmkp-full-record #1#))
     (buffer-name . "aral/")
     (visits . 0)
@@ -287,9 +343,9 @@
 #1=(#("work" 0 4
       (bmkp-full-record #1#))
     (buffer-name . "work/")
-    (visits . 0)
-    (time . #2=(24618 18375 893235 488000))
-    (created . #2#)
+    (visits . 1)
+    (time 25788 15415 623719 579000)
+    (created 24618 18375 893235 488000)
     (position . 244)
     (filename . "   - no file -")
     (desktop-file . "/home/schnecki/Documents/work/.emacs.desktop")
@@ -336,11 +392,13 @@
     (handler . bmkp-jump-desktop))
 #1=(#("aral-trader" 0 11
       (bmkp-full-record #1#))
-    (buffer-name . "aral-trader/")
-    (visits . 2)
-    (time 25064 12213 410775 179000)
-    (created 23970 14613 997909 440000)
-    (position . 260)
+    (annotation)
+    (tags)
+    (buffer-name . "LearnOrdering.hs")
+    (visits . 0)
+    (time 25788 15514 886131 430000)
+    (created 25788 15514 886131 430000)
+    (position . 1)
     (filename . "   - no file -")
     (desktop-file . "/home/schnecki/Documents/projects/aral-trader/emacs.desktop")
     (handler . bmkp-jump-desktop))
@@ -537,15 +595,5 @@
     (position . 9122)
     (filename . "   - no file -")
     (desktop-file . "/home/schnecki/Documents/Jobs/UIBK/CL/tct/emacs.desktop")
-    (handler . bmkp-jump-desktop))
-#1=(#("HaskellMachineLearning" 0 22
-      (bmkp-full-record #1#))
-    (buffer-name . "*haskellmachinelearning*")
-    (visits . 0)
-    (time . #2=(22120 10336 836648 887000))
-    (created . #2#)
-    (position . 2005)
-    (filename . "   - no file -")
-    (desktop-file . "/home/schnecki/Programmierung/HaskellMachineLearning/emacs.desktop")
     (handler . bmkp-jump-desktop))
 )

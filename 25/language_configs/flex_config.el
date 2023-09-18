@@ -69,9 +69,9 @@
      (concat "cd " esdir " && find . -name \"*.c\" -o -name \"*.h\" -o -name \"*.cpp\" -o -name \"*.hpp\" -o -name \"*.l\" | etags - 1>/dev/null 2>/dev/null") nil)
     (visit-tags-table (concat dir "TAGS"))))
 
-(require 'auto-complete-config)
-(require 'auto-complete-c-headers)
-(require 'auto-complete)
+;; (require 'auto-complete-config)
+;; (require 'auto-complete-c-headers)
+;; (require 'auto-complete)
 
 ;; C MODE
 (defun my-flex-mode-hook ()
@@ -129,7 +129,7 @@
                                (insert ">")
                                ;; (if (not (auto-complete-mode))
                                ;;     (auto-complete-mode t))
-                               (auto-complete)
+                               ;; (auto-complete)
                                ;; (semantic-ia-complete-tip (point))
                                )))
 

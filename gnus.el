@@ -51,17 +51,25 @@
 ;; INCOMING MAIL CONFIG
 (setq gnus-select-method '(nnnil nil))
 (setq gnus-secondary-select-methods
-      '((nnimap "uibk_exchange"
-                (nnimap-address "exchange.uibk.ac.at")
-                (nnimap-server-port 993)
-                (nnimap-stream ssl)
-                (nnir-search-engine imap))
+      '(;; (nnimap "uibk_exchange"
+        ;;         (nnimap-address "exchange.uibk.ac.at")
+        ;;         (nnimap-server-port 993)
+        ;;         (nnimap-stream ssl)
+        ;;         (nnir-search-engine imap))
         (nnimap "uibk"
                 (nnimap-address "mail.uibk.ac.at")
                 (nnimap-stream ssl)
                 (nnimap-server-port 993)
                 (nnir-search-engine imap))
         (nnimap "gmail"
+                (nnimap-address "imap.gmail.com")
+                (nnimap-stream ssl)
+                (nnimap-server-port 993)
+                (nnir-search-engine imap)
+                ;; (nnmail-expiry-target "nnimap+work:[Gmail]/Trash")
+                ;; (nnmail-expiry-wait 'immediate)
+                )
+        (nnimap "schnecki.cmleon"
                 (nnimap-address "imap.gmail.com")
                 (nnimap-stream ssl)
                 (nnimap-server-port 993)

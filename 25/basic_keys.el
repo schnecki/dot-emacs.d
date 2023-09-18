@@ -115,6 +115,7 @@
 ;; TAGS
 (global-set-key (kbd "C-c C-.") 'find-tag-other-window) ; pointer moves
 (global-set-key (kbd "C-.") 'view-tag-other-window)     ; pointer stays
+(global-set-key (kbd (concat prefix-command-key " t")) nil)                       ;; unset prefix
 (global-set-key (kbd (concat prefix-command-key " t r")) 'tags-reset-tags-tables);; Reset tags table
 (global-set-key (kbd (concat prefix-command-key " t v")) 'visit-tags-table) ;; Visit tags table
 (global-set-key (kbd "M-*") 'pop-tag-mark)

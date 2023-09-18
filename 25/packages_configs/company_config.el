@@ -26,7 +26,7 @@
 ;; (add-to-list 'company-backends 'company-yasnippet)
 
 ;; immediate completion
-(setq company-idle-delay 0.1)
+(setq company-idle-delay 0.5)
 (setq company-minimum-prefix-length 3)
 
 ;; start completion using company
@@ -72,4 +72,3 @@
 ;; ;; doc info
 ;; (require 'company-quickhelp)
 ;; (company-quickhelp-mode)
-

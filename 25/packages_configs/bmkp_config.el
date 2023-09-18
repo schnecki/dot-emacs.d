@@ -56,6 +56,19 @@
 ;;
 ;;; Code:
 
+;; see https://www.emacswiki.org/emacs/BookmarkPlus
+
+(quelpa '(bookmark+ :fetcher wiki
+                    :files
+                    ("bookmark+.el"
+                     "bookmark+-mac.el"
+                     "bookmark+-bmu.el"
+                     "bookmark+-1.el"
+                     "bookmark+-key.el"
+                     "bookmark+-lit.el"
+                     "bookmark+-doc.el"
+                     "bookmark+-chg.el")))
+
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; +++++++++++++++++++++++++ BOOKMARK PLUS ++++++++++++++++++++++++++++++
@@ -63,6 +76,13 @@
 
 (require 'bookmark+)
 (require 'desktop)
+
+(global-set-key (kbd "C-x x g") nil)
+(global-set-key (kbd "C-x x m") nil)
+(global-set-key (kbd "C-x x e") nil)
+(global-set-key (kbd "C-x x s") nil)
+(global-set-key (kbd "C-x x b") nil)
+
 
 (setq bmkp-desktop-jump-save-before-flag t)
 (setq bmkp-desktop-save-as-last t)

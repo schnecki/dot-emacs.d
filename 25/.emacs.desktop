@@ -20,10 +20,9 @@
   "/home/schnecki/.emacs.d/24/basics.el"
   "basics.el"
   'emacs-lisp-mode
-  '(auto-complete-mode linum-mode highlight-changes-mode semantic-stickyfunc-mode senator-minor-mode semantic-idle-scheduler-mode semantic-idle-summary-mode semantic-idle-completions-mode semantic-mru-bookmark-mode undo-tree-mode window-number-mode project-mode)
+  '(linum-mode highlight-changes-mode semantic-stickyfunc-mode senator-minor-mode semantic-idle-scheduler-mode semantic-idle-summary-mode semantic-idle-completions-mode semantic-mru-bookmark-mode undo-tree-mode window-number-mode project-mode)
   839
   '(818 t)
   nil
   nil
   '((buffer-file-coding-system . undecided-unix) (overwrite-mode) (highlight-changes-mode . t)))
-

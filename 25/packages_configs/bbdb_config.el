@@ -51,34 +51,34 @@
 
 ;; init bbdb for gnus
 (require 'bbdb)
-(bbdb-initialize 'gnus 'message 'sc 'w3)
+(bbdb-initialize 'gnus 'message 'sc)
 (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
 
 
 ;; ;; gnus scores
-;; (setq gnus-score-find-score-files-function
-;;       '(gnus-score-find-bnews bbdb/gnus-score))
+(setq gnus-score-find-score-files-function
+      '(gnus-score-find-bnews bbdb/gnus-score))
 
 ;; supercite
-(setq sc-preferred-attribution-list
-  '("sc-lastchoice" "x-attribution" "sc-consult"
-    "initials" "firstname" "lastname"))
+;; (setq sc-preferred-attribution-list
+;;   '("sc-lastchoice" "x-attribution" "sc-consult"
+;;     "initials" "firstname" "lastname"))
 
-(setq sc-attrib-selection-list
-             '(("sc-from-address"
-                ((".*" . (bbdb/sc-consult-attr
-                          (sc-mail-field "sc-from-address")))))))
+;; (setq sc-attrib-selection-list
+;;              '(("sc-from-address"
+;;                 ((".*" . (bbdb/sc-consult-attr
+;;                           (sc-mail-field "sc-from-address")))))))
 
 
-(setq sc-mail-glom-frame
-   '((begin                        (setq sc-mail-headers-start (point)))
-     ("^x-attribution:[ \t]+.*$"   (sc-mail-fetch-field t) nil t)
-     ("^\\S +:.*$"                 (sc-mail-fetch-field) nil t)
-     ("^$"                         (progn (bbdb/sc-default)
-                                   (list 'abort '(step . 0))))
-     ("^[ \t]+"                    (sc-mail-append-field))
-     (sc-mail-warn-if-non-rfc822-p (sc-mail-error-in-mail-field))
-     (end                          (setq sc-mail-headers-end (point)))))
+;; (setq sc-mail-glom-frame
+;;    '((begin                        (setq sc-mail-headers-start (point)))
+;;      ("^x-attribution:[ \t]+.*$"   (sc-mail-fetch-field t) nil t)
+;;      ("^\\S +:.*$"                 (sc-mail-fetch-field) nil t)
+;;      ;; ("^$"                         (progn (bbdb/sc-default)
+;;      ;;                               (list 'abort '(step . 0))))
+;;      ("^[ \t]+"                    (sc-mail-append-field))
+;;      (sc-mail-warn-if-non-rfc822-p (sc-mail-error-in-mail-field))
+;;      (end                          (setq sc-mail-headers-end (point)))))
 
 
 ;; always display the names

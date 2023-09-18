@@ -149,7 +149,7 @@
         ace-jump-mode
         ace-jump-buffer                 ; config in ace-jump-mode config
         ace-window                      ; config in ace-jump-mode config
-        android-mode
+        ;; android-mode
         auctex
         auto-complete
         auto-complete-auctex
@@ -263,6 +263,13 @@
         yasnippet
         ))
 
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+(require 'quelpa)
+
 
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -342,8 +349,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(Flymake-compilation-prevents-syntax-check nil)
- '(TeX-auto-save t)
- '(TeX-parse-self t)
+ '(TeX-auto-save t t)
+ '(TeX-parse-self t t)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
  '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
@@ -368,10 +375,16 @@
  '(clang-format-style "{BasedOnStyle: llvm, ColumnLimit: 160}")
  '(column-number-mode t)
  '(company-box-icons-alist 'company-box-icons-icons-in-terminal)
- '(company-idle-delay 0.01)
+ '(company-dabbrev-downcase nil)
+ '(company-dabbrev-ignore-case nil)
+ '(company-tooltip-align-annotations t)
  '(cua-delete-selection nil)
  '(custom-safe-themes
    '("efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4ca84f9861113f889d505b66c4a9c30b81400f450b54f4c857d3eb44c5bdc601" "0615f6940c6c5e5638c9157644263889db755d43576c25f7b311806f4cfe2c3a" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
+ '(dabbrev-case-distinction nil)
+ '(dabbrev-case-fold-search nil)
+ '(dabbrev-case-replace nil)
+ '(dabbrev-upcase-means-case-search t)
  '(delete-active-region nil)
  '(dired-kept-versions 10)
  '(display-time-mode t)
@@ -399,6 +412,8 @@
  '(eclimd-autostart nil)
  '(ede-project-directories
    '("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04"))
+ '(elpy-disable-backend-error-display nil)
+ '(elpy-rpc-python-command "python3")
  '(flycheck-checker-error-threshold nil)
  '(flycheck-clang-args '("-DFLYCHECK"))
  '(flycheck-clang-include-path
@@ -409,20 +424,25 @@
  '(flycheck-flake8-maximum-line-length 160)
  '(flycheck-ghc-args
    '("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float"))
- '(flycheck-ghc-language-extensions '("NoStarIsType"))
+ '(flycheck-ghc-language-extensions '("NoStarIsType" "OverlappingInstances"))
  '(flycheck-ghc-search-path '("src" "shared" "test" "examples"))
+ '(flycheck-ghc-stack-project-file nil)
  '(flycheck-lintr-linters
    "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, object_name_linter = NULL)")
+ '(flycheck-python-pycompile-executable "python3")
  '(flymake-gui-warnings-enabled nil)
  '(frame-background-mode 'dark)
  '(global-eclim-mode t)
  '(global-flycheck-mode t)
  '(global-undo-tree-mode t)
  '(gnus-topic-display-empty-topics nil)
+ '(grammarly-password "1knuesi1#")
+ '(grammarly-username "manuel.schnecki@gmail.com")
  '(haskell-align-imports-pad-after-name t)
  '(haskell-ask-also-kill-buffers nil)
  '(haskell-doc-prettify-types t)
  '(haskell-font-lock-symbols nil)
+ '(haskell-hoogle-command "hoogle --count=80")
  '(haskell-interactive-mode-collapse t)
  '(haskell-interactive-popup-errors nil)
  '(haskell-mode-hook
@@ -476,6 +496,12 @@
  '(jde-sourcepath '("./src/main" "./src/test") t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
+ '(languagetool-console-command "org.languagetool.commandline.Main" t)
+ '(languagetool-disabled-rules '("WHITESPACE_RULE"))
+ '(languagetool-java-arguments
+   '("-Dfile.encoding=UTF-8" "-cp" "/usr/share/languagetool:/usr/share/java/languagetool/*") t)
+ '(languagetool-local-disabled-rules nil)
+ '(languagetool-server-command "org.languagetool.server.HTTPServer" t)
  '(lsp-haskell-process-path-hie "ghcide")
  '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
@@ -501,13 +527,15 @@
    '(("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+ '(py-isort-options '("-l 160"))
  '(safe-local-variable-values
-   '((intero-targets "borl:lib")
-     (TeX-master . paper\.tex)
-     (TeX-mast . presentation\.tex)
+   '((intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
+     (intero-targets "borl:lib")
+     (TeX-master . paper.tex)
+     (TeX-mast . presentation.tex)
      (TeX-command-extra-options . "-shell-escape")
-     (TeX-mast . paper\.tex)
+     (TeX-mast . paper.tex)
      (header-auto-update-enabled)))
  '(semanticdb-javap-classpath
    '((concat
@@ -552,9 +580,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-marker-1 ((t nil)))
+ '(ein:basecell-input-area-face ((t (:extend t :background "white smoke"))))
  '(flymake-error ((((class color)) (:underline (:style wave :color "Red1")))))
  '(flymake-warning ((((class color)) (:underline (:style wave :color "Orange")))))
  '(fringe ((t nil)))
+ '(languagetool-issue-default ((t (:underline (:color "orange" :style wave)))))
  '(magit-section-highlight ((t nil)))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "red"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "magenta"))))

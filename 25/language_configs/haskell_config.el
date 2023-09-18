@@ -88,11 +88,11 @@
     (if (file-exists-p (concat esdir "fay_shared")) (add-to-list 'tagslst "fay_shared"))
     (setq dirs (mapconcat 'identity tagslst " "))
     (message (concat "dirs: " dirs))
-    (shell-command
+    (async-shell-command
      (concat "cd " esdir
              ;; " && hasktags --ignore-close-implementation -e --cache . 2>/dev/null 1>/dev/null") nil)
              ;; " && hasktags -e --ignore-close-implementation "
-             " && hasktags -e "
+             " && hasktags --ignore-close-implementation -e "
              dirs
              ;; " 2>/dev/null 1>/dev/null"
              ) nil)
@@ -130,7 +130,7 @@
   (define-key haskell-mode-map (kbd "C-c h h") 'haskell-hoogle)
   (define-key haskell-mode-map (kbd "C-.") nil)
   (define-key interactive-haskell-mode-map (kbd "M-.") nil)
-
+  (define-key interactive-haskell-mode-map (kbd "C-c C-x") nil)
 
   )
 

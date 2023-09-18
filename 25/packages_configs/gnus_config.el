@@ -142,7 +142,7 @@
 
 ;; ;; bbdb
 (setq bbdb/news-auto-create-p t)
-
+(require 'bbdb)
 ;; ;; start bbdb and dired
 (add-hook 'gnus-startup-hook 'bbdb-insinuate-gnus)
 (add-hook 'dired-mode-hook 'turn-on-gnus-dired-mode)
@@ -309,6 +309,7 @@
 
 ;; use the built in supercite for citing.
 (add-hook 'mail-citation-hook 'sc-cite-original)
+
 
 ;; This prevents GNUS from inserting its default attribution header.
 ;; Otherwise, both GNUS and Supercite will insert an attribution

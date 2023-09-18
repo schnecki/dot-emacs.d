@@ -146,21 +146,21 @@
 
 
 ;;GNU Global - enhance and speed up CEDET
-(setq cedet-global-command "global")
+;; (setq cedet-global-command "global")
 
-;; use gnu global if available
-(when (cedet-gnu-global-version-check t)  ; Is it ok?
-  ;; Configurations for GNU Global and CEDET
-  (semanticdb-enable-gnu-global-databases 'c++-mode t)
-  (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'haskell-mode t)
-  ;; (semanticdb-enable-gnu-global-databases 'java-mode t)
-  ;; (semanticdb-enable-gnu-global-databases 'jde-mode t)
+;; ;; use gnu global if available
+;; (when (cedet-gnu-global-version-check t)  ; Is it ok?
+;;   ;; Configurations for GNU Global and CEDET
+;;   (semanticdb-enable-gnu-global-databases 'c++-mode t)
+;;   (semanticdb-enable-gnu-global-databases 'c-mode t)
+;;   (semanticdb-enable-gnu-global-databases 'haskell-mode t)
+;;   ;; (semanticdb-enable-gnu-global-databases 'java-mode t)
+;;   ;; (semanticdb-enable-gnu-global-databases 'jde-mode t)
 
-  ;; (setq ede-locate-setup-options
-  ;;       '(ede-locate-global
-  ;;         ede-locate-base))
-  )
+;;   ;; (setq ede-locate-setup-options
+;;   ;;       '(ede-locate-global
+;;   ;;         ede-locate-base))
+;;   )
 
 
 ;; MANUALLY
@@ -199,21 +199,21 @@
 (global-semantic-highlight-func-mode t)
 (setq global-semantic-idle-summary-mode nil)
 
-;; customisation of modes
-(defun cedet-minor-mode-hook ()
-  ;;  (local-set-key "\C-c " 'cedet-m3-menu-kbd)
-  ;; (local-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
-  (local-set-key "\C-c?" 'semantic-ia-complete-symbol)
-  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
-  (local-set-key "\C-c=" 'semantic-decoration-include-visit)
-  (local-set-key "\C-cj" 'semantic-ia-fast-jump)
-  (local-set-key "\C-cq" 'semantic-ia-show-doc)
-  (local-set-key "\C-cs" 'semantic-ia-show-summary)
-  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+;; ;; customisation of modes
+;; (defun cedet-minor-mode-hook ()
+;;   ;;  (local-set-key "\C-c " 'cedet-m3-menu-kbd)
+;;   ;; (local-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
+;;   (local-set-key "\C-c?" 'semantic-ia-complete-symbol)
+;;   (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
+;;   (local-set-key "\C-c=" 'semantic-decoration-include-visit)
+;;   (local-set-key "\C-cj" 'semantic-ia-fast-jump)
+;;   (local-set-key "\C-cq" 'semantic-ia-show-doc)
+;;   (local-set-key "\C-cs" 'semantic-ia-show-summary)
+;;   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
 
-  (local-set-key "\C-cl" 'eassist-list-methods)
-  (local-set-key "\C-c\C-r" 'semantic-symref)
-  )
+;;   (local-set-key "\C-cl" 'eassist-list-methods)
+;;   (local-set-key "\C-c\C-r" 'semantic-symref)
+;;   )
 
 ;; (add-hook 'c-mode-common-hook 'my/cedet-hook) ;; all common hooks load this
 ;; (add-hook 'lisp-mode-hook 'my/cedet-hook)

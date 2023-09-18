@@ -19,11 +19,13 @@
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ;; ++++++++++++++++++++++++++++++ BASICS ++++++++++++++++++++++++++++++++
-;; ++++++++++++++ which means no extra package needed +++++++++++++++++++
+;; ++++++++++++++ which means no extra package needed +++++++++++++++++++p
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 ;; Remove keys that are interfering
 (global-set-key (kbd "C-x x g") nil)		;
+;; (global-set-key (kbd "C-x x m") nil)		;
+;; (global-set-key (kbd "C-x x s m") nil)		;
 (global-set-key (kbd "C-x x t") nil) 		; toggle-truncate-lines from ‘simple.el’.
 
 (load (concat load-folder "basics.el"))
@@ -68,15 +70,13 @@
 ;; (load (concat package-conf-folder "rainbow_mode_config.el"))
 ;; ORG Mode - organize everything
 (load (concat package-conf-folder "org_mode_config.el"))
-;; AUTO COMPLETE - completion - You should not enable this, unless
-;; you know what you are doing -- SEE COMPANY MODE
+;; AUTO COMPLETE - completion - *You should not enable this, unless
+;; you know what you are doing* -- SEE COMPANY MODE
 ;; (load (concat package-conf-folder "auto_complete_config.el"))
 ;; WHITESPACE MODE -- mark 80'th+ columns
 (load (concat package-conf-folder "whitespace_config.el"))
 ;; MAKE BACKUPS
 (load (concat package-conf-folder "backup_each_save_config.el"))
-;; MAGIT - git for emacs
-(load (concat package-conf-folder "magit_config.el"))
 ;; DIRED - file mangement for emacs
 (load (concat package-conf-folder "dired_config.el"))
 ;; DIRED PLUS - extension function for dired
@@ -125,6 +125,10 @@
 (load (concat package-conf-folder "python_django_config.el"))
 ;; load ESS
 (load (concat package-conf-folder "ess_config.el"))
+;; load Languagetool
+(load (concat package-conf-folder "languagetool_config.el"))
+;; MAGIT - git for emacs
+(load (concat package-conf-folder "magit_config.el"))
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

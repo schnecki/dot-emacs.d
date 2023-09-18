@@ -1,2 +1,0 @@
-;;; Generated package description from flycheck-google-cpplint.el  -*- no-byte-compile: t -*-
-(define-package "flycheck-google-cpplint" "20210210.300" "Help to comply with the Google C++ Style Guide" '((flycheck "0.20snapshot1")) :commit "8b68168db13df4e393d65ca8c0464019dcc45745" :authors '(("Akiha Senda" . "senda.akiha@gmail.com")) :maintainer '("Jen-Chieh Shen" . "jcs090218@gmail.com") :keywords '("flycheck" "c" "c++") :url "https://github.com/flycheck/flycheck-google-cpplint/")

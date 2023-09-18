@@ -43,7 +43,11 @@
 
 ;; persistent clocking
 (setq org-clock-persisnt 'history)
+
+;; (setq org-duration-format '(("h" . t) (special . 2)))
+
 (org-clock-persistence-insinuate)
+
 
 (global-set-key (kbd "C-c C-x C-x") 'org-clock-in-last)
 (global-set-key (kbd "C-c C-x C-j") 'org-clock-goto)

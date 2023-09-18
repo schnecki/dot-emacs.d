@@ -34,3 +34,4 @@ org-gcal/*
 /recentf
 /.lsp-session-v1
 /.org-generic-id-locations
+/.#gnus.el
