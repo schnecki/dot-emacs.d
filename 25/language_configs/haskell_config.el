@@ -92,7 +92,9 @@
      (concat "cd " esdir
              ;; " && hasktags --ignore-close-implementation -e --cache . 2>/dev/null 1>/dev/null") nil)
              ;; " && hasktags -e --ignore-close-implementation "
-             " && hasktags --ignore-close-implementation -e "
+             " && hasktags "
+             ;; "--ignore-close-implementation "
+             "-e "
              dirs
              ;; " 2>/dev/null 1>/dev/null"
              ) nil)

@@ -48,12 +48,13 @@
 (load (concat package-conf-folder "eldoc_config.el"))
 ;; FLYCHECK -- automatic syntax checking on-the-fly
 (load (concat package-conf-folder "flycheck_config.el"))
+;; (load (concat package-conf-folder "flycheck_grammarly_config.el"))
+;; load Languagetool
+(load (concat package-conf-folder "languagetool_config.el"))
 ;; FLYSPELL -- automatic spell checking on-the-fly
 (load (concat package-conf-folder "flyspell_config.el"))
 ;; IDO - minibuffer helper
 ;; (load (concat package-conf-folder "ido_config.el"))
-;; MULTIPLE CURSORS - use multiple cursors to edit the buffers
-(load (concat package-conf-folder "multiple_cursors_config.el"))
 ;; THESAURUS - choose synonym and replace
 (load (concat package-conf-folder "thesaurus_config.el"))
 ;; WINDOW NUMBER MODE - change windows by C-x C-j [NUMBER] or  META-[NUMBER]
@@ -125,10 +126,10 @@
 (load (concat package-conf-folder "python_django_config.el"))
 ;; load ESS
 (load (concat package-conf-folder "ess_config.el"))
-;; load Languagetool
-(load (concat package-conf-folder "languagetool_config.el"))
 ;; MAGIT - git for emacs
 (load (concat package-conf-folder "magit_config.el"))
+;; MULTIPLE CURSORS - use multiple cursors to edit the buffers
+(load (concat package-conf-folder "multiple_cursors_config.el"))
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -415,7 +415,7 @@
   (org-gcal-sync)
   (org-agenda))
 
-(global-set-key "\C-ca" 'org-gcal-sync-and-open-agenda)
+;; (global-set-key "\C-ca" 'org-gcal-sync-and-open-agenda)
 (global-set-key (kbd (concat prefix-command-key " C-c")) 'org-capture) ;;  define keystroke
 (global-set-key (kbd (concat prefix-command-key " C-a")) 'org-gcal-sync-and-open-agenda) ;;  define keystroke
 ;; (global-set-key "\C-cb" 'org-iswitchb)

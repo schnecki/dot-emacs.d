@@ -126,13 +126,18 @@
 (autoload 'cflow-mode "cflow-mode")
 (setq auto-mode-alist (append auto-mode-alist
                               '(("\\.cflow$" . cflow-mode))))
-(when (>= emacs-major-version 24)
-  (require 'package)
-  (package-initialize)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-  (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+;; (when (>= emacs-major-version 24)
+;;   (require 'package)
+;;   (package-initialize)
+;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/") t)
+;;   ;; (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;   ;; (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;;   (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t))
+
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 
 ;; packages to be loaded
@@ -349,8 +354,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(Flymake-compilation-prevents-syntax-check nil)
- '(TeX-auto-save t t)
- '(TeX-parse-self t t)
+ '(TeX-auto-save t)
+ '(TeX-parse-self t)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
  '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
@@ -427,6 +432,10 @@
  '(flycheck-ghc-language-extensions '("NoStarIsType" "OverlappingInstances"))
  '(flycheck-ghc-search-path '("src" "shared" "test" "examples"))
  '(flycheck-ghc-stack-project-file nil)
+ '(flycheck-languagetool-check-params
+   '(("disabledRules" . "WHITESPACE_RULE,COMMA_PARENTHESIS_WHITESPACE")))
+ '(flycheck-languagetool-server-jar
+   "~/.emacs.d/29/packages/LanguageTool-6.3/languagetool-server.jar")
  '(flycheck-lintr-linters
    "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, object_name_linter = NULL)")
  '(flycheck-python-pycompile-executable "python3")
@@ -496,12 +505,12 @@
  '(jde-sourcepath '("./src/main" "./src/test") t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
- '(languagetool-console-command "org.languagetool.commandline.Main" t)
+ '(languagetool-console-command "org.languagetool.commandline.Main")
  '(languagetool-disabled-rules '("WHITESPACE_RULE"))
  '(languagetool-java-arguments
-   '("-Dfile.encoding=UTF-8" "-cp" "/usr/share/languagetool:/usr/share/java/languagetool/*") t)
+   '("-Dfile.encoding=UTF-8" "-cp" "/usr/share/languagetool:/usr/share/java/languagetool/*"))
  '(languagetool-local-disabled-rules nil)
- '(languagetool-server-command "org.languagetool.server.HTTPServer" t)
+ '(languagetool-server-command "org.languagetool.server.HTTPServer")
  '(lsp-haskell-process-path-hie "ghcide")
  '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
@@ -523,11 +532,8 @@
  '(org-latex-table-caption-above nil)
  '(org-startup-shrink-all-tables t)
  '(org-use-sub-superscripts '{})
- '(package-archives
-   '(("gnu" . "https://elpa.gnu.org/packages/")
-     ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(flycheck-grammarly tex-smart-umlauts smart-mode-line powerline ov org-gcal jedi ido-hacks helm-bibtex hlint-refactor flyspell-correct-helm flycheck-ledger flycheck-haskell flycheck-hdevtools company-try-hard company-ghci company-cabal company-c-headers bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
  '(py-isort-options '("-l 160"))
  '(safe-local-variable-values
    '((intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
