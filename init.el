@@ -354,11 +354,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(Flymake-compilation-prevents-syntax-check nil)
- '(TeX-auto-save t)
- '(TeX-parse-self t)
+ '(TeX-auto-save t t)
+ '(TeX-parse-self t t)
  '(ac-etags-requires 1)
  '(auto-save-default nil)
- '(bmkp-last-as-first-bookmark-file "/home/schnecki/.emacs.d/.bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
    '((concat
       (nth 0
@@ -380,7 +380,7 @@
  '(clang-format-style "{BasedOnStyle: llvm, ColumnLimit: 160}")
  '(column-number-mode t)
  '(company-box-icons-alist 'company-box-icons-icons-in-terminal)
- '(company-dabbrev-downcase nil)
+ '(company-dabbrev-downcase nil t)
  '(company-dabbrev-ignore-case nil)
  '(company-tooltip-align-annotations t)
  '(cua-delete-selection nil)
@@ -435,7 +435,7 @@
  '(flycheck-languagetool-check-params
    '(("disabledRules" . "WHITESPACE_RULE,COMMA_PARENTHESIS_WHITESPACE")))
  '(flycheck-languagetool-server-jar
-   "~/.emacs.d/29/packages/LanguageTool-6.3/languagetool-server.jar")
+   "~/.emacs.d/29/packages/LanguageTool-6.3/languagetool-server.jar" t)
  '(flycheck-lintr-linters
    "with_defaults(line_length_linter = NULL, commented_code_linter = NULL,trailing_blank_lines_linter = NULL, object_name_linter = NULL)")
  '(flycheck-python-pycompile-executable "python3")
@@ -464,7 +464,7 @@
  '(haskell-process-log t)
  '(haskell-process-path-ghci "stack")
  '(haskell-process-suggest-hoogle-imports t)
- '(haskell-process-suggest-remove-import-lines nil)
+ '(haskell-process-suggest-remove-import-lines t)
  '(haskell-process-type 'stack-ghci)
  '(haskell-stylish-on-save t)
  '(helm-M-x-always-save-history t)
@@ -491,7 +491,7 @@
  '(helm-split-window-inside-p t)
  '(help-at-pt-display-when-idle '(flymake-overlay) nil (help-at-pt))
  '(help-at-pt-timer-delay 0.1)
- '(hindent-extra-args '("--line-length" "180"))
+ '(hindent-extra-args '("--line-length" "120"))
  '(intero-extra-ghc-options '("-ifay"))
  '(intero-extra-ghci-options nil)
  '(ivy-count-format "")
@@ -505,12 +505,12 @@
  '(jde-sourcepath '("./src/main" "./src/test") t)
  '(kept-new-versions 5000)
  '(kill-ring-max 600)
- '(languagetool-console-command "org.languagetool.commandline.Main")
+ '(languagetool-console-command "org.languagetool.commandline.Main" t)
  '(languagetool-disabled-rules '("WHITESPACE_RULE"))
  '(languagetool-java-arguments
-   '("-Dfile.encoding=UTF-8" "-cp" "/usr/share/languagetool:/usr/share/java/languagetool/*"))
+   '("-Dfile.encoding=UTF-8" "-cp" "/usr/share/languagetool:/usr/share/java/languagetool/*") t)
  '(languagetool-local-disabled-rules nil)
- '(languagetool-server-command "org.languagetool.server.HTTPServer")
+ '(languagetool-server-command "org.languagetool.server.HTTPServer" t)
  '(lsp-haskell-process-path-hie "ghcide")
  '(lsp-prefer-flymake :none)
  '(mc/always-run-for-all t)
@@ -533,10 +533,11 @@
  '(org-startup-shrink-all-tables t)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
-   '(flycheck-grammarly tex-smart-umlauts smart-mode-line powerline ov org-gcal jedi ido-hacks helm-bibtex hlint-refactor flyspell-correct-helm flycheck-ledger flycheck-haskell flycheck-hdevtools company-try-hard company-ghci company-cabal company-c-headers bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore ess-view ess-view-data cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(flycheck dockerfile-mode flycheck-grammarly tex-smart-umlauts smart-mode-line powerline ov org-gcal jedi ido-hacks helm-bibtex hlint-refactor flyspell-correct-helm flycheck-ledger flycheck-haskell flycheck-hdevtools company-try-hard company-ghci company-cabal company-c-headers bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
  '(py-isort-options '("-l 160"))
  '(safe-local-variable-values
-   '((intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
+   '((languagetool-local-disabled-rules "WHITESPACE_RULE" "WHITESPACE_RULE")
+     (intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
      (intero-targets "borl:lib")
      (TeX-master . paper.tex)
      (TeX-mast . presentation.tex)

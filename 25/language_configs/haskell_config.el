@@ -114,7 +114,7 @@
 
   ;; (auto-complete-mode)
   (set (make-local-variable 'whitespace-style) nil)
-  (set-fill-column 200)
+  (set-fill-column 120)
 
   ;; (local-set-key (kbd "C-j")  'haskell-newline)
   (local-set-key (kbd "RET")  'newline-and-indent)

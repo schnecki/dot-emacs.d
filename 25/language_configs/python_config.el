@@ -39,11 +39,23 @@
 (defun make-python-tags ()
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
-  (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
-                    if (or (file-exists-p (expand-file-name ".venv" d))
-                           (file-exists-p (expand-file-name "setup.py" d)))
-                    return d))
-         (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/"))))
+  (let ((dir (nth 0 (if (file-exists-p (expand-file-name ".venv" default-directory))
+                        (split-string default-directory ".venv")
+                      (if (file-exists-p (expand-file-name "venv" default-directory))
+                          (split-string default-directory "venv")
+                        (if (string-match "src/" default-directory)
+                            (split-string default-directory "src")
+                          (if (string-match "examples/" default-directory)
+                              (split-string default-directory "examples")
+                            (if (string-match "gymnasium/" default-directory)
+                                (split-string default-directory "gymnasium")))))))))
+    (setq esdir (replace-regexp-in-string " " "\\\\ " dir))
+  ;; (let* ((dir (loop as d = default-directory then (expand-file-name ".." d)
+  ;;                   if (or (file-exists-p (expand-file-name ".venv" d))
+  ;;                          (file-exists-p (expand-file-name "setup.py" d)))
+  ;;                   return d))
+         ;; (esdir (replace-regexp-in-string " " "\\\\ " (concat dir "/"))))
+    (message esdir)
     (shell-command
      (concat "cd " esdir " && find . -name \"*.py\" -not -name \".#*\" -not -name \"flycheck_*\" -not -path \"./venv/*\"  -not -path \"./.venv/*\"  -not -path \"./.eggs/*\"  -not -path \"./build/*\" -not -name \".*flycheck.*\" "
              "| etags - 1>/dev/null 2>/dev/null") nil)
@@ -124,19 +136,19 @@
 
 
 (add-to-list 'process-coding-system-alist '("python" . (utf-8 . utf-8)))
-(setq elpy-rpc-python-command "python3")
+;; (setq elpy-rpc-python-command "python3")
 
 (require 'jupyter)
-(require 'elpy)
-(elpy-enable)
-(when (load "flycheck" t t)
-  ;; (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-  (add-hook 'elpy-mode-hook 'flycheck-mode))
+;; (require 'elpy)
+;; (elpy-enable)
+;; (when (load "flycheck" t t)
+;;   ;; (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;   (add-hook 'elpy-mode-hook 'flycheck-mode))
 
 
-(setq flycheck-python-pycompile-executable "python3")
+;; (setq flycheck-python-pycompile-executable "python3")
 ;; (add-to-list 'flycheck-disabled-checkers 'python-flake8)
-(setq-default flycheck-disabled-checkers '(python-pylint))
+;; (setq-default flycheck-disabled-checkers '(python-pylint))
 
 ;; add hook
 (add-hook 'python-mode-hook 'my-python-mode-hook)

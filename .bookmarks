@@ -2,7 +2,20 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(#1=(#("lara" 0 4
+(#1=(#("30" 0 2
+      (bmkp-full-record #1#))
+    (filename . "~/Documents/projects/aral-trader/src/Trader/Learn/Ordering/LearnOrdering.hs")
+    (buffer-name . "LearnOrdering.hs")
+    (front-context-string . "                        (emaPeriod Nothi")
+    (rear-context-string . "ranularityInSecondsI M30)        -- OLD\n")
+    (front-context-region-string . "ranularityInSecondsI M30)        -- OLD\n")
+    (rear-context-region-string . "                      , (emaPeriod Nothi")
+    (visits . 0)
+    (time . #2=(26184 48215 873945 309000))
+    (created . #2#)
+    (position . 32329)
+    (end-position . 32714))
+#1=(#("lara" 0 4
       (bmkp-full-record #1#))
     (buffer-name . "lara/")
     (visits . 0)
