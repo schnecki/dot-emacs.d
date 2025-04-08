@@ -130,6 +130,8 @@
 (load (concat package-conf-folder "magit_config.el"))
 ;; MULTIPLE CURSORS - use multiple cursors to edit the buffers
 (load (concat package-conf-folder "multiple_cursors_config.el"))
+;; TRAMP config
+(load (concat package-conf-folder "tramp_config.el"))
 
 
 ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
