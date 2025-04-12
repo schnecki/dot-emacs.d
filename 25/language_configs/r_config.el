@@ -52,6 +52,7 @@
 (defun make-r-tags ()
   "This function reloads the tags by using the command 'make tags'."
   (interactive)
+  (message "Running make-r-tags")
   (let ((dir (nth 0 (if (string-match "app/" default-directory)
                         (split-string default-directory "app")
                       (if (string-match "src/" default-directory)
@@ -76,23 +77,25 @@
                                       ))))))))))))
     (message (concat "dir: " dir))
     (setq esdir (string-replace " " "\\\\ " dir))
+    (message (concat "CMD: "
+                     ;; -- (concat "cd " esdir " && find " esdir " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null")))
+                     (concat "cd " esdir " && printf \"rtags(path = './R/', recursive = TRUE, type = 'etags', ofile = 'TAGS')\" | R --no-save -q 1>/dev/null 2>/dev/null")))
+    ;; (shell-command
+    ;;  (concat "cd " esdir " && find " esdir " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
     (shell-command
-     (concat "cd " esdir " && find " esdir " -name \"*.r\" -o -name \"*.R\" -o -name \"*.Rd\" -o -name \"*.rd\" | etags - 1>/dev/null 2>/dev/null") nil)
-    (visit-tags-table (concat esdir "/TAGS")))
+     (concat "cd " esdir " && printf \"rtags(path = './R/', recursive = TRUE, type = 'etags', ofile = 'TAGS')\" | R --no-save -q 1>/dev/null 2>/dev/null"))
+    (visit-tags-table (concat esdir "/TAGS"))
+    )
   )
 
 
 ;; R MODE
-(defun my-r-mode-hook ()
+(defun my/r-mode-hook ()
+  ;; (define-key ess-mode-map (kbd "M-.") 'nil)
   (add-hook 'after-save-hook 'make-r-tags nil t) )
 
 ;; (setq auto-mode-alist
 ;;       (cons '("\\.r$" . ess-r-mode) auto-mode-alist))
-
-
-;; add hook
-(add-hook 'r-mode-hook 'my-r-mode-hook)
-(add-hook 'ess-r-mode-hook 'my-r-mode-hook)
 
 
 ;; use Air to format the content of the file
@@ -107,3 +110,6 @@
         (revert-buffer nil t t)))))
 
 (add-hook 'after-save-hook 'run-air-on-r-save)
+(add-hook 'R-mode-hook 'my/r-mode-hook)
+(add-hook 'ess-r-mode-hook 'my/r-mode-hook)
+
