@@ -281,14 +281,21 @@ Dependencies:
     We highly encourage you to use stack, as it plays well together with
     flycheck and keeps your systems clean.
   - hasktags ($ cabal install hasktags)
-  - hindent
+  - hindent ($ stack install hindent)
   - stylish-haskell (format source code nicely)
   - structured-haskell-mode ($ cabal install structured-haskell-mode)
   - ghc-mod ($ cabal install ghc-mod)
   - hoogle ($ cabal install hoogle)
-  - hident ($ stack install hident)
+  - hindent ($ stack install hident)
   - hlint ($ cabal install hlint): code suggestions
   - HaRe ($ cabal install HaRe)
+  - haskell-language-server ($ yay -S haskell-language-server-static hlint-bin stylish-haskell-bin)
+  - sudo pacman -S python-lsp-server python-pycodestyle python-pydocstyle python-pylint python-rope autopep8
+
++ R
+  - AIR Code Formatter ($ curl -LsSf https://github.com/posit-dev/air/releases/latest/download/air-installer.sh | sh)
+  - see https://posit-dev.github.io/air/cli.html and https://francoismichonneau.net/2025/02/air-with-emacs-ess/
+
 
 + PHP
   - phpmd ($ sudo aura -As phpmd)

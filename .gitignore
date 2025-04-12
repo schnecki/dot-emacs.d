@@ -35,3 +35,4 @@ org-gcal/*
 /.lsp-session-v1
 /.org-generic-id-locations
 /.#gnus.el
+eln-cache

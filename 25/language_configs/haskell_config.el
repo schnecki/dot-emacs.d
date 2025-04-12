@@ -133,6 +133,7 @@
   (define-key haskell-mode-map (kbd "C-.") nil)
   (define-key interactive-haskell-mode-map (kbd "M-.") nil)
   (define-key interactive-haskell-mode-map (kbd "C-c C-x") nil)
+  (define-key haskell-mode-map (kbd "M-q") 'hindent-reformat-decl-or-fill)
 
   )
 
@@ -149,7 +150,9 @@
 ;; (require 'hlint-refactor)
 ;; (add-hook 'haskell-mode-hook 'hlint-refactor-mode)
 
-
+(require 'lsp)
+(require 'lsp-haskell)
+;; Hooks so haskell and literate haskell major modes trigger LSP setup
 (add-hook 'haskell-mode-hook #'lsp)
 (add-hook 'haskell-literate-mode-hook #'lsp)
 

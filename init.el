@@ -360,32 +360,28 @@
  '(auto-save-default nil)
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/.bookmarks")
  '(cedet-java-classpath-extension
-   '((concat
-      (nth 0
-           (split-string default-directory "src"))
-      "./lib/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "./src/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "../Common/src/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "../Common/lib/")))
+   '((concat (nth 0 (split-string default-directory "src")) "./lib/")
+     (concat (nth 0 (split-string default-directory "src")) "./src/")
+     (concat (nth 0 (split-string default-directory "src")) "../Common/src/")
+     (concat (nth 0 (split-string default-directory "src")) "../Common/lib/")))
  '(clang-format-executable "/usr/bin/clang-format")
  '(clang-format-style "{BasedOnStyle: llvm, ColumnLimit: 160}")
  '(column-number-mode t)
  '(company-box-icons-alist 'company-box-icons-icons-in-terminal)
- '(company-dabbrev-downcase nil t)
+ '(company-dabbrev-downcase nil)
  '(company-dabbrev-ignore-case nil)
  '(company-tooltip-align-annotations t)
  '(cua-delete-selection nil)
  '(custom-safe-themes
-   '("efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" "4ca84f9861113f889d505b66c4a9c30b81400f450b54f4c857d3eb44c5bdc601" "0615f6940c6c5e5638c9157644263889db755d43576c25f7b311806f4cfe2c3a" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
+   '("efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659"
+     "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7"
+     "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773"
+     "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3"
+     "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088"
+     "4ca84f9861113f889d505b66c4a9c30b81400f450b54f4c857d3eb44c5bdc601"
+     "0615f6940c6c5e5638c9157644263889db755d43576c25f7b311806f4cfe2c3a"
+     "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e"
+     "cdc2a7ba4ecf0910f13ba207cce7080b58d9ed2234032113b8846a4e44597e41" default))
  '(dabbrev-case-distinction nil)
  '(dabbrev-case-fold-search nil)
  '(dabbrev-case-replace nil)
@@ -400,11 +396,9 @@
  '(ecb-jde-set-directories-buffer-to-jde-sourcepath 'replace)
  '(ecb-layout-name "left-methods-sources")
  '(ecb-layout-window-sizes
-   '(("left-methods-sources"
-      (ecb-methods-buffer-name 0.15546218487394958 . 0.6911764705882353)
+   '(("left-methods-sources" (ecb-methods-buffer-name 0.15546218487394958 . 0.6911764705882353)
       (ecb-sources-buffer-name 0.15546218487394958 . 0.29411764705882354))
-     ("left8"
-      (ecb-directories-buffer-name 0.15126050420168066 . 0.29411764705882354)
+     ("left8" (ecb-directories-buffer-name 0.15126050420168066 . 0.29411764705882354)
       (ecb-sources-buffer-name 0.15126050420168066 . 0.23529411764705882)
       (ecb-methods-buffer-name 0.15126050420168066 . 0.29411764705882354)
       (ecb-history-buffer-name 0.15126050420168066 . 0.16176470588235295))))
@@ -416,19 +410,45 @@
  '(ecb-use-speedbar-instead-native-tree-buffer nil)
  '(eclimd-autostart nil)
  '(ede-project-directories
-   '("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src" "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src" "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04"))
+   '("/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03/src"
+     "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/08/03"
+     "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04/src"
+     "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/06/04"
+     "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/framework"
+     "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model/exceptions"
+     "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src/model"
+     "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex/src"
+     "/home/schnecki/Documents/UIBK/7.Semester/C++/project/textyTex"
+     "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04/src"
+     "/home/schnecki/Documents/UIBK/7.Semester/InfoSec_SecArch/PS/05/04"))
  '(elpy-disable-backend-error-display nil)
  '(elpy-rpc-python-command "python3")
  '(flycheck-checker-error-threshold nil)
  '(flycheck-clang-args '("-DFLYCHECK"))
  '(flycheck-clang-include-path
-   '("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4" "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6" "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include" "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4" "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include" "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0" "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0" "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0" "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0" "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1" "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz" "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16" "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0" "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include" "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/"))
+   '("/usr/include/gtkmm-3.0" "/usr/include/gdkmm-3.0" "/usr/include/glibmm-2.4"
+     "/usr/include/gtkmm-3.0" "/usr/lib/gtkmm-3.0/include" "/usr/include/atkmm-1.6"
+     "/usr/include/gtk-3.0/unix-print" "/usr/include/gdkmm-3.0" "/usr/lib/gdkmm-3.0/include"
+     "/usr/include/giomm-2.4" "/usr/lib/giomm-2.4/include" "/usr/include/pangomm-1.4"
+     "/usr/lib/pangomm-1.4/include" "/usr/include/glibmm-2.4" "/usr/lib/glibmm-2.4/include"
+     "/usr/include/gtk-3.0" "/usr/include/at-spi2-atk/2.0" "/usr/include/at-spi-2.0"
+     "/usr/include/dbus-1.0" "/usr/lib/dbus-1.0/include" "/usr/include/gtk-3.0"
+     "/usr/include/gio-unix-2.0/" "/usr/include/cairo" "/usr/include/pango-1.0"
+     "/usr/include/atk-1.0" "/usr/include/cairo" "/usr/include/cairomm-1.0"
+     "/usr/lib/cairomm-1.0/include" "/usr/include/cairo" "/usr/include/pixman-1"
+     "/usr/include/freetype2" "/usr/include/libpng16" "/usr/include/harfbuzz"
+     "/usr/include/freetype2" "/usr/include/harfbuzz" "/usr/include/libdrm" "/usr/include/libpng16"
+     "/usr/include/sigc++-2.0" "/usr/lib/sigc++-2.0/include" "/usr/include/gdk-pixbuf-2.0"
+     "/usr/include/libpng16" "/usr/include/glib-2.0" "/usr/lib/glib-2.0/include"
+     "/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/"))
  '(flycheck-clang-includes '("/usr/include/netdb.h"))
  '(flycheck-cppcheck-include-path '("/opt/ibm/ILOG/CPLEX_Studio1210/cplex/include/"))
  '(flycheck-cppcheck-suppressions '("knownConditionTrueFalse"))
  '(flycheck-flake8-maximum-line-length 160)
  '(flycheck-ghc-args
-   '("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat" "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs" "-ignore-package hmatrix-float"))
+   '("-fwarn-warnings-deprecations" "-DFLYCHECK" "-Wredundant-constraints" "-Wcompat"
+     "-Wincomplete-record-updates" "-Wincomplete-uni-patterns" "-fwarn-tabs"
+     "-ignore-package hmatrix-float"))
  '(flycheck-ghc-language-extensions '("NoStarIsType" "OverlappingInstances"))
  '(flycheck-ghc-search-path '("src" "shared" "test" "examples"))
  '(flycheck-ghc-stack-project-file nil)
@@ -455,7 +475,8 @@
  '(haskell-interactive-mode-collapse t)
  '(haskell-interactive-popup-errors nil)
  '(haskell-mode-hook
-   '(haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode hindent-mode haskell-indentation-mode my/haskell-minor-mode))
+   '(haskell-indent-mode interactive-haskell-mode haskell-doc-mode interactive-haskell-mode
+                         hindent-mode haskell-indentation-mode my/haskell-minor-mode))
  '(haskell-process-args-cabal-repl
    '("--ghc-option=-ferror-spans" "--ghc-option=-fbreak-on-error"))
  '(haskell-process-args-ghci '("-ferror-spans -fbreak-on-error"))
@@ -521,10 +542,7 @@
  '(org-export-creator-string "")
  '(org-export-with-creator nil)
  '(org-file-apps
-   '((auto-mode . emacs)
-     ("\\.mm\\'" . default)
-     ("\\.x?html?\\'" . default)
-     ("\\.pdf\\'" . "evince %s")))
+   '((auto-mode . emacs) ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . "evince %s")))
  '(org-html-creator-string "")
  '(org-latex-caption-above nil)
  '(org-latex-listings t)
@@ -533,34 +551,44 @@
  '(org-startup-shrink-all-tables t)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
-   '(flycheck dockerfile-mode flycheck-grammarly tex-smart-umlauts smart-mode-line powerline ov org-gcal jedi ido-hacks helm-bibtex hlint-refactor flyspell-correct-helm flycheck-ledger flycheck-haskell flycheck-hdevtools company-try-hard company-ghci company-cabal company-c-headers bbdb format-all languagetool flycheck-languagetool ein revert-buffer-all blacken elpy pine-script-mode yaml-mode lsp-haskell jupyter synosaurus py-isort ess flycheck-mypy flyspell-correct auctex textmate-to-yas solarized-theme spacemacs-theme leuven-theme fill-column-indicator ess-smart-equals ess-smart-underscore cuda-mode clang-format use-package exec-path-from-shell company-quickhelp flyspell-lazy company-auctex company-bibtex color-theme-modern editorconfig editorconfig-generate wolfram-mode flycheck-pyflakes synonymous maude-mode erlang abs-mode hayoo latex-pretty-symbols php-auto-yasnippets web-mode counsel helm-flx browse-kill-ring flycheck-elm elm-mode elm-yasnippets flycheck-elm elm-mode elm-yasnippets matlab-mode hamlet-mode thesaurus window-number w3m vc-darcs shm shakespeare-mode request php-mode pager-default-keybindings orgtbl-ascii-plot org-plus-contrib org-cua-dwim org-ac markdown-toc markdown-mode+ magit javap-mode javadoc-lookup ido-ubiquitous ido-gnus hindent helm-mode-manager helm-hoogle helm-hayoo helm-google helm-git-files helm-git helm-flycheck helm-dired-recent-dirs helm-c-yasnippet gnuplot-mode gnuplot ghci-completion fuzzy function-args flycheck-stack flycheck-google-cpplint flycheck-color-mode-line edbi ecb company-shell change-inner cdlatex bison-mode backup-walker auto-dictionary auto-complete-clang auto-complete-c-headers auto-complete-auctex arduino-mode ace-window ace-jump-mode ace-jump-buffer ac-octave ac-math ac-ispell ac-etags ac-dabbrev ac-capf ac-c-headers))
+   '(abs-mode ac-c-headers ac-capf ac-dabbrev ac-etags ac-ispell ac-math ac-octave ace-jump-buffer
+              ace-jump-mode ace-window arduino-mode auto-complete-auctex auto-complete-c-headers
+              auto-complete-clang auto-dictionary backup-walker bbdb bison-mode blacken bookmark+
+              browse-kill-ring cdlatex change-inner clang-format color-theme-modern company-auctex
+              company-bibtex company-c-headers company-cabal company-ghci company-math
+              company-quickhelp company-shell company-try-hard counsel dockerfile-mode ecb edbi
+              editorconfig editorconfig-generate ein elm-mode elm-yasnippets elpy ess
+              exec-path-from-shell fill-column-indicator flycheck-color-mode-line flycheck-elm
+              flycheck-google-cpplint flycheck-grammarly flycheck-haskell flycheck-hdevtools
+              flycheck-languagetool flycheck-ledger flycheck-mypy flycheck-pyflakes flycheck-stack
+              flyspell-correct-helm flyspell-lazy format-all function-args fuzzy ghci-completion
+              gnuplot gnuplot-mode hamlet-mode hayoo helm-bibtex helm-c-yasnippet
+              helm-dired-recent-dirs helm-flx helm-flycheck helm-git helm-git-files helm-google
+              helm-hayoo helm-hoogle helm-mode-manager hindent hlint-refactor htmlize ido-gnus
+              ido-hacks ido-ubiquitous javadoc-lookup javap-mode jedi jupyter languagetool
+              latex-pretty-symbols leuven-theme lsp-haskell magit markdown-mode+ markdown-toc
+              matlab-mode multiple-cursors org-ac org-cua-dwim org-gcal org-plus-contrib
+              orgtbl-ascii-plot ov pager-default-keybindings paredit php-auto-yasnippets
+              pine-script-mode powerline py-isort quelpa rainbow-delimiters rainbow-mode
+              revert-buffer-all shakespeare-mode shm smart-mode-line sml-mode solarized-theme
+              spacemacs-theme synonymous synosaurus tex-smart-umlauts textmate-to-yas thesaurus
+              tuareg undo-tree use-package vc-darcs w3m web-mode which-key window-number
+              wolfram-mode yaml-mode))
  '(py-isort-options '("-l 160"))
  '(safe-local-variable-values
    '((languagetool-local-disabled-rules "WHITESPACE_RULE" "WHITESPACE_RULE")
-     (intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini" "examples:exe:multichain" "examples:exe:printer-mail" "examples:exe:queuing-system" "examples:exe:three-states" "examples:exe:three-states-model-free")
-     (intero-targets "borl:lib")
-     (TeX-master . paper.tex)
-     (TeX-mast . presentation.tex)
-     (TeX-command-extra-options . "-shell-escape")
-     (TeX-mast . paper.tex)
+     (intero-targets "borl-model-based:lib" "examples:exe:gridworld" "examples:exe:gridworld-mini"
+                     "examples:exe:multichain" "examples:exe:printer-mail"
+                     "examples:exe:queuing-system" "examples:exe:three-states"
+                     "examples:exe:three-states-model-free")
+     (intero-targets "borl:lib") (TeX-master . paper.tex) (TeX-mast . presentation.tex)
+     (TeX-command-extra-options . "-shell-escape") (TeX-mast . paper.tex)
      (header-auto-update-enabled)))
  '(semanticdb-javap-classpath
-   '((concat
-      (nth 0
-           (split-string default-directory "src"))
-      "./lib/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "./src/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "../Common/src/")
-     (concat
-      (nth 0
-           (split-string default-directory "src"))
-      "../Common/lib/")))
+   '((concat (nth 0 (split-string default-directory "src")) "./lib/")
+     (concat (nth 0 (split-string default-directory "src")) "./src/")
+     (concat (nth 0 (split-string default-directory "src")) "../Common/src/")
+     (concat (nth 0 (split-string default-directory "src")) "../Common/lib/")))
  '(send-mail-function 'smtpmail-send-it)
  '(setq max-specpdl-size t)
  '(size-indication-mode t)
@@ -590,18 +618,7 @@
  '(ein:basecell-input-area-face ((t (:extend t :background "white smoke"))))
  '(flymake-error ((((class color)) (:underline (:style wave :color "Red1")))))
  '(flymake-warning ((((class color)) (:underline (:style wave :color "Orange")))))
- '(fringe ((t nil)))
  '(languagetool-issue-default ((t (:underline (:color "orange" :style wave)))))
- '(magit-section-highlight ((t nil)))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "red"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "magenta"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "cyan"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "brown"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "violet"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "green"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "tomato2"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "orange"))))
- '(semantic-highlight-func-current-tag-face ((t (:box (:line-width 1 :color "grey75")))))
  '(undo-tree-visualizer-active-branch-face ((t (:foreground "black" :weight bold)))))
 
 (put 'downcase-region 'disabled nil)

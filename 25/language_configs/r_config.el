@@ -93,3 +93,17 @@
 ;; add hook
 (add-hook 'r-mode-hook 'my-r-mode-hook)
 (add-hook 'ess-r-mode-hook 'my-r-mode-hook)
+
+
+;; use Air to format the content of the file
+(defun run-air-on-r-save ()
+  "Run Air after saving .R files and refresh buffer."
+  (when (and (stringp buffer-file-name)
+             (string-match "\\.R$" buffer-file-name))
+    (let ((current-buffer (current-buffer)))
+      (shell-command (concat "air format " buffer-file-name))
+      ;; Refresh buffer from disk
+      (with-current-buffer current-buffer
+        (revert-buffer nil t t)))))
+
+(add-hook 'after-save-hook 'run-air-on-r-save)

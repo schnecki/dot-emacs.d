@@ -175,6 +175,9 @@
 ;; jedi for autocompletion, etc
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 
+(require 'lsp)
+(add-hook 'python-mode-hook #'lsp-mode)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; python_config.el ends here
