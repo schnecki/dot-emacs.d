@@ -556,24 +556,24 @@
               auto-complete-clang auto-dictionary backup-walker bbdb bison-mode blacken bookmark+
               browse-kill-ring cdlatex change-inner clang-format color-theme-modern company-auctex
               company-bibtex company-c-headers company-cabal company-ghci company-math
-              company-quickhelp company-shell company-try-hard counsel dockerfile-mode ecb edbi
-              editorconfig editorconfig-generate ein elm-mode elm-yasnippets elpy ess
-              exec-path-from-shell fill-column-indicator flycheck-color-mode-line flycheck-elm
-              flycheck-google-cpplint flycheck-grammarly flycheck-haskell flycheck-hdevtools
-              flycheck-languagetool flycheck-ledger flycheck-mypy flycheck-pyflakes flycheck-stack
-              flyspell-correct-helm flyspell-lazy format-all function-args fuzzy ghci-completion
-              gnuplot gnuplot-mode hamlet-mode hayoo helm-bibtex helm-c-yasnippet
-              helm-dired-recent-dirs helm-flx helm-flycheck helm-git helm-git-files helm-google
-              helm-hayoo helm-hoogle helm-mode-manager hindent hlint-refactor htmlize ido-gnus
-              ido-hacks ido-ubiquitous javadoc-lookup javap-mode jedi jupyter languagetool
-              latex-pretty-symbols leuven-theme lsp-haskell magit markdown-mode+ markdown-toc
-              matlab-mode multiple-cursors org-ac org-cua-dwim org-gcal org-plus-contrib
-              orgtbl-ascii-plot ov pager-default-keybindings paredit php-auto-yasnippets
-              pine-script-mode powerline py-isort quelpa rainbow-delimiters rainbow-mode
-              revert-buffer-all shakespeare-mode shm smart-mode-line sml-mode solarized-theme
-              spacemacs-theme synonymous synosaurus tex-smart-umlauts textmate-to-yas thesaurus
-              tuareg undo-tree use-package vc-darcs w3m web-mode which-key window-number
-              wolfram-mode yaml-mode))
+              company-quickhelp company-shell company-try-hard copilot copilot-chat counsel
+              dockerfile-mode ecb edbi editorconfig editorconfig-generate ein elm-mode
+              elm-yasnippets elpy ess exec-path-from-shell fill-column-indicator
+              flycheck-color-mode-line flycheck-elm flycheck-google-cpplint flycheck-grammarly
+              flycheck-haskell flycheck-hdevtools flycheck-languagetool flycheck-ledger
+              flycheck-mypy flycheck-pyflakes flycheck-stack flyspell-correct-helm flyspell-lazy
+              format-all function-args fuzzy ghci-completion gnuplot gnuplot-mode hamlet-mode hayoo
+              helm-bibtex helm-c-yasnippet helm-dired-recent-dirs helm-flx helm-flycheck helm-git
+              helm-git-files helm-google helm-hayoo helm-hoogle helm-mode-manager hindent
+              hlint-refactor htmlize ido-gnus ido-hacks ido-ubiquitous javadoc-lookup javap-mode
+              jedi jupyter languagetool latex-pretty-symbols leuven-theme lsp-haskell magit
+              markdown-mode+ markdown-toc matlab-mode multiple-cursors org-ac org-cua-dwim org-gcal
+              org-plus-contrib orgtbl-ascii-plot ov pager-default-keybindings paredit
+              php-auto-yasnippets pine-script-mode powerline py-isort quelpa rainbow-delimiters
+              rainbow-mode revert-buffer-all shakespeare-mode shm smart-mode-line sml-mode
+              solarized-theme spacemacs-theme synonymous synosaurus tex-smart-umlauts
+              textmate-to-yas thesaurus tuareg undo-tree use-package vc-darcs w3m web-mode which-key
+              window-number wolfram-mode yaml-mode))
  '(py-isort-options '("-l 160"))
  '(safe-local-variable-values
    '((languagetool-local-disabled-rules "WHITESPACE_RULE" "WHITESPACE_RULE")

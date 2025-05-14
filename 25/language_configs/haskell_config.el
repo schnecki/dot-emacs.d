@@ -134,10 +134,16 @@
   (define-key interactive-haskell-mode-map (kbd "M-.") nil)
   (define-key interactive-haskell-mode-map (kbd "C-c C-x") nil)
   (define-key haskell-mode-map (kbd "M-q") 'hindent-reformat-decl-or-fill)
-
+  (define-key interactive-haskell-mode-map (kbd "C-c C-t") 'haskell-mode-show-type-at)
   )
 
 (add-hook 'haskell-mode-hook 'my/haskell-minor-mode)
+
+(custom-set-variables
+  '(haskell-process-suggest-remove-import-lines t)
+  '(haskell-process-auto-import-loaded-modules t)
+  '(haskell-process-log t)
+  '(haskell-process-suggest-hoogle-imports t))
 
 
 ;; ;; ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
