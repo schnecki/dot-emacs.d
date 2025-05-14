@@ -697,5 +697,11 @@
             (if (buffer-too-big-p) (font-lock-mode -1))
             (if (buffer-too-big-p) (undo-tree-mode -1))))
 
+
+;; SQL Mode
+
+(add-to-list 'auto-mode-alist '("\\.sql$" . sql-mode))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; basics.el ends here
